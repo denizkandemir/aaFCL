@@ -1,16 +1,16 @@
 import "./Header.scss";
-import Navbar from "../Navbar/Navbar";
-import background from "/aafcl-background16.png";
+import background from "/aafcl-background17.png";
 import rocket from "/rocket.png";
 import education from "/education.png";
 import hammers from "/hammer.png";
 import technology from "/virtual.png";
+import HeaderNavbar from "../HeaderNavbar/HeaderNavbar";
 
 const Header = () => {
     return (
         <>
             <div className="header-container">
-                <Navbar />
+                <HeaderNavbar />
                 <div className="header-content-container">
                     <div className="header-info-container">
                         <h1 className="header-title"> Geleceğin Sınıfına <br /> Hoşgeldiniz! </h1>
