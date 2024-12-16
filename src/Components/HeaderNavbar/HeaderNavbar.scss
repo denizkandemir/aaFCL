@@ -1,19 +1,15 @@
 @import "/src/styles/_variables.scss";
 
-.navbar-container {
+.headerNavbar-container {
     display: flex;
     padding: 30px 50px 30px 4.5%;
     align-items: center;
     justify-content: space-between;
-    background-color: #ffffff; /* navbar background color */
-    box-shadow: 0px 10px 15px -5px rgba(0, 0, 0, 0.3);
     z-index: 100;
 
-    .link-p {
-        text-decoration: none;
-    }
 
-    .navbar-logo-p-container {
+
+    .headerNavbar-logo-p-container {
         display: flex;
         min-width: 140px;
         align-items: center;
@@ -33,24 +29,29 @@
         height: 85px;
     }
 
-    .navbar-links-container {
+    .headerNavbar-links-container {
         display: flex;
         align-items: center;
         list-style: none;
         gap: 35px;
 
-        .navbar-link {
+        .link-p {
+            text-decoration: none;
+        }
+        
+        .headerNavbar-link {
           cursor: pointer;
           font-family: $primary-font;
           font-weight: 600;
           font-size: 21px;
-          color: $school-color;
+        //   color: $school-color;
+        color: white;
         }
     }
 
 
 
-    .navbar-right-logo-container {
+    .headerNavbar-right-logo-container {
         display: flex;
         gap: 20px;
 
