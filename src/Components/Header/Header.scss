@@ -1,14 +1,11 @@
 @import "/src/styles/_variables.scss";
 
-
 .header-container {
     display: flex;
     flex-direction: column;
     justify-content: center;
     position: relative;
     overflow-x: hidden;
-
-
 
     .header-background-container {
         position: absolute;

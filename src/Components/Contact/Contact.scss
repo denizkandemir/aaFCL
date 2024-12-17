@@ -1,0 +1,97 @@
+@import "/src/styles/_variables.scss";
+
+
+
+.contact-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: $lightGrey-color;
+
+    .contact-content-container {
+        padding: 50px;
+        padding-top: 60px;
+
+        .contact-title{
+            margin-bottom: 30px;
+            align-self: self-start;
+            color: $blue-color4;
+            font-family: $primary-font;
+            font-weight: 600;
+            font-size: 50px;
+        }   
+
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        max-width: 1300px;
+        align-items: center;
+
+        .contact-cards-container {
+            display: flex;
+            align-items: stretch;
+            justify-content: space-between;
+            gap: 50px;
+
+            .contact-card-wrapper {
+                box-shadow: $wrapper-box-shadow;
+                border-radius: 10px;
+                width: 250px;
+                background-color: white;
+                padding: 20px;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+
+                .card-texts-container {
+                    margin-top: 10px;
+                    text-align: center;
+
+                    .card-p-title {
+                        font-family: $primary-font;
+                        font-weight: 600;
+                        font-size: 20px;
+                        margin-top: 5px;
+                        color: $blue-color4;
+                    }
+
+                    .card-link {
+                        text-decoration: none;
+                    }
+
+                    .card-p {
+                        font-family: $primary-font;
+                        font-weight: 500;
+                        font-size: 18px;
+                        margin-top: 5px;
+                        color: rgba(0,0,0,0.8);
+                    }
+                }
+
+
+                .card-img-container {
+                    display: flex;
+                    justify-content: center;
+
+                    .card-img {
+                        object-fit: cover;
+                        width: 90px;
+                        height: 90px;
+
+                    }
+                }
+            }
+        }
+
+        .contact-map-container {
+            margin-top: 50px;
+        }
+        .contact-map {
+            // width: 100%;
+            border-radius: 7px;
+            border: none;
+        }
+    }
+}

@@ -1,0 +1,71 @@
+@import "/src/styles/_variables.scss";
+
+.banner-img-title-container {
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 130px;
+    overflow: hidden;
+
+    .banner-img-container {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        width: 100vw;
+        max-height: 800px;
+        overflow: hidden;
+        overflow-x: hidden;
+    
+        .banner-img {
+            object-fit: cover;
+            width: 100vw;
+            height: 100%;
+            filter: brightness(55%);
+            overflow-x: hidden;
+        }
+    }
+}
+
+.banner-title {
+    color: white;
+    font-family: $primary-font;
+    font-size: 60px;
+    font-weight: 600;
+    position: relative;
+    z-index: 10;
+  }
+
+.banner-img-texts-container{
+    position: relative;
+    z-index: 10;
+    display: flex;
+    gap: 30px;
+    margin-top: 20px;
+
+    .link-arrow-container {
+        display: flex;
+        gap: 8px;
+        align-items: center;
+        .banner-link {
+            text-decoration: none;
+            color: rgba(255,255,255,0.92);
+            font-family: $primary-font;
+            font-size: 25px;
+            font-weight: 500;
+          }
+    }
+    
+
+      .banner-p {
+        text-decoration: none;
+        color: rgba(255,255,255,0.92);
+        font-family: $primary-font;
+        font-size: 25px;
+        font-weight: 500;
+      }
+}
