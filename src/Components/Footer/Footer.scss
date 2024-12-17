@@ -1,0 +1,114 @@
+@import "/src/styles/_variables.scss";
+
+.footer-container {
+    .footer-logo-content-container {
+        display: flex;
+        justify-content: center;
+        background-color: $grey-color;
+
+        .footer-logos-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px 120px;
+            max-width: 1150px;
+            padding: 40px 0px;
+
+
+            .logo-texts-container {
+                display: flex;
+                gap: 10px;
+                align-items: center;
+
+                .fcl-text {
+                    font-weight: 500;
+                    font-size: 19px;
+                    max-width: 200px;
+                }
+
+                .school-text {
+                    font-family: $primary-font;
+                    font-size: 20px;
+                    line-height: 25px;
+                    font-weight: 500;
+                    max-width: 200px;
+                }
+
+                .ministery-text {
+                    color: #DF232A;
+                    font-size: 20px;
+                    font-weight: 500;
+                }
+
+                .fcl-bottom-text {
+                    color: #04bce8;
+                    margin-top: 1px;
+                    font-size: 20px;
+                    max-width: 200px;
+                }
+
+                .logo {
+                    object-fit: contain;
+                    width: 150px;
+                }
+            }
+        }
+    }
+
+    .footer-bottom-content-container {
+        background-color: black;
+        // background-color: #01102f;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 50px;
+
+        .footer-content-container {
+            max-width: 1150px;
+            
+            display: flex;
+            justify-content: center;
+            gap: 80px;
+
+            .footer-title {
+                color: white;
+                font-family: $primary-font;
+
+                font-weight: 600;
+                font-size: 22px;
+                margin-bottom: 15px;
+            }
+
+            .footer-wrapper {
+                display: flex;
+                gap: 15px;
+                align-items: center;
+                margin-top: 10px;
+            }
+
+
+            .footer-link {
+                text-decoration: none;
+            }
+
+            .footer-p {
+                font-family: $primary-font;
+                color: white;
+                max-width: 250px;
+                font-size: 17px;
+                font-weight: 500;
+            }
+
+            .footer-p:hover { 
+                color: #315ff6;
+            }
+
+            .footer-menu-container {
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+            }
+
+
+        }
+    }
+}

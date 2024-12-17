@@ -8,7 +8,9 @@ const Navbar = () => {
     return (
         <div className="navbar-container">
             <div className="navbar-logo-p-container">
-               <Link  className="link-p"  to={"/"} ><img src={okulLogo} className="school-logo" alt="" /></Link>
+               <Link  className="link-p"  to={"/"} >          
+                     <img src={bakanlıkLogo} className="ministery-logo" alt="" />
+               </Link>
             </div>
 
             <div className="navbar-center-container">
@@ -22,7 +24,7 @@ const Navbar = () => {
             </div>
 
             <div className="navbar-right-logo-container">
-                <img src={bakanlıkLogo} className="ministery-logo" alt="" />
+                <img src={okulLogo} className="school-logo" alt="" />
                 <div className="fcl-logo-texts-container">
                     <img src={fclLogo} className="fcl-logo" alt="" />
                     <div className="fcl-texts-container">
