@@ -7,26 +7,26 @@ const contactCards = [
 
     {
         id:1,
-        img: schoolSvg,
-        text:"Okulumuzun Websitesi",
-        link:"https://sehituzmancavusaliakdoganilkokul.meb.k12.tr",
-    },
-
-
-    {
-        id:2,
         img: emailSvg,
         text:"Mail Adresimiz",
-        info:"okul@gmail.com",
-        link:"mailto:okul@gmail.com",
+        info:"osmagaziokulu@gmail.com",
+        link:"mailto:osmagaziokulu@gmail.com",
     },
-    
+ 
     {
-        id:3,
+        id:2,
         img: phoneSvg,
         text:"Telefon Numaramız",
         info:"02323711015",
         link:"tel:02323711015",
+    },
+
+    {
+        id:3,
+        img: schoolSvg,
+        text:"Okulumuzun Websitesi",
+        info:"sehituzmancavusali akdoganilkokul.meb",
+        link:"https://sehituzmancavusaliakdoganilkokul.meb.k12.tr",
     },
 
     {
