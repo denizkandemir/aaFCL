@@ -1,7 +1,5 @@
 @import "/src/styles/_variables.scss";
 
-
-
 .contact-container {
     display: flex;
     flex-direction: column;
@@ -12,6 +10,10 @@
     .contact-content-container {
         padding: 50px;
         padding-top: 60px;
+        padding-bottom: 60px;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
 
         .contact-title{
             margin-bottom: 30px;
@@ -22,11 +24,9 @@
             font-size: 50px;
         }   
 
-        display: flex;
-        justify-content: center;
-        flex-direction: column;
-        max-width: 1300px;
-        align-items: center;
+        .contact-cards-content-container {
+            max-width: 1150px;
+        }
 
         .contact-cards-container {
             display: flex;
@@ -44,6 +44,7 @@
                 flex-direction: column;
                 align-items: center;
                 justify-content: center;
+                transition: transform 0.3s ease, box-shadow 0.3s ease;
 
                 .card-texts-container {
                     margin-top: 10px;
@@ -61,6 +62,11 @@
                         text-decoration: none;
                     }
 
+                    .card-p:hover {
+                     color: $blue-color;
+                     font-weight: 600;
+                    }
+
                     .card-p {
                         font-family: $primary-font;
                         font-weight: 500;
@@ -69,7 +75,6 @@
                         color: rgba(0,0,0,0.8);
                     }
                 }
-
 
                 .card-img-container {
                     display: flex;
@@ -83,13 +88,18 @@
                     }
                 }
             }
+
+            .contact-card-wrapper:hover {
+                transform: scale(1.1); 
+                box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); 
+            }
         }
 
         .contact-map-container {
             margin-top: 50px;
         }
         .contact-map {
-            // width: 100%;
+            width: 100%;
             border-radius: 7px;
             border: none;
         }

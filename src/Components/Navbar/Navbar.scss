@@ -29,10 +29,11 @@
 
         }
     }
-    .school-logo {
+    .ministery-logo {
         object-fit: contain;
-        height: 85px;
+        width: 80px;
     }
+  
 
     .navbar-links-container {
         display: flex;
@@ -46,6 +47,32 @@
           font-weight: 600;
           font-size: 21px;
           color: $school-color;
+          text-decoration: none;
+          position: relative;
+          transition: .3s;
+          width: fit-content;
+
+
+          &:after {
+              position: absolute;
+              transition: .3s;
+              content: '';
+              width: 0;
+              right: 0;
+              top: 28px;
+              height: 2.5px;
+              background: black;
+              border-radius: 10px;
+          }
+
+          &:hover {
+              cursor: pointer;
+
+              &:after {
+                  width: 100%;
+                  left: 0;
+              }
+          }
         }
     }
 
@@ -55,9 +82,9 @@
         display: flex;
         gap: 20px;
 
-        .ministery-logo {
+        .school-logo {
             object-fit: contain;
-            width: 80px;
+            height: 85px;
         }
     
         .fcl-logo-texts-container {

@@ -8,9 +8,9 @@ const HeaderNavbar = () => {
     return (
         <div className="headerNavbar-container">
             <div className="headerNavbar-logo-p-container">
-                <img src={okulLogo} className="school-logo" alt="" />
+               <img src={bakanlıkLogo} className="ministery-logo" alt="" />
                 <div className="headerNavbar-right-logo-container">
-                    <img src={bakanlıkLogo} className="ministery-logo" alt="" />
+                    <img src={okulLogo} className="school-logo" alt="" />
                     <div className="fcl-logo-texts-container">
                         <img src={fclLogo} className="fcl-logo" alt="" />
                         <div className="fcl-texts-container">
