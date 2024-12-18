@@ -8,17 +8,22 @@ const Navbar = () => {
     return (
         <div className="navbar-container">
             <div className="navbar-logo-p-container">
-               <Link  className="link-p"  to={"/"} >          
-                     <img src={bakanlıkLogo} className="ministery-logo" alt="" />
+                <Link className="link-p" to={"/"} >
+                    <div className="logo-texts-container">
+                        <img src={bakanlıkLogo} className="ministery-logo" alt="" />
+                        <div className="texts-container">
+                            <p className="ministery-text"> T.C Milli Eğitim <br /> Bakanlığı </p>
+                        </div>
+                    </div>                  
                </Link>
             </div>
 
             <div className="navbar-center-container">
                 <ul className="navbar-links-container">
-                    <Link  className="link-p"  to={"/fclNedir"}> <li className="navbar-link"> FCL Nedir </li> </Link>
-                    <Link  className="link-p"  to={"/öğrenmeAlanlarımız"}> <li className="navbar-link"> Öğrenme Alanlarımız </li></Link>
-                    <Link  className="link-p"  to={"/etkinliklerimiz"}><li className="navbar-link"> Etkinliklerimiz </li></Link>
-                    <Link  className="link-p"  to={"/iletişim"}><li className="navbar-link"> İletişim  </li></Link>
+                    <Link className="link-p" to={"/fclNedir"}> <li className="navbar-link"> FCL Nedir </li> </Link>
+                    <Link className="link-p" to={"/öğrenmeAlanlarımız"}> <li className="navbar-link"> Öğrenme Alanlarımız </li></Link>
+                    <Link className="link-p" to={"/etkinliklerimiz"}><li className="navbar-link"> Etkinliklerimiz </li></Link>
+                    <Link className="link-p" to={"/iletişim"}><li className="navbar-link"> İletişim  </li></Link>
                     {/* <li className="navbar-link"></li> */}
                 </ul>
             </div>
