@@ -41,7 +41,7 @@ const Footer = () => {
               <h3 className="footer-title"> İletişim </h3>
               {
                 contactCards.map((info) => (
-                  <div className="footer-wrapper">
+                  <div key={info.id} className="footer-wrapper">
                     {info.svg}
                     <Link className="footer-link" to={info.link}>
                       <p className="footer-p"> {  info.info} </p>
