@@ -7,8 +7,6 @@ const ProjectGoals = () => {
         <>
             <div className="project-goals-container">
                 <div className="project-goals-content-container">
-
-
                     <div class="project-goals-arrow-container">
                         <div className="project-titles-container">
                             <h5 className="project-little-title"> FCL Nedir </h5>
@@ -27,10 +25,6 @@ const ProjectGoals = () => {
                         }
                     </div>
                     <div className="goals-img-container">
-                        {/* <div className="project-titles-container">
-                            <h5 className="project-little-title"> FCL Nedir </h5>
-                            <h3 className="project-title"> Projenin Hedefleri </h3>
-                        </div> */}
                         <img src={goalsImg} alt="" className="goals-img" />
                     </div>
 

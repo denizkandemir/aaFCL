@@ -1,0 +1,68 @@
+@import "/src/styles/_variables.scss";
+
+.fcl-map-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 80px;
+
+    .fcl-map-content-container {
+        display: flex;
+        flex-direction: column;
+        max-width: 1150px;
+        gap: 0px;
+
+        .fcl-img-text-container {
+            display: flex;
+            gap: 60px;
+        }
+
+        .fcl-map-bottom-text-container {
+            padding-left: 30px;
+        }
+
+        .fcl-map-title {
+            font-family: $primary-font;
+            color: $blue-color4;
+            font-size: 35px;
+            word-spacing: 5px;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+
+        .fcl-text {
+            font-family: $primary-font;
+            font-size: 17px;
+            color: rgba(0,0,0,0.97);
+            font-weight: 500;
+            word-spacing: 3px;
+            line-height: 23px;
+            margin-bottom: 20px;
+
+        }
+
+        .last-text {
+            margin-bottom: 0;
+        }
+
+        .project-titles-container {
+            margin-top: 20px;
+        }
+        .project-little-title {
+            font-family: $primary-font;
+            color: #817e7e;
+            font-weight: 500;
+            font-size: 15px;
+            margin-left: 1px;
+            margin-bottom: 3px;
+          }
+      
+
+        .fcl-map-img {
+            object-fit: contain;
+            max-width: 580px;
+        }
+    }
+}
