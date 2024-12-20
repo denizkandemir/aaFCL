@@ -11,9 +11,13 @@
   .project-goals-content-container {
     display: flex;
     max-width: 1150px;
-    gap: 90px;
+    gap: 25px 90px;
     align-items: end;
 
+    .goals-img-container {
+      display: flex;
+      justify-content: center;
+    }
     .goals-img {
       object-fit: contain;
       max-width: 650px;
@@ -94,5 +98,27 @@
     }
   }
 
+
+}
+
+@media(max-width: 1190px) {
+  .project-goals-container {
+    .project-goals-content-container {
+      flex-wrap: wrap;
+      justify-content: center;
+      .goals-img {
+        max-width: 80%;
+        width: 100%;
+      }
+       .project-goals-arrow-container{
+        .project-p {
+          max-width: 100%;
+        }
+        .project-goals-arrow {
+          max-width: 100%;
+        }
+       } 
+    }
+  }
 
 }
