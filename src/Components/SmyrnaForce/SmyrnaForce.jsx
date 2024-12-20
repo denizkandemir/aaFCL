@@ -11,19 +11,13 @@ const SmyrnaForce = () => {
                 <div className="row margin-top timeline smyrna-big-screen">
                     <div className="col-one-fourth">
                         <div className="smyran-details-container">
-                            <h5>Ideation</h5>
-                            <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur mollit.</p>
-                        </div>
-                    </div>
-                    <div className="col-one-fourth">
-                        <div className="smyran-details-container">
-                            <h5>Ideation</h5>
+                            <h5>Forged</h5>
                             <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur mollit.</p>
                         </div>
                     </div>
                     <div className="col-one-fourth">
                         <div className="smyrna-details-container">
-                            <h5>Reinforged</h5>
+                            <h5>Reinforced</h5>
                             <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
                         </div>
                     </div>
@@ -44,19 +38,13 @@ const SmyrnaForce = () => {
                     <div className="timeline">
                         <div className="col-one-fourth">
                             <div className="smyrna-details-container">
-                                <h5>Research</h5>
+                                <h5>Forged</h5>
                                 <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo.</p>
                             </div>
                         </div>
                         <div className="col-one-fourth">
                             <div className="smyrna-details-container">
-                                <h5>Ideation</h5>
-                                <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur mollit.</p>
-                            </div>
-                        </div>
-                        <div className="col-one-fourth">
-                            <div className="smyrna-details-container">
-                                <h5>Reinforged</h5>
+                                <h5>Reinforced</h5>
                                 <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
                             </div>
                         </div>

@@ -25,7 +25,7 @@
             object-fit: cover;
             width: 100vw;
             height: 100%;
-            filter: brightness(55%);
+            filter: brightness(56%);
             overflow-x: hidden;
         }
     }
@@ -34,9 +34,10 @@
 .banner-title {
     color: white;
     font-family: $primary-font;
-    font-size: 60px;
+    font-size: 65px;
     font-weight: 600;
     position: relative;
+    word-spacing: 10px;
     z-index: 10;
   }
 
