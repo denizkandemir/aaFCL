@@ -17,9 +17,9 @@ const ProjectGoals = () => {
                         {
                             Goals.map((goal) => (
                                 <div key={goal.id} class="project-goals-arrow">
-                                    <img src={goal.svg} class="project-icon"/> 
+                                    <p className="project-icon">{goal.id}</p>
                                     <div class="content">
-                                        <h3> {goal.title} </h3>
+                                        <h3 className="project-goal-title"> {goal.title} </h3>
                                         <p className="project-p"> {goal.text} </p>
                                     </div>
                                 </div>

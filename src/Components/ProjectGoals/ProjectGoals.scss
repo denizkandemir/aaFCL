@@ -14,18 +14,18 @@
     gap: 90px;
     align-items: end;
 
-    .goals-img{
+    .goals-img {
       object-fit: contain;
       max-width: 650px;
     }
 
-  
-    .project-little-title{
+
+    .project-little-title {
       font-family: $primary-font;
       color: #817e7e;
       font-weight: 500;
       font-size: 15px;
- 
+
       margin-left: 8px;
       margin-bottom: 0px;
     }
@@ -43,7 +43,10 @@
     .project-icon {
       width: 50px;
       height: 50px;
- 
+      border-radius: 50%;
+      //  background: linear-gradient(90deg,#0D8E90,#1FBCBF,);
+      //  background: linear-gradient(135deg, #4fc3f7, #0288d1);
+      background: linear-gradient(220deg, #4ca9d4, #0D8E90);
       display: flex;
       justify-content: center;
       align-items: center;
@@ -52,31 +55,42 @@
       color: #fff;
       margin-right: 20px;
     }
-  }
 
-  .project-goals-arrow-container {
-    display: flex;
-    flex-direction: column;
-    gap: 30px;
-    padding-bottom: 30px;
-
-    .project-goals-arrow {
-      position: relative;
+    .project-goals-arrow-container {
       display: flex;
-      align-items: center;
-      background-color: #fff;
-      border-radius: 10px;
+      flex-direction: column;
+      gap: 30px;
+      padding-bottom: 30px;
 
-      padding: 15px 25px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-      max-width: 500px;
+      .project-goals-arrow {
+        position: relative;
+        display: flex;
+        align-items: center;
+        background-color: #fff;
+        border-radius: 10px;
 
+        padding: 15px 25px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        max-width: 600px;
+
+      }
+
+      .project-p {
+        max-width: 300px;
+        font-family: $primary-font;
+        font-size: 16px;
+        color: rgba(0, 0, 0, 0.85);
+      }
+
+      .project-goal-title {
+        font-family: $primary-font;
+        font-size: 19px;
+        font-weight: 600;
+        color: rgba(4, 11, 75,0.8);
+        margin-bottom: 5px;
+      }
     }
-
-    .project-p {
-      max-width: 290px;
-    }
-
   }
-}
 
+
+}
