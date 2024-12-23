@@ -1,0 +1,49 @@
+@import "/src/styles/_variables.scss";
+
+
+.collage-container {
+    display: flex;
+    justify-content: center;
+    padding: 100px 0px;
+    padding-top: 40px;
+    background-color: rgb(250,250,250);
+    background-color: $lightBlue-color2;
+
+    .collage-content-container {
+        display: flex;
+        flex-direction: row-reverse;
+        gap: 40px;
+        padding: 0 20px;
+        justify-content: space-between;
+
+        .collage-imgs-container {
+          .collage-img {
+            object-fit: contain;
+            max-width: 690px;
+          }
+          
+        }
+
+        .collage-title {
+            color: $blue-color4;
+            font-family: $primary-font;
+            font-weight: 600x;
+            font-size: 40px;
+            margin-bottom: 20px;
+            margin-top: 20px;
+        }
+
+        .collage-p {
+            font-family: $primary-font;
+            font-weight: 500;
+            font-size: 17px;
+            max-width: 600px;
+            line-height: 24px;
+            word-spacing: 2px;
+            margin-bottom: 20px;
+        }
+        
+    
+
+    }
+}
