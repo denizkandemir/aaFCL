@@ -2,6 +2,7 @@ import Header from "../Components/Header/Header";
 import SmyrnaForce from "../Components/SmyrnaForce/SmyrnaForce";
 import HomepageCollage from "../Components/HomepageCollage/HomepageCollage";
 import Slide from "../Components/Slider/Slider";
+import HomePageContact from "../Components/HomepageContact/HomePageContact";
 
 const HomePage = () => {
  return (
@@ -9,7 +10,9 @@ const HomePage = () => {
       <Header/>
       <SmyrnaForce/> 
       <HomepageCollage/>
+      <HomePageContact/>
       <Slide/>
+     
     </>
  )
 }

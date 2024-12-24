@@ -1,5 +1,5 @@
 import "./HomepageCollage.scss";
-import collage from "/aafcl-collage2.png";
+import collage from "/aafcl-collage3.png";
 
 
 
