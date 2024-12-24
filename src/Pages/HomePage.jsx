@@ -1,5 +1,6 @@
 import Header from "../Components/Header/Header";
 import SmyrnaForce from "../Components/SmyrnaForce/SmyrnaForce";
+import HomepageCollage from "../Components/HomepageCollage/HomepageCollage";
 import Slide from "../Components/Slider/Slider";
 
 const HomePage = () => {
@@ -7,6 +8,7 @@ const HomePage = () => {
     <>
       <Header/>
       <SmyrnaForce/> 
+      <HomepageCollage/>
       <Slide/>
     </>
  )
