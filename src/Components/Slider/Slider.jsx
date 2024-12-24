@@ -50,8 +50,8 @@ const Slide = () => {
                         >
                         {
                             SlideImgs.map((img) => (
-                            <SwiperSlide>
-                                <div key={img.id} className="slide-container">
+                            <SwiperSlide key={img.id}>
+                                <div  className="slide-container">
                                     <img className="slide-1" src={img.img} alt="" />
                                 </div>
                              </SwiperSlide>

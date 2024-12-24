@@ -15,6 +15,7 @@ const HomePage = () => {
       <HomePageContact/>
       <Slide/>
      
+     
     </>
  )
 }
