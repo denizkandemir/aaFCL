@@ -12,11 +12,14 @@ const HomepageCollage = () => {
       </div>
       <div className="collage-texts-container">
         <h2 className="collage-title">
-            Kod Adı: Smyrna Force
+          Projemiz: Smyrna Force
         </h2>
         <p className="collage-p"> 
         Smyrna force (forging reinforced classes for education), İzmir İl  Milli Eğitim Müdürlüğü bünyesinde açılan okul eğitimi akreditasyon programı kapsamında basvurdugumuz projemizin adıdır. Bu projemizin geçmesi durumunda ortak olduğumuz okulun öğretmenleri ile deneyim paylaşımları gerçekleştirilecektir. Eğitim öğretim ortamlarının esnek olması, öğrenci merkezli hale gelmesi, öğrencilerin öğrenme süreçlerini eglenceli hale getirecektir.
         </p>
+        <h2 className="collage-title title2">
+          FCL Sınıfımız
+        </h2>
         <p className="collage-p">Smyrna FCL sınıfının hedef kitlesi okulumuz Şehit Uzman Çavuş Ali Akdoğan İlkokulu bunyesinde 1,2,3 ve 4.  sınıflarında öğrenim gören öğrencilerdir.
         </p>
         <p className="collage-p">

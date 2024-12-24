@@ -6,20 +6,20 @@
     justify-content: center;
     padding: 100px 0px;
     padding-top: 40px;
-    background-color: rgb(250,250,250);
-    background-color: $lightBlue-color2;
+    background-color: $lightBlue-color4;
+    // background-color: $lightGrey-color;
 
     .collage-content-container {
         display: flex;
         flex-direction: row-reverse;
-        gap: 40px;
-        padding: 0 20px;
+        gap: 50px;
+        padding: 0 50px;
         justify-content: space-between;
 
         .collage-imgs-container {
           .collage-img {
             object-fit: contain;
-            max-width: 690px;
+            max-width: 640px;
           }
           
         }
@@ -30,16 +30,22 @@
             font-weight: 600x;
             font-size: 40px;
             margin-bottom: 20px;
-            margin-top: 20px;
+            margin-top: 15px;
+        }
+
+        .title2 {
+          margin-bottom: 10px;
+          margin-top: 0;
         }
 
         .collage-p {
             font-family: $primary-font;
             font-weight: 500;
             font-size: 17px;
-            max-width: 600px;
+            max-width: 590px;
             line-height: 24px;
             word-spacing: 2px;
+            color: rgba(0,0,0,0.8);
             margin-bottom: 20px;
         }
         
