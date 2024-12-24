@@ -13,7 +13,7 @@ const HomePage = () => {
       <HomepageCollage/>
       <HomepageCards/>
       <HomePageContact/>
-      <Slide/>
+  
      
      
     </>
