@@ -3,21 +3,39 @@
 .home-contact-container {
     display: flex;
     justify-content: center;
-    padding: 50px;
-    // background-color: $lightBlue-color4;
-    background-color: $lightGrey-color;
+    padding: 120px 20px;
+    // background-color: $blue-color4;
+    background-color: rgb(245,245,245);
 
+    // background-color: $lightBlue-color4;
 
     .home-contact-content-container {
         max-width: 1150px;
         display: flex;
         justify-content: space-between;
+        // background-color: $lightGrey-color;
+        background-color: rgb(245,245,245);
+        background-color: white;
         // align-items: center;
-        gap: 50px;
+        box-shadow:   0 10px 20px rgba(0, 0, 0, 0.4);
+        // box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.06);
+        box-shadow: $card-box-shadow;
+        // box-shadow: $threed-box-shadow;
+
+
+        // box-shadow: $wrapper-box-shadow;
+        border-radius: 6px;
+        gap: 20px;
 
         .home-contact-img {
-            object-fit: contain;
-            max-width: 620px;
+            object-fit: cover;
+            max-width: 580px;
+            border-top-left-radius: 6px;
+            border-bottom-left-radius: 6px;
+        }
+
+        .home-contact-text-container {
+            padding: 50px 35px;
         }
 
         .home-contact-p {
@@ -35,7 +53,7 @@
             font-family: $primary-font;
             color: $blue-color4;
             font-weight: 600;
-            margin-top: 20px;
+            // margin-top: 20px;
             margin-bottom: 20px;
             font-size: 40px;
         }
