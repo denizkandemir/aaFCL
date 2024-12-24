@@ -10,9 +10,7 @@ import {
     Autoplay,
     EffectFade
 } from "swiper/modules";
-import slide1 from "/aafcl-img2.jpg";
-import slide2 from "/aafcl-img3.jpg";
-import slide3 from "/aafcl-class4.jpg";
+import SlideImgs from "../../objects/SlideImgs";
 
 const Slide = () => {
 
@@ -50,33 +48,15 @@ const Slide = () => {
                                 console.log("Swiper initialized:", swiper);
                             }}
                         >
+                        {
+                            SlideImgs.map((img) => (
                             <SwiperSlide>
-                                <div className="slide-container">
-                                    <img className="slide-1" src={slide1} alt="" />
+                                <div key={img.id} className="slide-container">
+                                    <img className="slide-1" src={img.img} alt="" />
                                 </div>
-                            </SwiperSlide>
-                            <SwiperSlide>
-                                <div className="slide-container">
-                                    <img className="slide-2" src={slide2} alt="" />
-                                </div>
-                            </SwiperSlide>
-                            <SwiperSlide>
-                                <div className="slide-container">
-                                    <img className="slide-3" src={slide3} alt="" />
-                                </div>
-                            </SwiperSlide>
-                            {/* <SwiperSlide>
-              <div className="slide-container">
-                <img className="slide-4" src={slide4} alt="" />
-              </div>
-            </SwiperSlide>
-            <SwiperSlide>
-              <div className="slide-container">
-                <img className="slide-5" src={slide5} alt="" />
-              </div>
-            </SwiperSlide> */}
-
-
+                             </SwiperSlide>
+                            ))
+                        }
                         </Swiper>
 
                         <div className="navigation-buttons">
