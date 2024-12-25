@@ -16,7 +16,6 @@ const ResponsiveHeader = () => {
                         <h1 className="responsive-header-title"> Geleceğin Sınıfına <br /> Hoşgeldiniz! </h1>
                         <p className="responsive-header-p">
                             Geleceğin sınıflarını bugünden inşa ederek, öğrencilerin potansiyellerini en üst düzeye çıkarmayı hedefliyoruz.
-                            Teknolojik yenilikler ve yaratıcı çözümlerle eğitim dünyasında devrim yaratmaya odaklanıyoruz.
                             İşte FCL'nin odak alanları :
                         </p>
                         <div className="responsive-header-icons-container">
