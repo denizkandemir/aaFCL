@@ -3,6 +3,7 @@ import okulLogo from "/aafcl-logo-okul.png";
 import fclLogo from "/fcl-logo.png";
 import bakanlıkLogo from "/bakanlık-logo.png";
 import { Link } from "react-router-dom";
+import HamburgerMenu from "../../svgs/HamburgerMenu";
 
 const Navbar = () => {
     return (
@@ -11,11 +12,23 @@ const Navbar = () => {
                 <Link className="link-p" to={"/"} >
                     <div className="logo-texts-container">
                         <img src={bakanlıkLogo} className="ministery-logo" alt="" />
+                        <img src={okulLogo} className="school-logo-responsive" alt="" />
+                        <div className="fcl-logo-text-container-responsive">
+                            <img src={fclLogo} className="fcl-logo-responsive" alt="" />
+                            <div className="fcl-texts-container-responsive">
+                                <p className="fcl-text"> Future <br /> Classroom Lab </p>
+                                <p className="fcl-bottom-text"> By European Schoolnet </p>
+                            </div>
+                        </div>
                         <div className="texts-container">
                             <p className="ministery-text"> T.C Milli Eğitim <br /> Bakanlığı </p>
                         </div>
-                    </div>                  
-               </Link>
+                    </div>
+                </Link>
+            </div>
+
+            <div className="navbar-center-title-container"> 
+                <h2 className="navbar-center-title"> ŞUAAFCL </h2>
             </div>
 
             <div className="navbar-center-container">
@@ -37,6 +50,10 @@ const Navbar = () => {
                         <p className="fcl-bottom-text"> By European Schoolnet </p>
                     </div>
                 </div>
+            </div>
+
+            <div className="hamburger-container">
+                <HamburgerMenu/>
             </div>
         </div>
     );
