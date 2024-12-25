@@ -1,5 +1,9 @@
 @import "../styles/variables.scss";
 
+.responsive-navbar-container {
+    display: none;
+}
+
 .responsive-header-container {
     display: none;
     padding: 80px 30px;
@@ -96,6 +100,9 @@
 }
 
 @media (max-width: 1300px) {
+    .responsive-navbar-container {
+        display: block;
+    }
     .responsive-header-container {
         display: flex;
         justify-content: center;

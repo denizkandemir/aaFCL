@@ -9,7 +9,9 @@ import technology from "/virtual.png";
 const ResponsiveHeader = () => {
     return (
         <>
-            <Navbar />
+            <div className="responsive-navbar-container">
+              <Navbar />
+            </div>
             <div className="responsive-header-container">
                 <div className="responsive-header-content-container">
                     <div className="responsive-header-info-container">
