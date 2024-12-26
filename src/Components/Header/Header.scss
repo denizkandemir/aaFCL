@@ -1,4 +1,4 @@
-@import "/src/styles/_variables.scss";
+@import "../styles/variables.scss";
 
 .header-container {
     display: flex;
@@ -132,6 +132,13 @@
         }
     }
 }
+
+@media(max-width:1300px) { 
+  .header-container {
+    display: none;
+  }
+}
+
 
 
 @media(max-width:680px) {

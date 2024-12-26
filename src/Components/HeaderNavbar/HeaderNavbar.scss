@@ -1,4 +1,4 @@
-@import "/src/styles/_variables.scss";
+@import "../styles/variables.scss";
 
 .headerNavbar-container {
     display: flex;
@@ -114,4 +114,22 @@
         }
 
     }
+}
+
+
+@media(max-width:1400px) {  
+    .headerNavbar-container{
+        .headerNavbar-links-container {
+          gap: 20px;
+        }  
+    } 
+}
+
+
+@media(max-width:1300px) {  
+    .headerNavbar-container{
+        .headerNavbar-links-container {
+          display: none;
+        }  
+    } 
 }

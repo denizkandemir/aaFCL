@@ -1,0 +1,82 @@
+@import "../styles/variables.scss";
+
+
+.collage-container {
+    display: flex;
+    justify-content: center;
+    padding: 100px 0px;
+    padding-top: 40px;
+    background-color: $lightBlue-color4;
+    background-color: $lightGrey-color;
+
+    @media(max-width:1370px) { 
+      padding-bottom: 40px;
+    }
+
+
+    .collage-content-container {
+        display: flex;
+        flex-direction: row-reverse;
+        gap: 50px;
+        padding: 0 50px;
+        justify-content: space-between;
+
+        @media(max-width:1370px) { 
+         flex-wrap: wrap;
+         justify-content: center;
+        }
+
+        @media(max-width:500px) {  
+          gap: 25px;
+        }
+
+        
+        @media(max-width:690px) { 
+          padding: 0 20px;
+        }
+
+        .collage-imgs-container {
+          .collage-img {
+            object-fit: contain;
+            max-width: 640px;
+
+            @media(max-width:690px) { 
+               max-width: 100%; 
+            }
+          }
+        }
+
+        .collage-texts-container {
+          @media(max-width:690px) { 
+            padding: 0 10px;
+          }
+        }
+        .collage-title {
+            color: $blue-color4;
+            font-family: $primary-font;
+            font-weight: 600x;
+            font-size: 40px;
+            margin-bottom: 20px;
+            margin-top: 15px;
+        }
+
+        .title2 {
+          margin-bottom: 10px;
+          margin-top: 0;
+        }
+
+        .collage-p {
+            font-family: $primary-font;
+            font-weight: 500;
+            font-size: 17px;
+            max-width: 590px;
+            line-height: 24px;
+            word-spacing: 2px;
+            color: rgba(0,0,0,0.8);
+            margin-bottom: 20px;
+        }
+        
+    
+
+    }
+}

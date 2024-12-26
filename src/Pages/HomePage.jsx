@@ -1,11 +1,20 @@
 import Header from "../Components/Header/Header";
 import SmyrnaForce from "../Components/SmyrnaForce/SmyrnaForce";
-
-const HomePage = () => {
+import HomepageCollage from "../Components/HomepageCollage/HomepageCollage";
+import Slide from "../Components/Slider/Slider";
+import HomePageContact from "../Components/HomepageContact/HomePageContact";
+import HomepageCards from "../Components/HomepageCards/HomepageCards";
+import ResponsiveHeader from "../Components/ResponsiveHeader/ResponsiveHeader";
+  
+const HomePage = () => {  
  return (
     <>
-      <Header/>
+      <Header/>          
+      <ResponsiveHeader/>
       <SmyrnaForce/> 
+      <HomepageCollage/>
+      <HomepageCards/>
+      <HomePageContact/>
     </>
  )
 }

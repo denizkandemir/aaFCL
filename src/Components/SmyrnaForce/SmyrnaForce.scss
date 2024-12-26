@@ -1,11 +1,12 @@
-@import "/src/styles/_variables.scss";
+@import "../styles/variables.scss";
 
 
 .smyrna-container {
-  padding: 60px 20px;
+  padding: 110px 20px;
+  // padding-bottom: 130px;
 
   .smyrna-content-container {
-    max-width: 1150px;
+    max-width: 1250px;
     margin: 0 auto;
 
     .smyrna-title {
@@ -123,6 +124,9 @@
   width: 1rem;
 }
 
+
+
+
 @media only screen and (max-width: 1023px) {
   .timeline {
     border-left: 2px solid #ccced0;
@@ -131,6 +135,12 @@
     justify-content: center;
     align-items: center;
     padding-top: 0;
+  }
+
+  
+  .smyrna-container {
+    padding-top: 50px;
+    padding-bottom: 60px;
   }
 
   .row {
