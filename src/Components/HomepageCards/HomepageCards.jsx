@@ -10,7 +10,7 @@ const HomepageCards = () => {
         <div className="cards-container">
             <div className="cards-content-container">
                 <div className="cards-title-container">
-                    <h2 className="cards-title"> FCL Öğrenme Alanlarımz </h2>
+                    <h2 className="cards-title"> FCL Öğrenme Alanlarımız </h2>
                     <p className="cards-p">Geleceğin öğrenme ortamlarını bugünden sunan FCL sınıfımız, öğrencilerin bilgiye ulaşma, üretme ve paylaşma süreçlerini destekleyen yenilikçi alanlardan oluşmaktadır. Her alan, farklı bir beceriyi geliştirmeye ve öğrencilerin bireysel potansiyellerini keşfetmelerine olanak tanır.</p>
                 </div>
                 <div className="cards-data-container">
@@ -27,8 +27,6 @@ const HomepageCards = () => {
                                     </div>
                                     <div className="place-button-container">
                                         <div className="place-logo-container">
-                                            {/* <img className="place-logo" src={bakanlıkLogo} alt="" />
-                                            <img className="place-logo" src={okulLogo} alt="" /> */}
                                             <div className="fcl-logo-texts-container">
                                                 <img className="place-logo" src={fclLogo} alt="" />
                                                 <div className="fcl-texts-container">
@@ -48,7 +46,6 @@ const HomepageCards = () => {
                             </div>
                         ))
                     }
-
                 </div>
             </div>
         </div>

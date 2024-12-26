@@ -8,35 +8,58 @@
     background-color: rgb(245,245,245);
     background-color: $grey-color;
 
-    // background-color: $lightBlue-color4;
+    @media(max-width:1200px) { 
+        padding: 50px 70px;
+    }
+
+    
+    @media(max-width:600px) {  
+        padding: 50px;
+    }
+
 
     .home-contact-content-container {
         max-width: 1150px;
         display: flex;
         justify-content: space-between;
-        // background-color: $lightGrey-color;
         background-color: rgb(245,245,245);
         background-color: white;
-        // align-items: center;
         box-shadow:   0 10px 20px rgba(0, 0, 0, 0.4);
-        // box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.06);
         box-shadow: $card-box-shadow;
-        // box-shadow: $threed-box-shadow;
 
+        @media(max-width:1200px) { 
+            flex-wrap: wrap;
+            justify-content: center ;
+        }
 
-        // box-shadow: $wrapper-box-shadow;
-        border-radius: 6px;
+        border-radius: 10px;
         gap: 20px;
 
         .home-contact-img {
             object-fit: cover;
             max-width: 580px;
-            border-top-left-radius: 6px;
-            border-bottom-left-radius: 6px;
+            border-top-left-radius: 10px;
+            border-bottom-left-radius: 10px;
+
+            @media(max-width:1200px) { 
+                max-width: 100%;
+                width: 100%;
+                max-height: 500px;
+                border-top-right-radius: 10px;
+                border-bottom-left-radius: 0px;
+
+            }
         }
 
         .home-contact-text-container {
             padding: 50px 35px;
+            @media(max-width:1200px) { 
+                padding-top: 20px;
+            }
+
+            @media(max-width:600px) {  
+                padding: 20px 15px;
+            }
         }
 
         .home-contact-p {
@@ -48,6 +71,14 @@
             max-width: 640px;
             margin-bottom: 20px;
             font-size: 20px;
+
+            @media(max-width:1200px) { 
+                max-width: 100%;
+            }
+
+            @media(max-width:500px) {  
+              font-size: 17px;
+            }
         }
 
         .home-contact-title {
@@ -57,6 +88,10 @@
             // margin-top: 20px;
             margin-bottom: 20px;
             font-size: 40px;
+
+            @media(max-width:500px) {  
+                font-size: 35px;
+              }
         }
 
         .home-contact-second-title {
@@ -68,6 +103,13 @@
             max-width: 640px;
             margin-bottom: 20px;
             font-size: 25px;
+            margin-bottom: 17px;
+
+            @media(max-width:500px) {  
+                font-size: 20px;
+                line-height: 25px;
+                margin-bottom: 15px;
+              }
         }
 
         .home-contact-button {
@@ -81,6 +123,11 @@
             padding: 13px 25px;
             border-radius: 10px;
             border:none;
+
+            
+            @media(max-width:500px) {  
+                padding: 11px 20px;
+            }
         }
     }
 }

@@ -1,6 +1,7 @@
 import "./ProjectGoals.scss";
 import goalsImg from "/aafcl-goals.png";
 import Goals from "../../objects/Goals";
+import circle from "/goalCircle.png";
 
 const ProjectGoals = () => {
     return (
@@ -15,8 +16,13 @@ const ProjectGoals = () => {
                         {
                             Goals.map((goal) => (
                                 <div key={goal.id} class="project-goals-arrow">
-                                    <p className="project-icon">{goal.id}</p>
-                                    <div class="content">
+                                    <div className="circle-id-container">
+                                     <div className="circle-container">
+                                        <img src={circle} alt="" className="circle-img" />
+                                     </div>
+                                     <p className="project-icon">{goal.id}</p>
+                                    </div>
+                                    <div class="goal-content">
                                         <h3 className="project-goal-title"> {goal.title} </h3>
                                         <p className="project-p"> {goal.text} </p>
                                     </div>

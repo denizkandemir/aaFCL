@@ -7,6 +7,11 @@
     align-items: center;
     padding: 80px;
 
+    @media(max-width:1180px) { 
+        padding: 50px ;
+        padding-top: 30px;
+    }
+
     .fcl-map-content-container {
         display: flex;
         flex-direction: column;
@@ -15,7 +20,7 @@
 
         .fcl-img-text-container {
             display: flex;
-            gap: 60px;
+            gap: 35px 60px;
         }
 
         .fcl-map-bottom-text-container {
@@ -65,4 +70,26 @@
             max-width: 580px;
         }
     }
+}
+
+@media(max-width:1180px) {
+    .fcl-map-container {
+        .fcl-map-content-container {
+            .fcl-img-text-container {
+                flex-wrap: wrap-reverse;
+
+          
+                .fcl-map-img {
+                    max-width: 100%;
+                    width: 100%;
+                }
+              }
+
+             .fcl-map-bottom-text-container {
+                padding-left: 0;
+                margin-top: 40px;
+             } 
+        }
+    
+}
 }

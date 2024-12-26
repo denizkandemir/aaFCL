@@ -9,6 +9,11 @@
     background-color: $lightBlue-color4;
     background-color: $lightGrey-color;
 
+    @media(max-width:1370px) { 
+      padding-bottom: 40px;
+    }
+
+
     .collage-content-container {
         display: flex;
         flex-direction: row-reverse;
@@ -16,14 +21,36 @@
         padding: 0 50px;
         justify-content: space-between;
 
+        @media(max-width:1370px) { 
+         flex-wrap: wrap;
+         justify-content: center;
+        }
+
+        @media(max-width:500px) {  
+          gap: 25px;
+        }
+
+        
+        @media(max-width:690px) { 
+          padding: 0 20px;
+        }
+
         .collage-imgs-container {
           .collage-img {
             object-fit: contain;
             max-width: 640px;
+
+            @media(max-width:690px) { 
+               max-width: 100%; 
+            }
           }
-          
         }
 
+        .collage-texts-container {
+          @media(max-width:690px) { 
+            padding: 0 10px;
+          }
+        }
         .collage-title {
             color: $blue-color4;
             font-family: $primary-font;

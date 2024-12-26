@@ -4,26 +4,26 @@ const SmyrnaProject = [
     {
         id:1,
         title:"Forged",
-        text:"Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur mollit.",
+        text:"Forged (Şekillendirilmiş), projemizin sağlam temeller üzerinde, modern teknolojilerle özenle inşa edildiğini simgeler.",
     },
 
     {
         id:2,
         title:"Reinforced",
-        text:"Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur mollit.",
+        text:"Reinforced (Güçlendirilmiş), eğitimin hem içerik hem de yöntem açısından desteklenerek daha etkili hale getirileceğini ifade eder.",
     },
 
 
     {
         id:3,
         title:"Classes For",
-        text:"Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur mollit.",
+        text:"Classes (Sınıflar), öğrenme ve keşfetme süreçlerinin odağı olan geleceğin öğrenme ortamını temsil eder.",
     },
 
     {
         id:4,
         title:"Education",
-        text:"Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur mollit.",
+        text:"Education (Eğitim), bu projenin merkezinde yer alır; amacımız, öğrencilere ve öğretmenlere bilgiyle donatılmış bir gelecek sunmaktır.",
     },
 ]
 
