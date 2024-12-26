@@ -77,7 +77,7 @@
 
             display: flex;
             justify-content: center;
-            gap: 80px;
+            gap: 45px 80px;
 
             @media(max-width:1100px) {
                 flex-wrap: wrap;

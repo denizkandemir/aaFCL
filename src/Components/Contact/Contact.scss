@@ -33,7 +33,10 @@
             align-items: stretch;
             justify-content: space-between;
             gap: 50px;
-
+            @media(max-width: 1250px) { 
+                flex-wrap: wrap;
+                justify-content: center;
+            }
             .contact-card-wrapper {
                 box-shadow: $wrapper-box-shadow;
                 border-radius: 10px;
@@ -45,6 +48,10 @@
                 align-items: center;
                 justify-content: center;
                 transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+                @media(max-width: 700px) { 
+                  width: 100%;
+                }
 
                 .card-texts-container {
                     margin-top: 10px;
