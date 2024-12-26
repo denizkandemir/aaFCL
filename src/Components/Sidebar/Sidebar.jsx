@@ -1,11 +1,9 @@
 import React from "react";
-import "./sidebar.scss"
+import "./Sidebar.scss"
 import { Link } from "react-router-dom";
 import { useLocation } from "react-router-dom";
 import Xmark from "../../svgs/Xmark";
-import okulLogo from "/aafcl-logo-okul.png";
-import fclLogo from "/fcl-logo.png";
-import bakanlıkLogo from "/bakanlık-logo.png";
+
 
 const Sidebar = ({ isSidebarOpen, setSidebarOpen }) => {
 
