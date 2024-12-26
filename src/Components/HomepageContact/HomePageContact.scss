@@ -1,4 +1,5 @@
-@import "../styles/variables.scss";
+@use "../styles/variables" as vars;
+
 
 .home-contact-container {
     display: flex;
@@ -6,7 +7,7 @@
     padding: 50px 20px;
     padding-top: 90px;
     background-color: rgb(245,245,245);
-    background-color: $grey-color;
+    background-color: vars.$grey-color;
 
     @media(max-width:1200px) { 
         padding: 50px 70px;
@@ -25,15 +26,14 @@
         background-color: rgb(245,245,245);
         background-color: white;
         box-shadow:   0 10px 20px rgba(0, 0, 0, 0.4);
-        box-shadow: $card-box-shadow;
+        box-shadow: vars.$card-box-shadow;
+        border-radius: 10px;
+        gap: 20px;
 
         @media(max-width:1200px) { 
             flex-wrap: wrap;
             justify-content: center ;
         }
-
-        border-radius: 10px;
-        gap: 20px;
 
         .home-contact-img {
             object-fit: cover;
@@ -63,7 +63,7 @@
         }
 
         .home-contact-p {
-            font-family: $primary-font;
+            font-family: vars.$primary-font;
             color: rgba(0,0,0,0.75);
             font-weight: 500;
             // margin-top: 10px;
@@ -82,8 +82,8 @@
         }
 
         .home-contact-title {
-            font-family: $primary-font;
-            color: $blue-color4;
+            font-family: vars.$primary-font;
+            color: vars.$blue-color4;
             font-weight: 600;
             // margin-top: 20px;
             margin-bottom: 20px;
@@ -95,7 +95,7 @@
         }
 
         .home-contact-second-title {
-            font-family: $primary-font;
+            font-family: vars.$primary-font;
             color: rgba(0,0,0,0.8);
             font-weight: 600;
             // margin-top: 10px;
@@ -113,9 +113,9 @@
         }
 
         .home-contact-button {
-            font-family: $primary-font;
+            font-family: vars.$primary-font;
             color: white;
-            background-color: $blue-color2;
+            background-color: vars.$blue-color2;
             cursor: pointer;
             opacity: 0.9;
             font-weight: 500;

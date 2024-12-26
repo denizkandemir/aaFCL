@@ -1,10 +1,11 @@
-@import "../styles/variables.scss";
+@use "../styles/variables" as vars;
+
 
 .footer-container {
     .footer-logo-content-container {
         display: flex;
         justify-content: center;
-        background-color: $grey-color;
+        background-color: vars.$grey-color;
 
         .footer-logos-container {
             display: flex;
@@ -35,7 +36,7 @@
                 }
 
                 .school-text {
-                    font-family: $primary-font;
+                    font-family: vars.$primary-font;
                     font-size: 20px;
                     line-height: 25px;
                     font-weight: 500;
@@ -86,7 +87,7 @@
 
             .footer-title {
                 color: white;
-                font-family: $primary-font;
+                font-family: vars.$primary-font;
 
                 font-weight: 600;
                 font-size: 22px;
@@ -106,7 +107,7 @@
             }
 
             .footer-p {
-                font-family: $primary-font;
+                font-family: vars.$primary-font;
                 color: white;
                 max-width: 250px;
                 font-size: 17px;

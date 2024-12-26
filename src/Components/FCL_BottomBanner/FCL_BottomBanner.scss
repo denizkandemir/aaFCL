@@ -1,4 +1,5 @@
-@import "../styles/variables.scss";
+@use "../styles/variables" as vars;
+
 
 .bottom-banner-container {
     display: flex;
@@ -33,7 +34,7 @@
         }
 
         .project-little-title {
-            font-family: $primary-font;
+            font-family: vars.$primary-font;
             color: #817e7e;
             font-weight: 500;
             font-size: 15px;
@@ -45,8 +46,8 @@
       
 
         .project-banner-title {
-            color:$blue-color4;
-            font-family: $primary-font;
+            color:vars.$blue-color4;
+            font-family: vars.$primary-font;
             font-size: 35px;
             justify-self: self-start;
             text-align: start;
@@ -55,7 +56,7 @@
         }
 
         .project-banner-text {
-            font-family: $primary-font;
+            font-family: vars.$primary-font;
             font-size: 17px;
             color: rgba(0,0,0,0.97);
             font-weight: 500;

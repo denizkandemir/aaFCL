@@ -1,4 +1,5 @@
-@import "../styles/variables.scss";
+@use "../styles/variables" as vars;
+
 
 .headerNavbar-container {
     display: flex;
@@ -16,11 +17,11 @@
         gap: 30px;
 
         .school-logo-p {
-            font-family: $primary-font;
+            font-family: vars.$primary-font;
             font-size: 18px;
             font-weight: 500;
             line-height: 23px;
-            color: $school-color;
+            color: vars.$school-color;
 
         }
     }
@@ -43,10 +44,10 @@
 
         .headerNavbar-link {
             cursor: pointer;
-            font-family: $primary-font;
+            font-family: vars.$primary-font;
             font-weight: 600;
             font-size: 21px;
-            //   color: $school-color;
+            //   color: vars.$school-color;
             color: white;
             text-decoration: none;
             position: relative;

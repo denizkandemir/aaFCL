@@ -1,4 +1,5 @@
-@import "../styles/variables.scss";
+@use "../styles/variables" as vars;
+
 
 
 .collage-container {
@@ -6,8 +7,8 @@
     justify-content: center;
     padding: 100px 0px;
     padding-top: 40px;
-    background-color: $lightBlue-color4;
-    background-color: $lightGrey-color;
+    background-color: vars.$lightBlue-color4;
+    background-color: vars.$lightGrey-color;
 
     @media(max-width:1370px) { 
       padding-bottom: 40px;
@@ -52,8 +53,8 @@
           }
         }
         .collage-title {
-            color: $blue-color4;
-            font-family: $primary-font;
+            color: vars.$blue-color4;
+            font-family: vars.$primary-font;
             font-weight: 600x;
             font-size: 40px;
             margin-bottom: 20px;
@@ -66,7 +67,7 @@
         }
 
         .collage-p {
-            font-family: $primary-font;
+            font-family: vars.$primary-font;
             font-weight: 500;
             font-size: 17px;
             max-width: 590px;

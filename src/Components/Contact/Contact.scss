@@ -1,11 +1,12 @@
-@import "../styles/variables.scss";
+@use "../styles/variables" as vars;
+
 
 .contact-container {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: $lightGrey-color;
+    background-color: vars.$lightGrey-color;
 
     .contact-content-container {
         padding: 50px;
@@ -18,8 +19,8 @@
         .contact-title{
             margin-bottom: 30px;
             align-self: self-start;
-            color: $blue-color4;
-            font-family: $primary-font;
+            color: vars.$blue-color4;
+            font-family: vars.$primary-font;
             font-weight: 600;
             font-size: 50px;
         }   
@@ -38,7 +39,7 @@
                 justify-content: center;
             }
             .contact-card-wrapper {
-                box-shadow: $wrapper-box-shadow;
+                box-shadow: vars.$wrapper-box-shadow;
                 border-radius: 10px;
                 width: 250px;
                 background-color: white;
@@ -58,11 +59,11 @@
                     text-align: center;
 
                     .card-p-title {
-                        font-family: $primary-font;
+                        font-family: vars.$primary-font;
                         font-weight: 600;
                         font-size: 20px;
                         margin-top: 5px;
-                        color: $blue-color4;
+                        color: vars.$blue-color4;
                     }
 
                     .card-link {
@@ -70,12 +71,12 @@
                     }
 
                     .card-p:hover {
-                     color: $blue-color;
+                     color: vars.$blue-color;
                      font-weight: 600;
                     }
 
                     .card-p {
-                        font-family: $primary-font;
+                        font-family: vars.$primary-font;
                         font-weight: 500;
                         font-size: 18px;
                         margin-top: 5px;

@@ -1,4 +1,5 @@
-@import "../styles/variables.scss";
+@use "../styles/variables" as vars;
+
 
 
 .smyrna-container {
@@ -11,15 +12,15 @@
 
     .smyrna-title {
       font-size: 70px;
-      font-family: $primary-font;
-      color: $blue-color4;
+      font-family: vars.$primary-font;
+      color: vars.$blue-color4;
       font-weight: 600;
       text-align: center;
       margin-bottom: 20px;
     }
 
     .smyrna-p {
-      font-family: $primary-font;
+      font-family: vars.$primary-font;
       font-size: 20px;
       text-align: center;
       margin-bottom: 45px;
@@ -60,7 +61,7 @@
 .col-one-fourth p {
   font-size: 15px;
   color: #666;
-  font-family: $primary-font;
+  font-family: vars.$primary-font;
   font-weight: 500;
   max-width: 300px;
   line-height: 1.4;
@@ -114,7 +115,7 @@
   -webkit-border-radius: 50%;
   -moz-border-radius: 50%;
   border-radius: 50%;
-  background: $blue-color;
+  background: vars.$blue-color;
   border: 4px solid #fff;
   content: "";
   height: 15px;

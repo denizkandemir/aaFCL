@@ -1,4 +1,5 @@
-@import "../styles/variables.scss";
+@use "../styles/variables" as vars;
+
 
 .slide-page-container {
   display: flex;
@@ -36,15 +37,15 @@
   align-items: end;
   margin-bottom: 15px;
   .slide-title {
-    font-family: $primary-font;
+    font-family: vars.$primary-font;
     font-size: 45px;
-    color: $blue-color4;
+    color: vars.$blue-color4;
     font-weight: 600;
     line-height: 50px;
   }
 
   .slide-text {
-    font-family: $primary-font;
+    font-family: vars.$primary-font;
     color: rgba(0, 0, 0, 0.7);
     font-size: 20px;
     max-width: 300px;
@@ -55,7 +56,7 @@
   }
 
   .project-little-title {
-    font-family: $primary-font;
+    font-family: vars.$primary-font;
     color: #817e7e;
     font-weight: 500;
     font-size: 17px;

@@ -1,4 +1,5 @@
-@import "../styles/variables.scss";
+@use "../styles/variables" as vars;
+
 
 .cards-container {
     display: flex;
@@ -26,7 +27,7 @@
 
     .cards-p {
         color: rgba(0, 0, 0, 0.8);
-        font-family: $primary-font;
+        font-family: vars.$primary-font;
         font-size: 20px;
         text-align: center;
         margin-top: 20px;
@@ -35,8 +36,8 @@
     }
 
     .cards-title {
-        color: $blue-color4;
-        font-family: $primary-font;
+        color: vars.$blue-color4;
+        font-family: vars.$primary-font;
         font-size: 40px;
         text-align: center;
     }
@@ -70,7 +71,7 @@
         display: flex;
         justify-content: center;
         width: 100%;
-        background-color: $lightGrey-color;
+        background-color: vars.$lightGrey-color;
     }
     .place-img {
         object-fit: contain;
@@ -88,15 +89,15 @@
 
         margin-bottom: 30px;
         .place-p {
-            font-family: $primary-font;
-            color: $blue-color4;
+            font-family: vars.$primary-font;
+            color: vars.$blue-color4;
             font-size: 24px;
             font-weight: 600;
 
         }
 
         .place-text {
-            font-family: $primary-font;
+            font-family: vars.$primary-font;
             color: rgba(0, 0, 0, 0.8);
             font-size: 19px;
             font-weight: 500;
@@ -143,10 +144,10 @@
 
         .place-button {
             padding: 10px 15px;
-            background-color: $blue-color2;
+            background-color: vars.$blue-color2;
             // background-color: black;
             color: white;
-            font-family: $primary-font;
+            font-family: vars.$primary-font;
             font-size: 16px;
             font-weight: 400;
             cursor: pointer;

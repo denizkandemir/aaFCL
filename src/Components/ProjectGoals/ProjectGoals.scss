@@ -1,4 +1,5 @@
-@import "../styles/variables.scss";
+@use "../styles/variables" as vars;
+
 
 .project-goals-container {
   padding: 50px;
@@ -6,7 +7,7 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  background-color: $lightBlue-color2;
+  background-color: vars.$lightBlue-color2;
 
   
 @media(max-width: 550px) {
@@ -31,7 +32,7 @@
 
 
     .project-little-title {
-      font-family: $primary-font;
+      font-family: vars.$primary-font;
       color: #817e7e;
       font-weight: 500;
       font-size: 15px;
@@ -40,8 +41,8 @@
     }
 
     .project-title {
-      font-family: $primary-font;
-      color: $blue-color4;
+      font-family: vars.$primary-font;
+      color: vars.$blue-color4;
       font-weight: 600;
       font-size: 49px;
       line-height: 55px;
@@ -117,13 +118,13 @@
 
       .project-p {
         max-width: 300px;
-        font-family: $primary-font;
+        font-family: vars.$primary-font;
         font-size: 16px;
         color: rgba(0, 0, 0, 0.85);
       }
 
       .project-goal-title {
-        font-family: $primary-font;
+        font-family: vars.$primary-font;
         font-size: 19px;
         font-weight: 600;
         color: rgba(4, 11, 75,0.8);

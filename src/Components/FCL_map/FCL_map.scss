@@ -1,4 +1,5 @@
-@import "../styles/variables.scss";
+@use "../styles/variables" as vars;
+
 
 .fcl-map-container {
     display: flex;
@@ -28,8 +29,8 @@
         }
 
         .fcl-map-title {
-            font-family: $primary-font;
-            color: $blue-color4;
+            font-family: vars.$primary-font;
+            color: vars.$blue-color4;
             font-size: 35px;
             word-spacing: 5px;
             font-weight: 600;
@@ -38,7 +39,7 @@
 
 
         .fcl-text {
-            font-family: $primary-font;
+            font-family: vars.$primary-font;
             font-size: 17px;
             color: rgba(0,0,0,0.97);
             font-weight: 500;
@@ -56,7 +57,7 @@
             margin-top: 20px;
         }
         .project-little-title {
-            font-family: $primary-font;
+            font-family: vars.$primary-font;
             color: #817e7e;
             font-weight: 500;
             font-size: 15px;
