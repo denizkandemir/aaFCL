@@ -7,7 +7,7 @@ import FCL_BottomBanner from "../Components/FCL_BottomBanner/FCL_BottomBanner";
 const FCLPage = () => {
     return (
         <>
-         <Banner img={educationImg} text={"Future Class Lab"} location={"FCL Nedir"} />
+         <Banner img={educationImg} text={"Future Classroom Lab"} location={"FCL Nedir"} />
          <FCL_map/>
          <ProjectGoals/>
          <FCL_BottomBanner/>

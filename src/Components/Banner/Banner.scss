@@ -7,7 +7,8 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 140px 30px;
+    padding: 110px 30px;
+    padding-bottom: 140px;
     overflow: hidden;
 
     .banner-img-container {
@@ -40,6 +41,10 @@
     word-spacing: 10px;
     text-align:center;
     z-index: 10;
+
+    @media(max-width: 690px) { 
+      font-size: 50px;
+    }
   }
 
 .banner-img-texts-container{

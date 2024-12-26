@@ -8,10 +8,16 @@
   flex-direction: column;
   background-color: $lightBlue-color2;
 
+  
+@media(max-width: 550px) {
+ padding: 30px;
+}
+
   .project-goals-content-container {
     display: flex;
     max-width: 1150px;
     gap: 25px 90px;
+    position: relative;
     align-items: end;
 
     .goals-img-container {
@@ -29,7 +35,6 @@
       color: #817e7e;
       font-weight: 500;
       font-size: 15px;
-
       margin-left: 8px;
       margin-bottom: 0px;
     }
@@ -45,20 +50,42 @@
       word-spacing: 1px;
     }
 
+    .circle-container {
+      position: absolute;
+    
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      .circle-img {
+        object-fit: contain;
+        width: 50px;
+      }
+    }
+
     .project-icon {
-      width: 50px;
-      height: 50px;
-      border-radius: 50%;
-      //  background: linear-gradient(90deg,#0D8E90,#1FBCBF,);
-      //  background: linear-gradient(135deg, #4fc3f7, #0288d1);
-      background: linear-gradient(220deg, #4ca9d4, #0D8E90);
+      // width: 50px;
+      // height: 50px;
+      // border-radius: 50%;
+      // background: linear-gradient(220deg, #4ca9d4, #0D8E90);
       display: flex;
       justify-content: center;
       align-items: center;
       font-size: 20px;
       font-weight: bold;
+      position: relative;
+      z-index: 100;
       color: #fff;
-      margin-right: 20px;
+    }
+
+    .circle-id-container {
+      position: relative;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      width: 50px;
     }
 
     .project-goals-arrow-container {
@@ -73,11 +100,19 @@
         align-items: center;
         background-color: #fff;
         border-radius: 10px;
-
         padding: 15px 25px;
+        padding-right: 0px;
         box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
         max-width: 600px;
 
+      }
+
+      .goal-content {
+        margin-left: 15px;
+
+        @media(max-width: 550px) { 
+          margin-left: 22px;
+        }
       }
 
       .project-p {

@@ -8,6 +8,14 @@
      padding-bottom: 40px;
     flex-direction: column;
 
+    @media(max-width: 750px) { 
+      padding: 50px ;
+    }
+
+    @media(max-width: 500px) { 
+        padding: 50px 30px ;
+      }
+
     .bottom-banner-content-container {
         max-width: 1150px;
 
@@ -15,6 +23,8 @@
             max-width: 100%;
             object-fit: contain;
             border-radius: 10px;
+
+            
         }
 
         .project-titles-container {
@@ -29,17 +39,22 @@
             font-size: 15px;
             margin-left: 1px;
             margin-bottom: 0px;
+            justify-self: self-start;
+            text-align: start;
           }
       
 
-        .banner-title {
+        .project-banner-title {
             color:$blue-color4;
             font-family: $primary-font;
             font-size: 35px;
+            justify-self: self-start;
+            text-align: start;
             font-weight: 600;
+            word-spacing: 4px;
         }
 
-        .banner-text {
+        .project-banner-text {
             font-family: $primary-font;
             font-size: 17px;
             color: rgba(0,0,0,0.97);
