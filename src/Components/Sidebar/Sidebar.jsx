@@ -4,11 +4,9 @@ import { Link } from "react-router-dom";
 import { useLocation } from "react-router-dom";
 import Xmark from "../../svgs/Xmark";
 
-
 const Sidebar = ({ isSidebarOpen, setSidebarOpen }) => {
 
     const location = useLocation();
-    const currentLocation = location.pathname;
 
     const closeSidebar = () => {
         setSidebarOpen(false);

@@ -8,9 +8,14 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 110px 30px;
-    padding-bottom: 140px;
+    padding: 120px 30px;
+    padding-bottom: 150px;
     overflow: hidden;
+
+    @media(max-width: 600px) { 
+     padding: 66px 30px;
+     padding-bottom: 80px;
+    }
 
     .banner-img-container {
         position: absolute;
@@ -22,6 +27,18 @@
         max-height: 800px;
         overflow: hidden;
         overflow-x: hidden;
+
+        .banner-responsive-img{
+          display: none;
+          object-fit: cover;
+          width: 100vw;
+          height: 100%;
+          filter: brightness(56%);
+          overflow-x: hidden;
+          @media(max-width: 1000px) { 
+            display: block;
+          }
+        }
     
         .banner-img {
             object-fit: cover;
@@ -29,6 +46,9 @@
             height: 100%;
             filter: brightness(56%);
             overflow-x: hidden;
+            @media(max-width: 1000px) { 
+              display: none;
+            }
         }
     }
 }

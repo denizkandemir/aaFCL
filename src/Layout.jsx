@@ -1,6 +1,7 @@
 import Footer from "./Components/Footer/Footer"
 import { Outlet } from "react-router-dom"
 import { useLocation } from "react-router-dom"
+import ScrollToTop from "./hooks/scrollToTop";
 import Navbar from "./Components/Navbar/Navbar";
 
 export function Layout() {
@@ -10,7 +11,8 @@ export function Layout() {
 
     return (
         <>
-            {
+         <ScrollToTop/>
+             {
                 !isHomePage && <Navbar />
             }
             <main>

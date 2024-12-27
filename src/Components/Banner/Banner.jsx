@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import LeftArrow from "../../svgs/LeftArrow";
 
 
-const Banner = ({text,img,location}) => {
+const Banner = ({text,img,location,responsiveImg}) => {
     return (
         <div className="banner-img-title-container">
             <h2 className="banner-title"> {text} </h2>
@@ -17,6 +17,7 @@ const Banner = ({text,img,location}) => {
             </div>
             <div className="banner-img-container">
                 <img src={img} alt="" className="banner-img" />
+                <img src={responsiveImg} className="banner-responsive-img" alt="" /> 
             </div>
         </div>
     )

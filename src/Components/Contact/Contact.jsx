@@ -1,14 +1,17 @@
 import "./Contact.scss";
 import contactCards from "../../objects/contactCards";
+import contactImgResponsive from "/aafcl-contact-img4.png";
 import contactImg from "/aafcl-contact-img3.png";
 import Banner from "../Banner/Banner";
+import withFadeInOnScroll from "../../hooks/animation/Animation";
 
 const Contact = () => {
+    withFadeInOnScroll();
     return (
         <>
             <div className="contact-container">
-                <Banner text={"Bizimle İletişime Geçin"} img={contactImg} location={"İletişim"} />
-                <div className="contact-content-container">
+                <Banner text={"Bizimle İletişime Geçin"} img={contactImg} responsiveImg={contactImgResponsive} location={"İletişim"} />
+                <div className="contact-content-container fade-in">
                     <div className="contact-cards-content-container">
                         <div className="contact-cards-container">
                             {

@@ -1,17 +1,17 @@
 import "./HomepageCards.scss";
 import { Link } from "react-router-dom";
 import LearningPlaces from "../../objects/LearningPlaces";
-import okulLogo from "/aafcl-logo-okul.png";
 import fclLogo from "/fcl-logo.png";
-import bakanlıkLogo from "/bakanlık-logo.png";
+import withFadeInOnScroll from "../../hooks/animation/Animation";
 
 const HomepageCards = () => {
+    withFadeInOnScroll();
     return (
         <div className="cards-container">
             <div className="cards-content-container">
                 <div className="cards-title-container">
-                    <h2 className="cards-title"> FCL Öğrenme Alanlarımız </h2>
-                    <p className="cards-p">Geleceğin öğrenme ortamlarını bugünden sunan FCL sınıfımız, öğrencilerin bilgiye ulaşma, üretme ve paylaşma süreçlerini destekleyen yenilikçi alanlardan oluşmaktadır. Her alan, farklı bir beceriyi geliştirmeye ve öğrencilerin bireysel potansiyellerini keşfetmelerine olanak tanır.</p>
+                    <h2 className="cards-title fade-in"> FCL Öğrenme Alanlarımız </h2>
+                    <p className="cards-p fade-in">Geleceğin öğrenme ortamlarını bugünden sunan FCL sınıfımız, öğrencilerin bilgiye ulaşma, üretme ve paylaşma süreçlerini destekleyen yenilikçi alanlardan oluşmaktadır. Her alan, farklı bir beceriyi geliştirmeye ve öğrencilerin bireysel potansiyellerini keşfetmelerine olanak tanır.</p>
                 </div>
                 <div className="cards-data-container">
                     {

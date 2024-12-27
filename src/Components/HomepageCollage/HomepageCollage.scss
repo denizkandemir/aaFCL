@@ -9,6 +9,7 @@
     padding-top: 40px;
     background-color: vars.$lightBlue-color4;
     background-color: vars.$lightGrey-color;
+    overflow: hidden;
 
     @media(max-width:1370px) { 
       padding-bottom: 40px;
