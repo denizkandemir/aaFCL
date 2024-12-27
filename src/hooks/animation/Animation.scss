@@ -7,7 +7,6 @@
   .fade-in.show {
     opacity: 1;
     transform: translateY(0);
-    transform: translateX(0);
   }
   
 .fade-in-left {
@@ -22,7 +21,6 @@
   opacity: 1;
   transform: translateX(0);
   overflow: visible;
-  
 }
 
 .fade-in-right {
@@ -30,13 +28,11 @@
     transform: translateX(40%);
     transition: opacity 1s ease-out, transform 1.5s ease-out;
     overflow: hidden;
-
   }
   
   .fade-in-right.show {
     opacity: 1;
-    transform: translateX(0);
     overflow: visible;
-
+    transform: translateX(0);
   }
   

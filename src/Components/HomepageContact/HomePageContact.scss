@@ -18,6 +18,11 @@
         padding: 50px;
     }
 
+    @media(max-width:500px) {  
+        padding: 20px;
+    }
+
+
 
     .home-contact-content-container {
         max-width: 1150px;
