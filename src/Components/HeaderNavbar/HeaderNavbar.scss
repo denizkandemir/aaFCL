@@ -9,6 +9,14 @@
     z-index: 100;
 
 
+    
+    @media(min-width:1800px) {
+        padding: 30px 50px 30px 8.5%;
+    }
+
+    @media(min-width:2000px) {
+        padding: 30px 50px 30px 10.5%;
+    }
 
     .headerNavbar-logo-p-container {
         display: flex;
