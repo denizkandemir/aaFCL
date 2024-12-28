@@ -1,0 +1,31 @@
+@use "../styles/variables" as vars;
+
+.learning-places-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .learning-places-content-container {
+  
+
+    .learning-places-wrapper {
+      display: flex;
+      justify-content: center;
+      width: 100vw;
+      gap: 50px;
+      padding: 80px 30px;
+    }
+
+    .learning-places-wrapper-reverse {
+        background-color: vars.$lightGrey-color;
+        flex-direction: row-reverse;
+    }
+
+    .learning-places-p {
+      font-family: vars.$primary-font;
+      font-size: 20px;
+      max-width: 500px;
+
+    }
+  }
+}

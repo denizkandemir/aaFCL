@@ -16,7 +16,6 @@ const withFadeInOnScroll = (selector = '.fade-in, .fade-in-left, .fade-in-right'
       {
         threshold:0.25,
       }
-     
     );
 
     elements.forEach((element) => observer.observe(element));
