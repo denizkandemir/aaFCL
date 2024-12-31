@@ -15,42 +15,22 @@
 
 .slide-container {
   display: flex;
+  width: 100%;
   margin-top: 25px;
   
 }
 
 .learning-places-slide-content-container{
   max-width: 650px;
-  position: relative;
 }
 
 
 
-.slide-page-container.centered {
-  transform: translate(-50%, -50%) scale(1.2);
-  position: fixed;
-  // top: 50%;
-  // left: 50%;
-  width: 80%; /* Adjust as needed */
-  height: auto; /* Adjust as needed */
-  // transform: translate(-50%, -50%);
-  z-index: 1000;
-  background-color: rgba(0, 0, 0, 0.8); /* Optional dimmed background */
-  border-radius: 15px;
-}
 
-.clickable-img {
-  cursor: pointer;
-  transition: transform 0.3s ease-in-out;
-}
-
-.clickable-img:hover {
-  transform: scale(1.1);
-}
 
 
 .learning-places-img{
-  max-height: 300px;
+  max-height: 400px;
   width: 100%;
   object-fit: cover;
   border-radius: 5px;

@@ -19,9 +19,12 @@ const FCLPlaces = () => {
                                 <p className="learning-places-p">
                                     {place.pageText}
                                 </p>
+                                <p className="learning-places-p">
+                                    {place.pageText2}
+                                </p>
                             </div>
-                            <div className="learning-places-slide-container">
-                                <Slide SlideImgs={place.imgs}  container={"learning-places-slide-content-container"} imgClass={"learning-places-img"} />
+                            <div key={place.id} className="learning-places-slide-container">
+                                <Slide SlideImgs={place.imgs} id={place.id} container={"learning-places-slide-content-container"} imgClass={"learning-places-img"} />
                             </div>
                         </div>
                     ))

@@ -4,6 +4,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  overflow-x: hidden;
 
   .learning-places-content-container {
   
@@ -21,11 +22,40 @@
         flex-direction: row-reverse;
     }
 
-    .learning-places-p {
-      font-family: vars.$primary-font;
-      font-size: 20px;
-      max-width: 500px;
-
+    .learning-places-text-container {
+      margin-top: 30px;
+      .learning-places-little-title {
+        font-family: vars.$primary-font;
+        color: #817e7e;
+        font-weight: 500;
+        font-size: 15px;
+        margin-left: 3px;
+        margin-bottom: 0px;
+      }
+  
+      .learning-places-title {
+        font-family: vars.$primary-font;
+        color: vars.$blue-color4;
+        font-weight: 600;
+        font-size: 49px;
+        line-height: 55px;
+        max-width: 500px;
+        word-spacing: 1px;
+      }
+      
+      .learning-places-p {
+        font-family: vars.$primary-font;
+        font-size: 18px;
+        line-height: 23px;
+        margin-top: 15px;
+        word-spacing: 2px;
+        color: rgba(0, 0, 0,0.8);
+        font-weight: 500;
+        max-width: 600px;
+  
+      }
     }
+
+  
   }
 }
