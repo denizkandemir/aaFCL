@@ -10,7 +10,7 @@ const FCLPlaces = () => {
             <div className="learning-places-content-container">
                 {
                     LearningPlaces.map((place) => (
-                        <div className={place.id % 2 === 1 ? "learning-places-wrapper" : "learning-places-wrapper learning-places-wrapper-reverse"}>
+                        <div key={place.id} className={place.id % 2 === 1 ? "learning-places-wrapper" : "learning-places-wrapper learning-places-wrapper-reverse"}>
                             <div className="learning-places-text-container">
                                 <div className="learning-places-titles-container">
                                     <h4 className="learning-places-little-title"> FCL Alanlarımız </h4>
@@ -21,7 +21,7 @@ const FCLPlaces = () => {
                                 </p>
                             </div>
                             <div className="learning-places-slide-container">
-                                <Slide SlideImgs={place.imgs} key={place.id} container={"learning-places-slide-content-container"} imgClass={"learning-places-img"} />
+                                <Slide SlideImgs={place.imgs}  container={"learning-places-slide-content-container"} imgClass={"learning-places-img"} />
                             </div>
                         </div>
                     ))

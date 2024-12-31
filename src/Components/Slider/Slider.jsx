@@ -12,7 +12,7 @@ import {
     EffectFade
 } from "swiper/modules";
 
-const Slide = ({ SlideImgs, imgClass, key, container }) => {
+const Slide = ({ SlideImgs, imgClass, container }) => {
 
     const [centered, setCentered] = useState(false);
 
@@ -47,9 +47,10 @@ const Slide = ({ SlideImgs, imgClass, key, container }) => {
                         >
                             {
                                 SlideImgs.map((img) => (
-                                    <SwiperSlide key={key}>
+                                
+                                    <SwiperSlide key={img.id}>
                                         <div className="slide-container">
-                                            <img className={imgClass} src={img} onClick={handleImageClick} alt="" />
+                                            <img className={imgClass} src={img.img} onClick={handleImageClick} alt="" />
                                         </div>
                                     </SwiperSlide>
                                 ))
