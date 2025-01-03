@@ -23,6 +23,9 @@ const LearningPlaces = [
             { img: placeImg5, id: 5 },
             { img: placeImg6, id: 6 }
         ],
+        littleImg:placeImg1,
+        littleImg2:placeImg2,
+        bigImg:placeImg3,
         svg:cardImg1,
         text:"Öğrencilerin fikirlerini özgürce ifade ettiği, tartışmalar ve aktif katılımla öğrenmeyi destekleyen bir iletişim merkezi.",
         title:"Etkileşim Alanı",
@@ -39,6 +42,9 @@ const LearningPlaces = [
             { img: placeImg2, id: 5 },
             { img: placeImg1, id: 6 }
         ],
+        littleImg:placeImg1,
+        littleImg2:placeImg2,
+        bigImg:placeImg3,
         svg:cardImg5,
         text:"Yaratıcı fikirlerin projelere dönüştüğü, yenilikçi düşüncenin ve problem çözme becerilerinin öne çıktığı bir öğrenme ortamı.",
         title:"Geliştirme Alanı",
@@ -57,6 +63,9 @@ const LearningPlaces = [
             { img: placeImg5, id: 5 },
             { img: placeImg6, id: 6 }
         ],        
+        littleImg:placeImg1,
+        littleImg2:placeImg2,
+        bigImg:placeImg3,
         svg:cardImg4,
         text:"Bilgiye ulaşma becerilerini geliştiren, merak edilen konuların derinlemesine incelendiği modern bir keşif alanı.",
         title:"Araştırma Alanı",
@@ -75,6 +84,9 @@ const LearningPlaces = [
             { img: placeImg5, id: 5 },
             { img: placeImg6, id: 6 }
         ],
+        littleImg:placeImg1,
+        littleImg2:placeImg2,
+        bigImg:placeImg3,
         svg:cardImg2,
         text:"Düşüncelerin somut sonuçlara dönüştüğü, uygulamalı çalışmalara olanak sağlayan bir tasarım ve üretim alanı.",
         title:"Üretim Alanı",
@@ -93,6 +105,9 @@ const LearningPlaces = [
             { img: placeImg5, id: 5 },
             { img: placeImg6, id: 6 }
         ],
+        littleImg:placeImg1,
+        littleImg2:placeImg2,
+        bigImg:placeImg3,
         svg:cardImg3,
         text:"Sunum alanı, öğrencilerin projelerini sergileyerek kendilerini ifade etme fırsatı buldukları bir sahne ortamıdır.",
         title:"Sunum Alanı",
@@ -111,6 +126,9 @@ const LearningPlaces = [
             { img: placeImg4, id: 5 },
             { img: placeImg5, id: 6 }
         ],        
+        littleImg:placeImg1,
+        littleImg2:placeImg2,
+        bigImg:placeImg3,
         svg:cardImg6,
         text: "Ekip çalışmasını teşvik eden, ortak hedeflere ulaşmak için birlikte çalışmayı destekleyen paylaşım odaklı bir ortam.",
         title:"İşbirliği Alanı",

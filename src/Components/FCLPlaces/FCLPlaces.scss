@@ -8,22 +8,64 @@
 
   .learning-places-content-container {
   
-
     .learning-places-wrapper {
       display: flex;
       justify-content: center;
+      flex-direction: column;
+      align-items: center;
       width: 100vw;
-      gap: 50px;
+
       padding: 80px 30px;
+      gap: 40px;
+
+
     }
 
     .learning-places-wrapper-reverse {
+        // flex-direction: row-reverse;
         background-color: vars.$lightGrey-color;
-        flex-direction: row-reverse;
+    }
+
+    .learning-places-collage-reverse {
+      flex-direction:row-reverse;
+    }
+
+    .learning-places-collage-container {
+      display: flex;
+      gap: 15px;
+      height: 100%;
+
+      .learning-collage-two-container {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+
+        .learning-img-little {
+          object-fit: contain;
+          // max-height: 190px;
+          max-height: 282px;
+          border-radius: 3px;
+          cursor: pointer;
+        }
+
+        .learning-img-little-reverse {
+          max-height: 281.8px;
+        }
+      }
+
+      .learning-img-big {
+        object-fit: cover;
+        height: 100%;
+        max-width: 760px;
+        // max-width: 450px;
+        border-radius: 3px;
+        cursor: pointer;
+      }
+
     }
 
     .learning-places-text-container {
-      margin-top: 30px;
+
       .learning-places-little-title {
         font-family: vars.$primary-font;
         color: #817e7e;
@@ -45,14 +87,19 @@
       
       .learning-places-p {
         font-family: vars.$primary-font;
-        font-size: 18px;
-        line-height: 23px;
+        // font-size: 18px;
+        //         line-height: 23px;
+
+        font-size: 20px;
+        line-height: 25px;
+
+        
         margin-top: 15px;
         word-spacing: 2px;
         color: rgba(0, 0, 0,0.8);
         font-weight: 500;
-        max-width: 600px;
-  
+         max-width: 1150px; 
+        // max-width: 570px;  
       }
     }
 
