@@ -24,8 +24,25 @@
   max-width: 650px;
 }
 
+.slide-button1 {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1000;
+  cursor: pointer;
+  right: -20%;
+  background-color: white;
+}
 
+.slide-button2 {
+  position: absolute;
+  top: 50%;
+  left: -20%;
+  z-index: 1000;
+  cursor: pointer;
+    background-color: white;
 
+}
 
 
 

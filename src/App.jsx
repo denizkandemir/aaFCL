@@ -3,8 +3,8 @@ import { HashRouter as Router, Routes, Route } from "react-router-dom";
 import { Layout } from "./Layout";
 import HomePage from './Pages/HomePage';
 import ContactPage from './Pages/ContactPage';
-import StudyPlacesPage from './Pages/StudyPlacesPage';
 import EventsPage from './Pages/EventsPage';
+import StudyPlacesPage from './Pages/StudyPlaces/StudyPlacesPage';
 import FCLPage from './Pages/FCLPage';
 
 

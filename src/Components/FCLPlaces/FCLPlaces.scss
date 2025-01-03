@@ -1,5 +1,7 @@
 @use "../styles/variables" as vars;
 
+
+
 .learning-places-container {
   display: flex;
   justify-content: center;
@@ -7,6 +9,17 @@
   overflow-x: hidden;
 
   .learning-places-content-container {
+
+    .learning-places-slide-container {
+      display: none;
+    }
+
+    .learning-places-slide-container-open {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: absolute;
+    }
   
     .learning-places-wrapper {
       display: flex;

@@ -1,0 +1,22 @@
+.study-places-page-container{
+    position: relative;
+}
+
+.learning-places-dark-close {
+    opacity: 0;
+    transition: all 1s ease;
+  }
+  
+  .learning-places-dark-open {
+    opacity: 1;
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0,0.8);
+    transition: all 1s ease;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    bottom: 0;
+    right: 0;
+  }
