@@ -18,7 +18,7 @@ const HomepageCards = () => {
                         LearningPlaces.map((place) => (
                             <div key={place.id} className="place-wrapper fade-in">
                                 <div className="place-img-container">
-                                    <img src={place.img} className="place-img" alt="" />
+                                    <img src={place.svg} className="place-img" alt="" />
                                 </div>
                                 <div className="place-content-container">
                                     <div className="place-text-container">
