@@ -10,18 +10,16 @@
   transition: transform 1s ease-in-out;
   width: 100%;
   height: 100%;
-
 }
 
 .slide-container {
   display: flex;
   width: 100%;
   margin-top: 25px;
-  
 }
 
 .learning-places-slide-content-container{
-  max-width: 650px;
+  max-width: 850px;
 }
 
 .slide-button1 {
@@ -32,6 +30,9 @@
   cursor: pointer;
   right: -20%;
   background-color: white;
+  svg {
+    font-size: 40px; /* Increase size of the icon */
+}
 }
 
 .slide-button2 {
@@ -40,19 +41,18 @@
   left: -20%;
   z-index: 1000;
   cursor: pointer;
-    background-color: white;
-
+  background-color: white;
+  svg {
+    font-size: 40px; /* Increase size of the icon */
+}
 }
 
-
-
 .learning-places-img{
-  max-height: 400px;
+  max-height: 550px;
   width: 100%;
   object-fit: cover;
   border-radius: 5px;
 }
-
 
 .slide-title-container {
   display: flex;

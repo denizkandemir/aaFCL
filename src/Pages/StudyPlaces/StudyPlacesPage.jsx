@@ -9,6 +9,16 @@ import "./StudyPlacesPage.scss"
 const StudyPlacesPage = () => {
 
   const [isSlideOpen, setSlideOpen] = useState(false);
+  const root = document.querySelector("#root");
+
+    // if (isSlideOpen) {
+    //     document.body.classList.add("no-scroll");
+    //     root.classList.add("no-scroll");
+    // } else {
+    //     document.body.classList.remove("no-scroll");
+    //     root.classList.remove("no-scroll");
+    // }
+
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -16,7 +26,7 @@ const StudyPlacesPage = () => {
 
   return (
     <>
-      <div className="study-places-page-container">
+      <div className={"study-places-page-container"}>
         <Banner img={learningImg} location={"Öğrenme Alanlarımız"} responsiveImg={learningImgResponsive} text={"FCL Öğrenme Alanları"} />
         <div className={isSlideOpen ? "learning-places-dark-open" : "learning-places-dark-close"}></div>
         <FCLPlaces isSlideOpen={isSlideOpen} setSlideOpen={setSlideOpen} />
