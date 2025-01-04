@@ -1,0 +1,41 @@
+@use "../styles/variables" as vars;
+
+.events-container {
+    display: flex;
+    justify-content: center;
+    max-width: 1250px;
+    flex-direction: column;
+    align-items: center;
+    
+    .events-content-container {
+
+        padding: 60px 30px;
+
+        .event-wrapper {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            align-items: center;
+            justify-content: center;
+
+            .event-title{
+             font-family: vars.$primary-font;
+             font-size: 40px;
+             color: vars.$blue-color4;
+             font-weight: 600;
+            }
+
+            .event-p {
+                font-family: vars.$primary-font;
+                font-size: 20px;
+                color: rgba(0,0,0,0.9);
+                font-weight: 500;
+                margin-bottom: 10px;
+            }
+
+            .event-slide-container{
+                max-width: 100%;
+            }
+        }
+    }
+}
