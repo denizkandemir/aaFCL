@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import {
     Navigation,
@@ -8,30 +8,38 @@ import {
 } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
+import "swiper/css/effect-fade";
 import "./Slide.scss";
 import { MdKeyboardArrowRight, MdKeyboardArrowLeft } from "react-icons/md";
 
-
 const Slide = ({ SlideImgs, imgClass, container, id, isSlideOpen }) => {
+    const swiperRef = useRef(null); 
+
+    useEffect(() => {
+        if (swiperRef.current) {
+            swiperRef.current.swiper.autoplay.start(); 
+        }
+    }, []);
 
     return (
         <>
             <div className={"slide-page-container"}>
                 <div className={container}>
-                    <div className="slide-content-container ">
+                    <div className="slide-content-container">
                         {SlideImgs && SlideImgs.length > 0 && (
                             <Swiper
-                                key={id + isSlideOpen}
+                                ref={swiperRef} 
                                 modules={[Navigation, Pagination, Autoplay, EffectFade]}
                                 centeredSlides={true}
+                                key={id + isSlideOpen}
+                                loop={true}
                                 slidesPerView={1}
-                                spaceBetween={30}
-                                effect={'fade'}
                                 autoplay={{
-                                    delay: 3000,
-                                    disableOnInteraction: false,
+                                    delay: 4000,
+                                    disableOnInteraction: false, 
                                 }}
-                                speed={2000}
+                                effect="fade"
+                                speed={1200}
                                 pagination={{
                                     clickable: true,
                                     el: `.swiper-pagination-${id}`,
@@ -59,7 +67,6 @@ const Slide = ({ SlideImgs, imgClass, container, id, isSlideOpen }) => {
                         </div>
                     </div>
                 </div>
-
             </div>
         </>
     );

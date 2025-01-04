@@ -35,9 +35,9 @@
   z-index: 1000;
   cursor: pointer;
   right: 0%;
-  background-color: white;
   svg {
-    font-size: 40px; /* Increase size of the icon */
+    font-size: 60px; /* Increase size of the icon */
+    fill: white;
 }
 }
 
@@ -46,10 +46,12 @@
   top: 50%;
   left: 0%;
   z-index: 1000;
+  transform: translateY(-50%);
+
   cursor: pointer;
-  background-color: white;
   svg {
-    font-size: 40px; /* Increase size of the icon */
+    font-size: 60px; /* Increase size of the icon */
+    fill: white;
 }
 }
 
@@ -61,7 +63,7 @@
 }
 
 .event-img {
-  max-height: 550px;
+  max-height: 570px;
   width: 100%;
   object-fit: cover;
   border-radius: 5px;
