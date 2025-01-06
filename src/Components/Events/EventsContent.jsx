@@ -18,7 +18,7 @@ const EventsContent = () => {
         <div className="events-container">
 
             {
-                Events.map((event) => (
+               Events.slice().reverse().map((event) => (
                     <div key={event.id} className={event.id % 2 === 1 ? "event-wrapper-container" : "event-wrapper-container event-reverse"}>
                         <div key={event.id} className="event-wrapper">
                             <div className="event-titles-container">
