@@ -40,7 +40,7 @@ const Events = [
             { img: eventImg21, id: 2 },
 
         ],
-        title:"FCL 3D yazıcı eğitimi",
+        title:"FCL 3D Yazıcı Eğitimi",
         text:"27 Aralık 2024 tarihinde, okulumuzun FCL (Future Classroom Lab) sınıfında kullanılmak üzere alınan 3D yazıcı ile ilgili kapsamlı bir eğitim düzenlenmiştir. Eğitime okulumuzun öğretmenleri katılım sağlamış ve 3D yazıcı teknolojisi hakkında detaylı bilgi edinme fırsatı bulmuşlardır.",
         text2:"Eğitim sırasında, 3D yazıcının nasıl kullanılacağı, hangi tür ürünlerin üretilebileceği ve bu teknolojinin derslere nasıl entegre edilebileceği gibi konular ele alınmıştır. Bu süreçte, 3D yazıcı ile somut bir üretim gerçekleştirilmiş, yazıcının uygulamalı kullanımı detaylı bir şekilde incelenmiştir.",
         text3:"Gerçekleştirilen bu eğitim, okulumuzun geleceğe yönelik eğitim-öğretim anlayışını bir adım ileri taşıyarak öğretmenlerimizin dijital araçları etkin bir şekilde kullanmalarını sağlama konusunda önemli bir adım olmuştur. FCL sınıfımızda 3D yazıcıların aktif olarak kullanılmasıyla, öğrencilerimizin hem teorik bilgilerini somut ürünlere dönüştürmesi hem de teknolojiyi daha yakından tanıması hedeflenmektedir.",
