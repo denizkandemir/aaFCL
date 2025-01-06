@@ -1,58 +1,67 @@
 @use "../styles/variables" as vars;
 
-.events-container { 
-    padding: 60px 30px;
+.events-container {
+    .event-reverse {
+        background-color: vars.$lightGrey-color;
+    }
 
-    
-    .events-content-container {
+    .event-wrapper-container {
+      width: 100%; 
+    }
+
+    .event-wrapper {
         max-width: 1150px;
         margin-left: auto;
         margin-right: auto;
+        padding: 60px 30px;
 
-        .event-wrapper {
-            .event-title{
-             font-family: vars.$primary-font;
-             font-size: 45px;
-             color: vars.$blue-color4;
-             font-weight: 600;
-             @media(max-width:600px) {
+        .event-title {
+            font-family: vars.$primary-font;
+            font-size: 45px;
+            color: vars.$blue-color4;
+            font-weight: 600;
+
+            @media(max-width:600px) {
                 font-size: 32px;
-             }
-             @media(max-width:450px) {
+            }
+
+            @media(max-width:450px) {
                 font-size: 26px;
-             }
             }
+        }
 
-            .event-little-title {
-                font-family: vars.$primary-font;
-                color: #817e7e;
-                font-weight: 500;
-                font-size: 17px;
-                margin-left: 1px;
-                margin-bottom: 0px;
+        .event-little-title {
+            font-family: vars.$primary-font;
+            color: #817e7e;
+            font-weight: 500;
+            font-size: 17px;
+            margin-left: 1px;
+            margin-bottom: 0px;
+        }
+
+        .event-p {
+            font-family: vars.$primary-font;
+            font-size: 21px;
+            color: rgba(0, 0, 0, 0.9);
+            font-weight: 500;
+            margin-top: 15px;
+            word-spacing: 2px;
+            line-height: 26px;
+
+            @media(max-width:600px) {
+                font-size: 19px;
             }
+        }
 
-            .event-p {
-                font-family: vars.$primary-font;
-                font-size: 21px;
-                color: rgba(0,0,0,0.9);
-                font-weight: 500;
-                margin-top: 15px;
-                word-spacing: 2px;
-                line-height: 26px;
-                @media(max-width:600px) {
-                    font-size: 19px;
-                }
-            }
+        .event-slide-container {
+            max-width: 1150px;
+            margin-top: 25px;
+            margin-bottom: 30px;
 
-            .event-slide-container{
-                max-width: 1150px;
-                margin-top: 25px;
-                margin-bottom: 30px;
-                @media(max-width:600px) {
-                    margin-bottom: 20px;
-                }
+            @media(max-width:600px) {
+                margin-bottom: 20px;
             }
         }
     }
+
 }
