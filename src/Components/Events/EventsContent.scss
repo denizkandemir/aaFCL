@@ -12,7 +12,7 @@
         .event-wrapper {
             .event-title{
              font-family: vars.$primary-font;
-             font-size: 40px;
+             font-size: 45px;
              color: vars.$blue-color4;
              font-weight: 600;
              @media(max-width:600px) {
@@ -27,14 +27,14 @@
                 font-family: vars.$primary-font;
                 color: #817e7e;
                 font-weight: 500;
-                font-size: 16px;
+                font-size: 17px;
                 margin-left: 1px;
                 margin-bottom: 0px;
             }
 
             .event-p {
                 font-family: vars.$primary-font;
-                font-size: 20px;
+                font-size: 21px;
                 color: rgba(0,0,0,0.9);
                 font-weight: 500;
                 margin-top: 15px;
@@ -47,7 +47,11 @@
 
             .event-slide-container{
                 max-width: 1150px;
-                margin-top: 20px;
+                margin-top: 25px;
+                margin-bottom: 30px;
+                @media(max-width:600px) {
+                    margin-bottom: 20px;
+                }
             }
         }
     }
