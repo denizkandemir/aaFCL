@@ -7,7 +7,6 @@ import cardImg6 from "/motivation.png";
 
 
 const LearningPlaces = [
-
     {
         id:1,
         img:cardImg1,
@@ -48,8 +47,7 @@ const LearningPlaces = [
         img:cardImg6,
         text: "Ekip çalışmasını teşvik eden, ortak hedeflere ulaşmak için birlikte çalışmayı destekleyen paylaşım odaklı bir ortam.",
         title:"İşbirliği Alanı",
-    },
-    
+    }, 
 ]
 
 export default LearningPlaces;
