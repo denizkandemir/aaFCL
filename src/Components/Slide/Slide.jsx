@@ -12,12 +12,13 @@ import "swiper/css/effect-fade";
 import "./Slide.scss";
 import { MdKeyboardArrowRight, MdKeyboardArrowLeft } from "react-icons/md";
 
+
 const Slide = ({ SlideImgs, imgClass, container, id, isSlideOpen }) => {
-    const swiperRef = useRef(null); 
+    const swiperRef = useRef(null);
 
     useEffect(() => {
         if (swiperRef.current) {
-            swiperRef.current.swiper.autoplay.start(); 
+            swiperRef.current.swiper.autoplay.start();
         }
     }, []);
 
@@ -28,7 +29,7 @@ const Slide = ({ SlideImgs, imgClass, container, id, isSlideOpen }) => {
                     <div className="slide-content-container">
                         {SlideImgs && SlideImgs.length > 0 && (
                             <Swiper
-                                ref={swiperRef} 
+                                ref={swiperRef}
                                 modules={[Navigation, Pagination, Autoplay, EffectFade]}
                                 centeredSlides={true}
                                 key={id + isSlideOpen}
@@ -36,9 +37,9 @@ const Slide = ({ SlideImgs, imgClass, container, id, isSlideOpen }) => {
                                 slidesPerView={1}
                                 autoplay={{
                                     delay: 4000,
-                                    disableOnInteraction: false, 
+                                    disableOnInteraction: false,
                                 }}
-                                effect="fade"
+                                // effect="fade"
                                 speed={1200}
                                 pagination={{
                                     clickable: true,
@@ -48,6 +49,7 @@ const Slide = ({ SlideImgs, imgClass, container, id, isSlideOpen }) => {
                                     nextEl: `.swiper-button-next-${id}`,
                                     prevEl: `.swiper-button-prev-${id}`,
                                 }}
+                                
                             >
                                 {SlideImgs.map((img) => (
                                     <SwiperSlide key={img.id}>
@@ -56,15 +58,16 @@ const Slide = ({ SlideImgs, imgClass, container, id, isSlideOpen }) => {
                                         </div>
                                     </SwiperSlide>
                                 ))}
+                                <div className={`swiper-button-next-${id} slide-button1`}>
+                                    <MdKeyboardArrowRight />
+                                </div>
+                                <div className={`swiper-button-prev-${id} slide-button2`}>
+                                    <MdKeyboardArrowLeft />
+                                </div>
                             </Swiper>
                         )}
 
-                        <div className={`swiper-button-next-${id} slide-button1`}>
-                            <MdKeyboardArrowRight />
-                        </div>
-                        <div className={`swiper-button-prev-${id} slide-button2`}>
-                            <MdKeyboardArrowLeft />
-                        </div>
+
                     </div>
                 </div>
             </div>

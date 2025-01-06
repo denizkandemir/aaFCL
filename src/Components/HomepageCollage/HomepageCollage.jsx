@@ -23,7 +23,7 @@ const HomepageCollage = () => {
         <h2 className="collage-title title2 fade-in">
           FCL Sınıfımız
         </h2>
-        <p className="collage-p fade-in">Smyrna FCL sınıfının hedef kitlesi okulumuz Şehit Uzman Çavuş Ali Akdoğan İlkokulu bunyesinde 1,2,3 ve 4.  sınıflarında öğrenim gören öğrencilerdir.
+        <p className="collage-p fade-in">Smyrna FCL sınıfının hedef kitlesi okulumuz Şehit Uzman Çavuş Ali Akdoğan İlkokulu bunyesinde eğitim gören tüm öğrencilerimizdir.
         </p>
         <p className="collage-p fade-in">
         Öğrenme alanlarındaki malzeme ve teknolojik donanım, Matematik, Türkçe, Fen ve Sosyal Bilimler, İngilizce, Bilişim, Müzik vb. farklı okul derslerinin amaç ve kazanımlarına hitap edecek çeşitliliktedir. Bunun dışında sınıf, okul bazında öğretmenlerin mesleki gelişimine yönelik etkinlikler ve ders dışı öğrenci etkinlikleri için bir öğrenme ortamı ve ayrıca okulda yürütülen Erasmus+ eTwinning ve Tübitak, Teknofest (Ulusal Projeler) gibi projeler için uygulama alanı olarak tasarlanmıştır. Bununla birlikte, aktif öğrenme, yaparak yaşayarak öğrenme gibi öğrencinin aktif katılım sağladığı uygulamaları içermektedir.

@@ -22,7 +22,7 @@
 
 .navbar-container {
     display: flex;
-    padding: 30px 50px 30px 4.5%;
+    padding: 20px 50px 20px 4.5%;
     align-items: center;
     justify-content: space-between;
     background-color: #ffffff;
@@ -36,18 +36,18 @@
 
     .logo-texts-container {
         display: flex;
-        gap: 10px;
+        gap: 6px;
         align-items: center;
 
         .ministery-logo {
             object-fit: contain;
-            width: 80px;
+            width: 65px;
 
         }
 
         .ministery-text {
             color: #DF232A;
-            font-size: 20px;
+            font-size: 19px;
             font-weight: 500;
         }
 
@@ -71,7 +71,7 @@
 
     .ministery-logo {
         object-fit: contain;
-        width: 80px;
+        width: 65px;
     }
 
 
@@ -156,7 +156,7 @@
 
         .school-logo {
             object-fit: contain;
-            height: 85px;
+            height: 70px;
         }
 
 
@@ -169,7 +169,7 @@
 
             .fcl-logo {
                 object-fit: contain;
-                width: 80px;
+                width: 65px;
             }
         }
 

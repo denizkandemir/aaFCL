@@ -1,13 +1,13 @@
 import eventImg1 from "/fclEvent1.jpg"
-import eventImg2 from "/fclEvent2.jpg"
+import eventImg2 from "/fclEvent11.jpg"
 import eventImg3 from "/fclEvent3.jpg"
-import eventImg4 from "/fclEvent4.jpg"
-import eventImg5 from "/fclEvent5.jpg"
-import eventImg6 from "/fclEvent6.jpg"
-import eventImg7 from "/fclEvent7.jpg"
-import eventImg8 from "/fclEvent8.jpg"
-import eventImg9 from "/fclEvent9.jpg"
-import eventImg10 from "/fclEvent10.jpg"
+import eventImg4 from "/fclEvent13.jpg"
+import eventImg5 from "/fclEvent14.jpg"
+import eventImg6 from "/fclEvent15.jpg"
+import eventImg7 from "/fclEvent16.jpg"
+import eventImg8 from "/fclEvent2.jpg"
+import eventImg9 from "/fclEvent12.jpg"
+import eventImg10 from "/fclEvent4.jpg"
 
 const Events = [
     {
@@ -27,6 +27,7 @@ const Events = [
         title:"Geleceğin Öğrenme Alanları: İzmir'de FCL Eğitimi",
         text:"İzmir İl Milli Eğitim Müdürlüğü Erasmus+ Okul Eğitimi Akreditasyonu öncülüğünde, 3 Ocak 2025 tarihinde Şehit Uzman Çavuş Ali AKDOĞAN İlkokulunda FCL elçisi Mesut ÜSTÜN tarafından konsorsiyum ortaklarına yönelik kapsamlı bir eğitim verildi.",
         text2:"Eğitimde, yenilikçi öğrenme alanlarının temelinde yatan pedagojik yaklaşımlar, eğitimde teknoloji entegrasyonu, yenilikçi değerlendirme yöntemleri ve teknoloji odaklı öğrenme senaryoları gibi önemli konular ele alındı. Teorik bilgilendirmelerin ardından katılımcılar, örnek bir öğrenme senaryosu hazırlayarak bu senaryoyu uygulama fırsatı buldu.",
+        text3:"Bu etkinlik, İzmir İl Milli Eğitim Müdürlüğü Erasmus+ Okul Eğitimi Akreditasyonunun geçtiğimiz Eylül ayında konsorsiyum ortaklarımıza yönelik davet ettiği FCL uzmanı Emma Abbate tarafından verilen üç günlük eğitimin bir devamı niteliğindedir.",
     },
 ]
 
