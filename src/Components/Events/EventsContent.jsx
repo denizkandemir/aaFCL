@@ -16,9 +16,10 @@ const EventsContent = () => {
 
     return (
         <div className="events-container">
-            <div className="events-content-container">
-                {
-                    Events.map((event) => (
+
+            {
+                Events.map((event) => (
+                    <div key={event.id} className={event.id % 2 === 1 ? "event-wrapper-container" : "event-wrapper-container event-reverse"}>
                         <div key={event.id} className="event-wrapper">
                             <div className="event-titles-container">
                                 <h5 className="event-little-title fade-in "> Etkinliklerimiz </h5>
@@ -34,13 +35,11 @@ const EventsContent = () => {
                                 <p className="event-p fade-in"> {event.text2} </p>
                                 <p className="event-p fade-in"> {event.text3} </p>
                             </div>
-
                         </div>
-                    ))
-                }
-            </div>
+                    </div>
+                ))
+            }
         </div>
-
     )
 }
 

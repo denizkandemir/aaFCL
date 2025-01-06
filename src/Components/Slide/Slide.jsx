@@ -39,7 +39,7 @@ const Slide = ({ SlideImgs, imgClass, container, id, isSlideOpen }) => {
                                     delay: 4000,
                                     disableOnInteraction: false,
                                 }}
-                                // effect="fade"
+                                effect="fade"
                                 speed={1200}
                                 pagination={{
                                     clickable: true,
