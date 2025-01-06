@@ -37,7 +37,9 @@ const HomepageCards = () => {
                                         </div>
                                         <Link
                                             className="place-link"
-                                            to={"/öğrenmeAlanlarımız"}
+                                            to={{
+                                                pathname: `${place.path}/${place.id}`,
+                                              }}
                                         >                  <button className="place-button">
                                                 <p className="button-text"> İncele </p> </button>
                                         </Link>

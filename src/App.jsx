@@ -18,7 +18,7 @@ function App() {
           <Route path="/" element={<HomePage/>} />
           <Route path="/iletişim" element={<ContactPage />} />
           <Route path="/fclNedir" element={<FCLPage/>}/>
-          <Route path="/öğrenmeAlanlarımız" element={<StudyPlacesPage/>}/>
+          <Route path="/:path/:routeId" element={<StudyPlacesPage/>}/>
           <Route path="/etkinliklerimiz" element={<EventsPage/>}/>
         </Route>
       </Routes>

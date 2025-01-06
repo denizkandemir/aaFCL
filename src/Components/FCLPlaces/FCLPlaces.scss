@@ -6,9 +6,30 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 80px 30px;
   overflow-x: hidden;
 
   .learning-places-content-container {
+    max-width: 1150px;
+    .learning-places-navigation-container {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 30px;
+      align-items: center;
+
+      .learning-navigation-title {
+        font-family: vars.$primary-font;
+        font-size: 40px;
+        font-weight: 600;
+        word-spacing: 2px;
+        color: vars.$blue-color4;
+      }
+
+      .learning-arrow {
+        object-fit: contain;
+        max-width: 70px;
+      }
+    }
 
     .learning-places-slide-container {
       display: none;
@@ -26,9 +47,7 @@
       justify-content: center;
       flex-direction: column;
       align-items: center;
-      width: 100vw;
 
-      padding: 80px 30px;
       gap: 40px;
 
 
