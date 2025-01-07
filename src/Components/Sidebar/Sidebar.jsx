@@ -28,7 +28,7 @@ const Sidebar = ({ isSidebarOpen, setSidebarOpen }) => {
                 </div>
 
                 <div onClick={() => closeSidebar()} className="sidebar-closer">
-                    <Xmark />
+                    <Xmark width={30} height={30} fill={"white"}/>
                 </div>
             </div>
             <div className={isSidebarOpen ? "sidebar-blurer" : "sidebar-not-blurer"}></div>

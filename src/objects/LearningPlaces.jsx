@@ -12,7 +12,6 @@ import cardImg5 from "/data-science.png";
 import cardImg6 from "/motivation.png";
 
 const LearningPlaces = [
-
     {
         id:1,
         imgs: [
@@ -140,8 +139,8 @@ const LearningPlaces = [
         title:"İşbirliği Alanı",
         pageText:"Öğrenme alanlarında başkaları ile işbirliği içinde çalışmak çok önemlidir. Araştırma, üretim ve sunum çalışmaları boyunca takım çalışmaları gerçekleştirilir. İşbirliğinin kalitesini grup içindeki aidiyet duygusu, sorumluluk paylaşımı ve karar verme süreci belirler. Oyunla ve interaktif öğrenme ile öğrenmenin kalıcı olması hedeflenmektedir.",
         pageText2:"Sınıfımızın işbirliği alanında 1 altıgen ayrılıp birleşen masa, 6 adet renkli tabureler bulunmaktadır.",
-  
     },
+    
     
 ]
 

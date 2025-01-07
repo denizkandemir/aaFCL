@@ -1,8 +1,6 @@
 import "./FCLPlaces.scss";
 import LearningPlaces from "../../objects/LearningPlaces";
-import Slide from "../Slider/Slider";
 import withFadeInOnScroll from "../../hooks/animation/Animation";
-import { useState } from "react";
 import { useParams } from "react-router-dom";
 import Banner from "../../Components/Banner/Banner";
 import learningImg from "/learningPlaces1.png";
@@ -10,8 +8,39 @@ import learningImgResponsive from "/learningPlacesResponsive.png";
 import { Link } from "react-router-dom";
 import NavigationArrowRight from "../../svgs/NavigationArrowRight";
 import NavigationArrowLeft from "../../svgs/NavigationArrowLeft";
+import Slide from "../Slide/Slide";
+import { useEffect, useRef,useState } from "react";
 
 const FCLPlaces = ({ isSlideOpen, setSlideOpen }) => {
+
+    const slideRef = useRef(null);
+
+    const openSlide = () => {
+        setSlideOpen(true);
+    };
+    
+    const closeSlide = () => {
+       setSlideOpen(false)
+    };
+    
+
+    useEffect(() => {
+        const handleClickOutside = (event) => {
+            if (slideRef.current && !slideRef.current.contains(event.target)) {
+                closeSlide();
+            }
+        };
+
+        if (isSlideOpen) {
+            document.addEventListener("mousedown", handleClickOutside);
+        }
+
+        return () => {
+            document.removeEventListener("mousedown", handleClickOutside);
+        };
+    }, [isSlideOpen]);
+
+
 
     const { routeId } = useParams();
     const place = LearningPlaces.find((place) => parseInt(place.id) === parseInt(routeId));
@@ -31,11 +60,6 @@ const FCLPlaces = ({ isSlideOpen, setSlideOpen }) => {
         nextPlace = false;
     }
 
-    const [activeSlideId, setActiveSlideId] = useState(null);
-    const openSlide = (id) => {
-        setActiveSlideId(id);
-        setSlideOpen(true);
-    };
 
     withFadeInOnScroll();
     return (
@@ -56,24 +80,26 @@ const FCLPlaces = ({ isSlideOpen, setSlideOpen }) => {
                                 {place.pageText2}
                             </p>
                         </div>
-                        {(!isSlideOpen || activeSlideId === place.id) && (
-                            <div
-                                className={
-                                    isSlideOpen
-                                        ? "learning-places-slide-container-open"
-                                        : "learning-places-slide-container"
-                                }
-                            >
-                                <Slide
-                                    key={place.id}
-                                    isSlideOpen={isSlideOpen}
-                                    SlideImgs={place.imgs}
-                                    id={place.id}
-                                    container="learning-places-slide-content-container"
-                                    imgClass="learning-places-img"
-                                />
-                            </div>
-                        )}
+                        <div
+                            ref={slideRef}
+                            className={
+                                isSlideOpen
+                                    ? "learning-places-slide-container-open"
+                                    : "learning-places-slide-container"
+                            }
+                        >
+                            {/* <div className="learnig-places-slide-closer" onClick={() => closeSlide()}>
+                                 <Xmark width={50} height={50} fill={"white"}/>
+                               </div> */}
+                            <Slide
+                                key={place.id}
+                                isSlideOpen={isSlideOpen}
+                                SlideImgs={place.imgs}
+                                id={place.id}
+                                container="learning-places-slide-content-container"
+                                imgClass="learning-places-img"
+                            />
+                        </div>
                         <div className="learning-places-collage-container" >
                             <div className="learning-img-big-container">
                                 <img src={place.bigImg} onClick={() => openSlide(place.id)} alt="" className="learning-img-big" />
@@ -92,7 +118,7 @@ const FCLPlaces = ({ isSlideOpen, setSlideOpen }) => {
                                 to={{
                                     pathname: `${prevPlace.path}/${prevPlace.id}`,
                                 }} >
-                                 <NavigationArrowLeft fill={"#043d60"} height={70} width={70} />   
+                                <NavigationArrowLeft fill={"#043d60"} height={70} width={70} />
                             </Link>
                         )}
                         <h4 className="learning-navigation-title"> Smyrna FCL Alanları </h4>
@@ -102,7 +128,7 @@ const FCLPlaces = ({ isSlideOpen, setSlideOpen }) => {
                                 to={{
                                     pathname: `${nextPlace.path}/${nextPlace.id}`,
                                 }} >
-                                 <NavigationArrowRight fill={"#043d60"} height={70} width={70} />   
+                                <NavigationArrowRight fill={"#043d60"} height={70} width={70} />
                             </Link>
                         )}
                     </div>
