@@ -40,8 +40,9 @@ const HomepageCards = () => {
                                             to={{
                                                 pathname: `${place.path}/${place.id}`,
                                               }}
-                                        >                  <button className="place-button">
-                                                <p className="button-text"> İncele </p> </button>
+                                        >                
+                                            <button className="place-button">
+                                            <p className="button-text"> İncele </p> </button>
                                         </Link>
                                     </div>
                                 </div>

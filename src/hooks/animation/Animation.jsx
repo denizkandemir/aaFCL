@@ -1,7 +1,10 @@
 import { useEffect } from 'react';
 import "./Animation.scss"
+import { useParams } from 'react-router-dom';
 
 const withFadeInOnScroll = (selector = '.fade-in, .fade-in-left, .fade-in-right') => {
+  const { routeId } = useParams();
+
   useEffect(() => {
     const elements = document.querySelectorAll(selector);
     const observer = new IntersectionObserver(
@@ -21,7 +24,7 @@ const withFadeInOnScroll = (selector = '.fade-in, .fade-in-left, .fade-in-right'
     elements.forEach((element) => observer.observe(element));
 
     return () => observer.disconnect();
-  }, [selector]);
+  }, [selector,routeId]);
 };
 
 export default withFadeInOnScroll;
