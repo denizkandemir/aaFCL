@@ -3,15 +3,33 @@
 .learning-places-container {
   display: flex;
   justify-content: center;
+  flex-direction: column;
   align-items: center;
   padding: 80px 30px;
   padding-bottom: 50px;
   overflow-x: hidden;
   position: relative;
-  // z-index: 5;
+
+  .learning-places-slide-container {
+    display: none;
+  }
+
+  .learning-places-slide-container-open {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -45%);
+    z-index: 1000;
+    height: auto;
+  }
+
 
   .learning-places-content-container {
     max-width: 1150px;
+
     .learning-places-navigation-container {
       display: flex;
       justify-content: space-between;
@@ -30,7 +48,6 @@
         align-items: center;
         text-decoration: none;
 
-
         .learning-place-p {
           font-family: vars.$primary-font;
           font-size: 25px;
@@ -39,7 +56,7 @@
           font-weight: 500;
         }
       }
-       
+
       .learning-navigation-title {
         font-family: vars.$primary-font;
         font-size: 30px;
@@ -54,27 +71,6 @@
       }
     }
 
-    .learning-places-slide-container {
-      display: none;
-    }
-
-    .learning-places-slide-container-open {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      position: absolute;
-      z-index: 1000;
-
-      .learnig-places-slide-closer {
-        position: absolute;
-        top: 5px;
-        right: 5px;
-        z-index: 1000;
-        cursor: pointer;
-      }
-      
-    }
-  
     .learning-places-wrapper {
       display: flex;
       justify-content: center;
@@ -84,11 +80,7 @@
     }
 
     .learning-places-wrapper-reverse {
-        background-color: vars.$lightGrey-color;
-    }
-
-    .learning-places-collage-reverse {
-      flex-direction:row-reverse;
+      background-color: vars.$lightGrey-color;
     }
 
     .learning-places-collage-container {
@@ -103,30 +95,51 @@
         flex-direction: column;
         gap: 10px;
 
+        .img-length-container {
+          position: relative;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+
+          .length-dark-container {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.4);
+            border-radius: 3px;
+          }
+
+          .learning-length-p {
+            position: absolute;
+            color: white;
+            font-family: vars.$primary-font;
+            font-size: 55px;
+            cursor: pointer;
+          }
+        }
         .learning-img-little {
           object-fit: contain;
-          max-height: 282px;
+          max-height: 280.5px;
           border-radius: 3px;
           cursor: pointer;
-        }
-
-        .learning-img-little-reverse {
-          max-height: 281.8px;
         }
       }
 
       .learning-img-big {
         object-fit: cover;
-        height: 100%;
         max-width: 760px;
         border-radius: 3px;
         cursor: pointer;
       }
-
     }
 
     .learning-places-text-container {
-
       .learning-places-little-title {
         font-family: vars.$primary-font;
         color: #817e7e;
@@ -135,7 +148,7 @@
         margin-left: 3px;
         margin-bottom: 0px;
       }
-  
+
       .learning-places-title {
         font-family: vars.$primary-font;
         color: vars.$blue-color4;
@@ -145,7 +158,7 @@
         max-width: 500px;
         word-spacing: 1px;
       }
-      
+
       .learning-places-p {
         font-family: vars.$primary-font;
         // font-size: 18px;
@@ -154,16 +167,16 @@
         font-size: 21px;
         line-height: 26px;
 
-        
+
         margin-top: 15px;
         word-spacing: 2px;
-        color: rgba(0, 0, 0,0.8);
+        color: rgba(0, 0, 0, 0.8);
         font-weight: 500;
-         max-width: 1150px; 
+        max-width: 1150px;
         // max-width: 570px;  
       }
     }
 
-  
+
   }
 }

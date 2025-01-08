@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 import HamburgerMenu from "../../svgs/HamburgerMenu";
 import { useState } from "react";
 import Sidebar from "../Sidebar/Sidebar";
+import LearningPlaces from "../../objects/LearningPlaces";
 
 const Navbar = () => {
 
@@ -61,7 +62,29 @@ const Navbar = () => {
                 <div className="navbar-center-container">
                     <ul className="navbar-links-container">
                         <Link className="link-p" to={"/fclNedir"}> <li className="navbar-link"> FCL Nedir </li> </Link>
-                        <Link className="link-p" to={"/öğrenmeAlanlarımız"}> <li className="navbar-link"> Öğrenme Alanlarımız </li></Link>
+                        <div className="link-dropdown-container">
+                            <div className="learning-link-container">
+                                <li className="navbar-link learning-link"> Öğrenme Alanlarımız </li>
+                            </div>
+                            <div className="learning-dropdown-container">
+                                <div className="learning-dropdown-content-container">
+                                    {
+                                        LearningPlaces.map((place) => (
+                                            <Link key={place.id} to={{
+                                                pathname: `${place.path}/${place.id}`,
+                                            }}
+                                                className="learning-link"
+                                            >
+                                                <div key={place.id} className="learning-dropdown-wrapper">
+                                                    <p className="navbar-learning-title"> {place.title} </p>
+                                                    <img src={place.svg} alt="" className="navbar-learning-svg" />
+                                                </div>
+                                            </Link>
+                                        ))
+                                    }
+                                </div>
+                            </div>
+                        </div>
                         <Link className="link-p" to={"/etkinliklerimiz"}><li className="navbar-link"> Etkinliklerimiz </li></Link>
                         <Link className="link-p" to={"/iletişim"}><li className="navbar-link"> İletişim  </li></Link>
                         {/* <li className="navbar-link"></li> */}

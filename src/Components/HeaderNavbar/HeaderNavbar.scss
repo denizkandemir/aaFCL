@@ -46,6 +46,28 @@
         list-style: none;
         gap: 35px;
 
+        .link-dropdown-container {
+            position: relative;
+        }
+        
+        .learning-dropdown-container{
+            position: absolute;
+            z-index: 20000;
+            top: 40px;
+            border-radius: 10px;
+            display: none;
+            background-color: vars.$lightGrey-color;
+        }
+         
+        .learning-link:hover+.learning-dropdown-container{
+            display: block;
+        }
+        
+        .learning-dropdown-container:hover {
+            display: block;
+        }
+        
+
         .link-p {
             text-decoration: none;
         }
