@@ -6,14 +6,14 @@
     transform: translateX(0);
     transition: all 1.5s ease-in-out;
     position: relative;
-    z-index: 100;
+    z-index: 1000000000;
 }
 
 .close-sidebar {
     transform: translateX(-130%);
     transition: all 1.5s ease-in-out;
     position: relative;
-    z-index: 100;
+    z-index: 10000000000;
 }
 
 .sidebar-closer {
