@@ -27,6 +27,17 @@ const Navbar = () => {
         root.classList.remove("no-scroll");
     }
 
+
+    const closeDropdown = () => {
+        const dropdown = document.querySelector(".learning-dropdown-container");
+        dropdown.classList.add("d-none");
+        dropdown.style.pointerEvents = "none";
+        setTimeout(() => {
+            dropdown.classList.remove("d-none");
+            dropdown.style.pointerEvents = "auto";  
+        }, 1000); 
+    }
+
     return (
         <>
             <div className={isSidebarOpen ? "open-sidebar" : "close-sidebar"}>
@@ -75,7 +86,7 @@ const Navbar = () => {
                                             }}
                                                 className="learning-link"
                                             >
-                                                <div key={place.id} className="learning-dropdown-wrapper">
+                                                <div key={place.id} onClick={() => closeDropdown()} className="learning-dropdown-wrapper">
                                                     <p className="navbar-learning-title"> {place.title} </p>
                                                     <img src={place.svg} alt="" className="navbar-learning-svg" />
                                                 </div>

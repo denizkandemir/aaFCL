@@ -47,19 +47,19 @@ const FCLPlaces = ({ isSlideOpen, setSlideOpen }) => {
 
     if (parseInt(place.id) !== 1) {
         prevPlace = LearningPlaces.find((place) => parseInt(place.id) === (parseInt(routeId) - 1));
-    } 
+    }
 
     if (parseInt(place.id) !== 6) {
         nextPlace = LearningPlaces.find((place) => parseInt(place.id) === (parseInt(routeId) + 1));
-    } 
+    }
 
     withFadeInOnScroll();
 
     return (
         <>
-           <Banner img={learningImg} location={place.title} responsiveImg={learningImgResponsive} text={"FCL Öğrenme Alanları"} />
+            <Banner img={learningImg} location={"FCL Alanları"} responsiveImg={learningImgResponsive} text={place.title} />
             <div className="learning-places-container" >
-                <div
+                {/* <div
                     ref={slideRef}
                     className={
                         isSlideOpen
@@ -75,7 +75,7 @@ const FCLPlaces = ({ isSlideOpen, setSlideOpen }) => {
                         container="learning-places-slide-content-container"
                         imgClass="learning-places-img"
                     />
-                </div>
+                </div> */}
                 <div className="learning-places-content-container">
                     <div key={place.id} className="learning-places-wrapper">
                         <div className="learning-places-text-container">
@@ -90,6 +90,23 @@ const FCLPlaces = ({ isSlideOpen, setSlideOpen }) => {
                                 {place.pageText2}
                             </p>
                         </div>
+                        <div
+                            ref={slideRef}
+                            className={
+                                isSlideOpen
+                                    ? "learning-places-slide-container-open"
+                                    : "learning-places-slide-container"
+                            }
+                        >
+                            <Slide
+                                key={place.id}
+                                isSlideOpen={isSlideOpen}
+                                SlideImgs={place.imgs}
+                                id={place.id}
+                                container="learning-places-slide-content-container"
+                                imgClass="learning-places-img"
+                            />
+                        </div>
 
                         <div className="learning-places-collage-container fade-in" >
                             <div className="learning-img-big-container">
@@ -97,8 +114,8 @@ const FCLPlaces = ({ isSlideOpen, setSlideOpen }) => {
                             </div>
                             <div className="learning-collage-two-container">
                                 <img src={place.littleImg} alt="" onClick={() => openSlide(place.id)} className={"learning-img-little"} />
-                                <div className="img-length-container"  onClick={() => openSlide(place.id)}>
-                                    <img src={place.littleImg2} alt="" className={"learning-img-little" } />
+                                <div className="img-length-container" onClick={() => openSlide(place.id)}>
+                                    <img src={place.littleImg2} alt="" className={"learning-img-little"} />
                                     <div className="length-dark-container"></div>
                                     <p className="learning-length-p"> +{place.imgs.length} </p>
                                 </div>

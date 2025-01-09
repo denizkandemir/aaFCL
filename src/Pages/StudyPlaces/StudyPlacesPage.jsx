@@ -28,7 +28,7 @@ const StudyPlacesPage = () => {
         <div className={   isSlideOpen 
                         ? "learning-places-dark-open"
                         : "learning-places-dark-close"}></div>
-        <FCLPlaces isSlideOpen={isSlideOpen} setSlideOpen={setSlideOpen}   />
+        <FCLPlaces isSlideOpen={isSlideOpen}  setSlideOpen={setSlideOpen}   />
       </div>
     </>
   )

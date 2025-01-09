@@ -7,7 +7,6 @@ import EventsPage from './Pages/EventsPage';
 import StudyPlacesPage from './Pages/StudyPlaces/StudyPlacesPage';
 import FCLPage from './Pages/FCLPage';
 
-
 function App() {
 
   return (
@@ -18,7 +17,7 @@ function App() {
           <Route path="/" element={<HomePage/>} />
           <Route path="/iletişim" element={<ContactPage />} />
           <Route path="/fclNedir" element={<FCLPage/>}/>
-          <Route path="/:path/:routeId" element={<StudyPlacesPage/>}/>
+          <Route path="/:path/:routeId" element={<StudyPlacesPage />}/>
           <Route path="/etkinliklerimiz" element={<EventsPage/>}/>
         </Route>
       </Routes>
