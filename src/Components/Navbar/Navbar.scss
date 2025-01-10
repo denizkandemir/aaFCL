@@ -240,6 +240,7 @@
 
     .hamburger-container {
         display: none;
+        cursor: pointer;
     }
 
     .fcl-bottom-text {
@@ -338,6 +339,7 @@
 
         .hamburger-container {
             display: grid;
+            cursor: pointer;
         }
 
         .navbar-center-title {

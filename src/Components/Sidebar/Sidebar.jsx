@@ -23,7 +23,6 @@ const Sidebar = ({ isSidebarOpen, setSidebarOpen }) => {
 
     const changeAccordion = () => {
         setAccordionOpen(!isAccordionOpen);
-        console.log(isAccordionOpen)
     };
 
 
@@ -50,17 +49,17 @@ const Sidebar = ({ isSidebarOpen, setSidebarOpen }) => {
                     </Link>
 
                     <div className={isAccordionOpen ? "open-accordion" : "close-accordion "} onClick={() => changeAccordion()}>
-                        <div className={isAccordionOpen ? "sidebar-link-svg-container open-link-svg-container" : "sidebar-link-svg-container "}>
+                        <div className={isAccordionOpen ? "sidebar-link-svg-container open-link-svg-container learning-places-link-svg-container " : "sidebar-link-svg-container learning-places-link-svg-container "}>
                             <p className="navbar-link">
                                 Öğrenme Alanlarımız
                             </p>
-                            <img src={downArrow} alt="" className="sidebar-arrow-down-img" />
+                            <img src={downArrow} alt="" className={isAccordionOpen ? "sidebar-arrow-img arrow-img-up" : "sidebar-arrow-img"} />
                         </div>
                         <div className="sidebar-learning-places-container">
                             {
                                 LearningPlaces.map((place) => (
                                     <div key={place.id} >
-                                        <Link className="navbar-link" onClick={linkHandler} to={{
+                                        <Link className="navbar-link " onClick={linkHandler} to={{
                                             pathname: `${place.path}/${place.id}`,
                                         }} >
                                             <div className="sidebar-learning-link-svg-container">
