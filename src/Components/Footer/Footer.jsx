@@ -25,14 +25,14 @@ const Footer = () => {
             <div className="logo-texts-container">
               <img src={bakanlıkLogo} className="logo" alt="" />
               <div className="texts-container">
-                <p className="ministery-text"> T.C Milli Eğitim <br /> Bakanlığı </p>
+                <p className="ministery-text"> T.C Milli Eğitim Bakanlığı </p>
               </div>
             </div>
 
             <div className="logo-texts-container">
               <img src={okulLogo} className="logo" alt="" />
               <div className="texts-container">
-                <p className="school-text"> Şehit Uzman <br /> Çavuş Ali Akdoğan İlköğretim Okulu </p>
+                <p className="school-text"> Şehit Uzman Çavuş Ali Akdoğan İlköğretim Okulu </p>
               </div>
 
             </div>

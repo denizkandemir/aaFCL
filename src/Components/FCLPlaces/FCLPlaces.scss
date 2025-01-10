@@ -164,8 +164,9 @@
         font-family: vars.$primary-font;
         color: #817e7e;
         font-weight: 500;
-        font-size: 15px;
-        margin-left: 3px;
+        font-size: 16px;
+        margin-left: 5px;
+        line-height: 20px;
         margin-bottom: 0px;
       }
 
@@ -191,11 +192,9 @@
 
         font-size: 21px;
         line-height: 26px;
-
-
         margin-top: 15px;
         word-spacing: 2px;
-        color: rgba(0, 0, 0, 0.8);
+        color: rgba(0, 0, 0, 0.76);
         font-weight: 500;
         max-width: 1150px;
         // max-width: 570px;  

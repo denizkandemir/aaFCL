@@ -37,7 +37,8 @@
       color: #817e7e;
       font-weight: 500;
       font-size: 15px;
-      margin-left: 8px;
+      margin-left: 9px;
+      line-height: 15px;
       margin-bottom: 0px;
     }
 
@@ -66,10 +67,6 @@
     }
 
     .project-icon {
-      // width: 50px;
-      // height: 50px;
-      // border-radius: 50%;
-      // background: linear-gradient(220deg, #4ca9d4, #0D8E90);
       display: flex;
       justify-content: center;
       align-items: center;
@@ -127,7 +124,7 @@
       .project-goal-title {
         font-family: vars.$primary-font;
         font-size: 19px;
-        font-weight: 600;
+        font-weight: 700;
         color: rgba(4, 11, 75,0.8);
         margin-bottom: 5px;
      

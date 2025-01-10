@@ -34,15 +34,16 @@
             font-family: vars.$primary-font;
             color: #817e7e;
             font-weight: 500;
-            font-size: 17px;
-            margin-left: 1px;
+            font-size: 18px;
+            margin-left: 4px;
+            line-height: 13px;
             margin-bottom: 0px;
         }
 
         .event-p {
             font-family: vars.$primary-font;
             font-size: 21px;
-            color: rgba(0, 0, 0, 0.9);
+            color: rgba(0, 0, 0, 0.8);
             font-weight: 500;
             margin-top: 15px;
             word-spacing: 2px;
