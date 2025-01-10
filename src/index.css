@@ -3,3 +3,10 @@
   padding: 0;
   box-sizing: border-box;
 }
+
+body {
+  font-family: 'Lato', sans-serif;
+  unicode-range: U+0000-00FF, U+0100-017F, U+0180-024F;
+  -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
