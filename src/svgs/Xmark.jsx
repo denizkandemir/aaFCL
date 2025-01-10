@@ -1,18 +1,18 @@
 import React from 'react';
 
-const Xmark = () => {
+const Xmark = ({fill,width,height}) => {
   return (
     <svg 
-      width="30px" 
-      height="30px" 
+      width={width}
+      height={height} 
       viewBox="0 0 32 32" 
       xmlns="http://www.w3.org/2000/svg"
     >
       <defs>
         <style>
           {`.cls-2 {
-            fill: white;
-            stroke: white;
+            fill: ${fill};
+            stroke: ${fill};
             stroke-linecap: round;
             stroke-linejoin: round;
             stroke-width: 2px;

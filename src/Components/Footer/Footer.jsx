@@ -4,8 +4,19 @@ import fclLogo from "/fcl-logo.png";
 import bakanlıkLogo from "/bakanlık-logo.png";
 import contactCards from "../../objects/contactCards";
 import { Link } from "react-router-dom";
+import { useState } from "react";
+import downArrow from "/down-arrow.png";
+import LearningPlaces from "../../objects/LearningPlaces";
+import arrow from "/arrow-white.png";
 
 const Footer = () => {
+
+    const [isAccordionOpen, setAccordionOpen] = useState(false);
+
+    const changeAccordion = () => {
+        setAccordionOpen(!isAccordionOpen);
+    };
+
   return (
     <>
       <div className="footer-container">
@@ -44,7 +55,7 @@ const Footer = () => {
                   <div key={info.id} className="footer-wrapper">
                     {info.svg}
                     <Link className="footer-link" to={info.link}>
-                      <p className="footer-p"> {  info.info} </p>
+                      <p className="footer-p"> {info.info} </p>
                     </Link>
                   </div>
                 ))
@@ -53,7 +64,32 @@ const Footer = () => {
             <div className="footer-menu-container">
               <h3 className="footer-title"> Menü </h3>
               <Link className="footer-link" to={"/fclNedir"}> <p className="footer-p"> FCL Nedir </p> </Link>
-              <Link className="footer-link" to={"/öğrenmeAlanlarımız"}> <p className="footer-p"> Öğrenme Alanlarımız </p></Link>
+              <div className={isAccordionOpen ? "open-accordion" : "close-accordion "} onClick={() => changeAccordion()}>
+                <div className={isAccordionOpen ? "footer-link-svg-container open-link-svg-container" : "footer-link-svg-container"}>
+                  <p className="footer-p">
+                    Öğrenme Alanlarımız
+                  </p>
+                  <img src={arrow} alt="" className={isAccordionOpen ? "footer-arrow-img arrow-img-up" : "footer-arrow-img"} />
+                </div>
+                <div className="footer-learning-places-container">
+                  {
+                    LearningPlaces.map((place) => (
+                      <div key={place.id} >
+                        <Link className="footer-link "  to={{
+                          pathname: `${place.path}/${place.id}`,
+                        }} >
+                          <div className="footer-learning-link-svg-container">
+                            <p className="footer-accordion-text footer-p">
+                              {place.title}
+                            </p>
+                            <img src={arrow} alt="" className="footer-arrow-img-learning" />
+                          </div>
+                        </Link>
+                      </div>
+                    ))
+                  }
+                </div>
+              </div>
               <Link className="footer-link" to={"/etkinliklerimiz"}><p className="footer-p"> Etkinliklerimiz </p></Link>
               <Link className="footer-link" to={"/iletişim"}><p className="footer-p"> İletişim  </p></Link>
             </div>
@@ -63,16 +99,16 @@ const Footer = () => {
               <a className="footer-link" target="blank" href="https://fclturkiye.eba.gov.tr"> <p className="footer-p"> FCL Türkiye  </p></a>
               <a className="footer-link" target="blank" href="https://www-eun-org.translate.goog/professional-development/future-classroom-lab?_x_tr_sch=http&_x_tr_sl=en&_x_tr_tl=tr&_x_tr_hl=tr&_x_tr_pto=tc"><p className="footer-p"> European Schoolnet </p></a>
             </div>
-            
+
             <div className="footer-menu-container">
-            <h3 className="footer-title"> Okulumuzun Projeleri </h3>
+              <h3 className="footer-title"> Okulumuzun Projeleri </h3>
               <a className="footer-link" target="blank" href="https://sehituzmancavusaliakdogan2g.weebly.com/#"> <p className="footer-p"> Kodluyoruz   </p> </a>
               <a className="footer-link" target="blank" href="https://sehituzmancavusaliakdoganilkokul.meb.k12.tr/meb_iys_dosyalar/35/29/970299/icerikler/listele_okullar-hayat-olsun.html?CHK=ed2ce0d02fd2d046bda134503c60b858r"> <p className="footer-p"> Okullar Hayat Olsun  </p></a>
               <a className="footer-link" target="blank" href="https://sehituzmancavusaliakdoganilkokul.meb.k12.tr/icerikler/tabletten-sanat-atolyelerine_6048839.html"><p className="footer-p"> EkoSchool </p></a>
               <a className="footer-link" target="blank" href="https://sehituzmancavusaliakdoganilkokul.meb.k12.tr/meb_iys_dosyalar/35/29/970299/dosyalar/2018_12/06110102_ekookullar.pdf?CHK=ed2ce0d02fd2d046bda134503c60b858"> <p className="footer-p"> Sorunlarımızdan Sorumluyuz Projesi  </p></a>
 
             </div>
-            
+
           </div>
         </div>
       </div>

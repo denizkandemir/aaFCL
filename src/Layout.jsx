@@ -9,11 +9,12 @@ export function Layout() {
     const location = useLocation();
     const isHomePage = location.pathname === "/";
 
+
     return (
         <>
          <ScrollToTop/>
              {
-                !isHomePage && <Navbar />
+                !isHomePage && <Navbar/>
             }
             <main>
                 <Outlet />

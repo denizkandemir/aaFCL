@@ -22,12 +22,15 @@
 .learning-places-slide-content-container {
   max-width: 850px;
   border-radius: 5px;
+  @media(max-width:1200px) {
+   max-width: 1150px;
+   overflow-x: hidden;
+  }
 
 }
 
 .event-slide-content-container {
   max-width: 1150px;
-  /* Prevent it from exceeding the fixed width */
   overflow: hidden;
   position: relative;
 }
@@ -99,7 +102,13 @@
 .learning-places-img {
   max-height: 550px;
   width: 100%;
+  border-radius: 5px;
   object-fit: cover;
+
+  @media(max-width:1200px) {
+    height: 100%;
+    
+  }
 }
 
 .event-img {

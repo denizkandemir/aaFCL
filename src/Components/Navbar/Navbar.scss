@@ -6,14 +6,14 @@
     transform: translateX(0);
     transition: all 1.5s ease-in-out;
     position: relative;
-    z-index: 100;
+    z-index: 1000000000;
 }
 
 .close-sidebar {
     transform: translateX(-130%);
     transition: all 1.5s ease-in-out;
     position: relative;
-    z-index: 100;
+    z-index: 10000000000;
 }
 
 .sidebar-closer {
@@ -26,9 +26,9 @@
     align-items: center;
     justify-content: space-between;
     background-color: #ffffff;
-    /* navbar background color */
     box-shadow: 0px 10px 15px -5px rgba(0, 0, 0, 0.25);
-
+    position: relative;
+    z-index: 100000;
 
     .link-p {
         text-decoration: none;
@@ -42,7 +42,6 @@
         .ministery-logo {
             object-fit: contain;
             width: 65px;
-
         }
 
         .ministery-text {
@@ -50,7 +49,6 @@
             font-size: 19px;
             font-weight: 500;
         }
-
     }
 
     .navbar-logo-p-container {
@@ -81,6 +79,112 @@
         list-style: none;
         gap: 35px;
 
+       
+
+        .learning-link-container  {
+            height: 65px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+
+        }
+
+        .link-dropdown-container {
+            position: relative;
+          
+        }
+        
+        .learning-dropdown-container {
+            position: absolute;
+            z-index: 200;
+            left: -40px;
+            top: 65px;
+            border-radius: 10px;
+            box-shadow: 0 -8px 20px rgba(0, 0, 0, 0.2);
+            display: none;    
+            background-color: vars.$lightGrey-color;
+          
+            .learning-dropdown-content-container {
+             max-height: 300px;
+              overflow-y: scroll;
+             overflow-x: hidden;
+             padding: 0px 20px;
+            }
+
+            .learning-dropdown-content-container::-webkit-scrollbar-thumb {
+                background-color: rgb(194, 194, 194);
+                border: 4px solid transparent;
+                border-radius: 13px;
+                background-clip: padding-box;
+            }
+            
+            .learning-dropdown-content-container::-webkit-scrollbar {
+                width: 11.5px;
+            }
+            
+
+            .learning-link{
+                text-decoration: none;
+            }
+
+            .learning-dropdown-wrapper {
+                display: flex;
+                justify-content: space-between;
+                border-bottom: 0.5px solid rgb(194, 194, 194);
+                align-items: center;
+                padding: 20px 0;
+    
+                .navbar-learning-svg {
+                    max-width: 40px;
+                    object-fit: contain;
+                }
+
+                .navbar-learning-title {
+                    font-family: vars.$primary-font;
+                    font-size: 20px;
+                    // color: white;
+                    color: vars.$blue-color4;
+                    font-weight: 600;
+                    min-width: 180px;
+                    text-decoration: none;
+                }
+            }
+        }
+
+        .link-dropdown-container:hover+.learning-dropdown-container {
+            display: block;
+        }
+
+        .learning-link-container:hover+.learning-dropdown-container {
+            display: block;
+        }
+
+        .learning-dropdown-container:hover {
+            display: block;
+        }
+
+        .d-none {
+            display: none;
+        }
+
+        .learning-dropdown-container::before {
+            content: ' ';
+            position: absolute;
+            width: 0;
+            height: 0;
+            top: -12px;
+            left: 50%;
+            margin-left: -15px;
+            border-style: solid;
+            border-width: 0 15px 15px 15px;
+            border-color: transparent transparent vars.$lightGrey-color transparent;
+            // border-color: transparent transparent black transparent;
+
+        }
+
+       
         .navbar-link {
             cursor: pointer;
             font-family: vars.$primary-font;
@@ -136,6 +240,7 @@
 
     .hamburger-container {
         display: none;
+        cursor: pointer;
     }
 
     .fcl-bottom-text {
@@ -191,7 +296,7 @@
 
         .logo-texts-container {
             .ministery-logo {
-                max-width: 40px;
+                max-width: 50px;
             }
 
             .ministery-text {
@@ -202,13 +307,13 @@
         .school-logo-responsive {
             display: block;
             object-fit: contain;
-            max-width: 40px;
+            max-width: 50px;
         }
 
         .fcl-logo-responsive {
             display: block;
             object-fit: contain;
-            max-width: 40px;
+            max-width: 50px;
         }
 
         .fcl-logo-text-container-responsive {
@@ -234,6 +339,7 @@
 
         .hamburger-container {
             display: grid;
+            cursor: pointer;
         }
 
         .navbar-center-title {
@@ -250,17 +356,18 @@
 @media (max-width: 570px) {
 
     .navbar-container {
-        
+
         .fcl-logo-text-container-responsive {
             display: none;
         }
 
-        .school-logo-responsive { 
+        .school-logo-responsive {
             display: none;
         }
 
         .logo-texts-container {
             gap: 5px;
+
             .ministery-text {
                 display: grid;
                 font-size: 12px;
