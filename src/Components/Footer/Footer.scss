@@ -100,8 +100,7 @@
 
         .footer-learning-link-svg-container{
             display: flex;
-            justify-content: space-between;
-            gap: 10px;
+            gap: 20px;
             cursor: pointer;
             margin-top: 10px;
         }
@@ -132,6 +131,7 @@
         .footer-accordion-text {
             display: block;
             position: relative;
+            width: 130px;
         }
 
         .arrow-img-up {
