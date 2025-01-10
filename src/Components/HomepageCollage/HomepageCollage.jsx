@@ -1,5 +1,5 @@
 import "./HomepageCollage.scss";
-import collage from "/aafcl-collage3.png";
+import collage from "/aafcl-collage4.png";
 import withFadeInOnScroll from "../../hooks/animation/Animation";
 
 

@@ -9,7 +9,7 @@ import { Link } from "react-router-dom";
 import NavigationArrowRight from "../../svgs/NavigationArrowRight";
 import NavigationArrowLeft from "../../svgs/NavigationArrowLeft";
 import Slide from "../Slide/Slide";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef} from "react";
 
 const FCLPlaces = ({ isSlideOpen, setSlideOpen }) => {
 
@@ -59,23 +59,6 @@ const FCLPlaces = ({ isSlideOpen, setSlideOpen }) => {
         <>
             <Banner img={learningImg} location={"FCL Alanları"} responsiveImg={learningImgResponsive} text={place.title} />
             <div className="learning-places-container" >
-                {/* <div
-                    ref={slideRef}
-                    className={
-                        isSlideOpen
-                            ? "learning-places-slide-container-open"
-                            : "learning-places-slide-container"
-                    }
-                >
-                    <Slide
-                        key={place.id}
-                        isSlideOpen={isSlideOpen}
-                        SlideImgs={place.imgs}
-                        id={place.id}
-                        container="learning-places-slide-content-container"
-                        imgClass="learning-places-img"
-                    />
-                </div> */}
                 <div className="learning-places-content-container">
                     <div key={place.id} className="learning-places-wrapper">
                         <div className="learning-places-text-container">
