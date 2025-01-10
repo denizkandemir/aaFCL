@@ -7,6 +7,7 @@ import EventsPage from './Pages/EventsPage';
 import StudyPlacesPage from './Pages/StudyPlaces/StudyPlacesPage';
 import FCLPage from './Pages/FCLPage';
 
+
 function App() {
 
   return (
