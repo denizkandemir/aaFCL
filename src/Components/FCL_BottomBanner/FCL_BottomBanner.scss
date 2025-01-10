@@ -37,10 +37,10 @@
             font-family: vars.$primary-font;
             color: #817e7e;
             font-weight: 500;
-            font-size: 15px;
-            margin-left: 3px;
+            font-size: 16px;
+            margin-left: 4px;
             line-height: 10px;
-            margin-bottom: 0px;
+            margin-bottom: 5px;
             justify-self: self-start;
             text-align: start;
           }
@@ -50,10 +50,10 @@
             color:vars.$blue-color4;
             font-family: vars.$primary-font;
             font-size: 38px;
+            line-height: 42px;
             justify-self: self-start;
             text-align: start;
             font-weight: 700;
-            word-spacing: 4px;
         }
 
         .project-banner-text {
@@ -61,7 +61,7 @@
             font-size: 18px;
             color: rgba(0,0,0,0.82);
             font-weight: 500;
-            word-spacing: 3px;
+            word-spacing: 1.1px;
             line-height: 23px;
             margin-bottom: 20px;
         }

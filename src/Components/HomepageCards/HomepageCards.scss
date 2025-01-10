@@ -23,6 +23,7 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
+       
     }
 
     .cards-p {
@@ -32,15 +33,26 @@
         text-align: center;
         margin-top: 20px;
         margin-bottom: 45px;
+        font-weight: 500;
         max-width: 900px;
+        word-spacing: 0.8px;
+        @media only screen and (max-width: 550px) {
+           text-align: left;
+           font-size: 19px;
+           margin: 15px 0;
+           margin-bottom: 25px;
+        }
+
     }
 
     .cards-title {
         color: vars.$blue-color4;
         font-family: vars.$primary-font;
-        font-size: 40px;
+        font-size: 45px;
+        line-height: 52px;
         text-align: center;
-        font-weight: 600;
+        font-weight: 700;
+      
     }
 
     .cards-data-container {
