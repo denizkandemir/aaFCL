@@ -133,7 +133,7 @@ const LearningPlaces = [
     {
         id:3,
         imgs: [
-            { img: productionImg5, id: 5 },
+            { img: productionImg5, id: 1 },
             { img: productionImg6, id: 2 },
             { img: productionImg2, id: 3 },
             { img: productionImg3, id: 4 },
