@@ -130,6 +130,10 @@
         font-weight: 700;
         color: rgba(4, 11, 75,0.8);
         margin-bottom: 5px;
+        
+        @media(max-width: 550px) { 
+         font-size: 18px;
+        }
      
      
       }
