@@ -91,9 +91,9 @@ const LearningPlaces = [
             { img: developmentImg8, id: 14 },
         
         ],
-        littleImg:developmentImg12,
-        littleImg2:developmentImg6,
-        bigImg:developmentImg13,
+        littleImg:developmentImg13,
+        littleImg2:developmentImg12,
+        bigImg:developmentImg14,
         svg:cardImg5,
         path:"/geliştirmeAlanı",
         text:"Yaratıcı fikirlerin projelere dönüştüğü, yenilikçi düşüncenin ve problem çözme becerilerinin öne çıktığı bir öğrenme ortamı.",
