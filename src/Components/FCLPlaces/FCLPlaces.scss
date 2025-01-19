@@ -1,5 +1,10 @@
 @use "../styles/variables" as vars;
 
+
+.d-none {
+  display: none;
+}
+
 .learning-places-container {
   padding: 80px 30px;
   padding-bottom: 50px;
@@ -23,6 +28,43 @@
     }
   }
 
+  .slide-title-svg-container-open {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px;
+    position: fixed;
+    top: 10px;
+    z-index: 1000;
+    align-items: center;
+    width: 100%;
+    left: 0;
+    color: white;
+
+    .fcl-logo-texts-container {
+      display: flex;
+      gap: 5px;
+      align-items: center;
+
+      .fcl-text {
+          font-weight: 500;
+          font-size: 10px;
+
+      }
+
+      .fcl-bottom-text {
+          // color: #5999cf;
+          color: #04bce8;
+          margin-top: 1px;
+          font-size: 8px;
+      }
+
+      .fcl-logo {
+          object-fit: contain;
+          width: 50px;
+      }
+  }
+  }
+
   .learning-places-slide-container-open {
     display: flex;
     justify-content: center;
@@ -33,6 +75,7 @@
     transform: translate(-50%, -45%);
     z-index: 1000;
     height: auto;
+    width: 100%;
   }
 
 

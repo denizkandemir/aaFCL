@@ -9,7 +9,9 @@ import { Link } from "react-router-dom";
 import NavigationArrowRight from "../../svgs/NavigationArrowRight";
 import NavigationArrowLeft from "../../svgs/NavigationArrowLeft";
 import Slide from "../Slide/Slide";
-import { useEffect, useRef} from "react";
+import fclLogo from "/fcl-logo.png";
+import { useEffect, useRef } from "react";
+import Xmark from "../../svgs/Xmark";
 
 const FCLPlaces = ({ isSlideOpen, setSlideOpen }) => {
 
@@ -73,22 +75,39 @@ const FCLPlaces = ({ isSlideOpen, setSlideOpen }) => {
                                 {place.pageText2}
                             </p>
                         </div>
-                        <div
-                            ref={slideRef}
-                            className={
-                                isSlideOpen
-                                    ? "learning-places-slide-container-open"
-                                    : "learning-places-slide-container"
-                            }
-                        >
-                            <Slide
-                                key={place.id}
-                                isSlideOpen={isSlideOpen}
-                                SlideImgs={place.imgs}
-                                id={place.id}
-                                container="learning-places-slide-content-container"
-                                imgClass="learning-places-img"
-                            />
+                        <div className="slide-dark-title-container">
+                            <div className={isSlideOpen ? "slide-title-svg-container-open" : "d-none"}>
+                                <div className="fcl-logo-texts-container">
+                                    <img src={fclLogo} className="fcl-logo" alt="" />
+                                    <div className="fcl-texts-container">
+                                        <p className="fcl-text"> Future <br /> Classroom Lab </p>
+                                        <p className="fcl-bottom-text"> By European Schoolnet </p>
+                                    </div>
+                                </div>
+
+                                <h3 className="learning-slide-title"> 
+                                  {place.title}    
+                                </h3>
+
+                                <Xmark fill={"white"} width={30} height={30}/>
+                            </div>
+                            <div onClick={() => openSlide()}
+                                ref={slideRef}
+                                className={
+                                    isSlideOpen
+                                        ? "learning-places-slide-container-open"
+                                        : "learning-places-slide-container"
+                                }
+                            >
+                                <Slide
+                                    key={place.id}
+                                    isSlideOpen={isSlideOpen}
+                                    SlideImgs={place.imgs}
+                                    id={place.id}
+                                    container="learning-places-slide-content-container"
+                                    imgClass="learning-places-img"
+                                />
+                            </div>
                         </div>
 
                         <div className="learning-places-collage-container fade-in" >

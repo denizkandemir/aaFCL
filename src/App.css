@@ -18,6 +18,13 @@
 
 }  
 
+.no-scroll {
+  overflow-y: hidden;
+  scroll-behavior: none;
+}
+
+
+
 .fade-in-left.show {
   opacity: 1;
   transform: translateX(0);
