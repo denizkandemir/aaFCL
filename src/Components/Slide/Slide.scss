@@ -22,12 +22,19 @@
 .learning-places-slide-content-container {
   max-width: 850px;
   border-radius: 5px;
-  @media(max-width:1200px) {
-   overflow-x: hidden;
-   max-width:max-content;
-   border-radius: 0px;
-  }
 
+  @media(max-width:1200px) {
+    max-width: max-content;
+    overflow-x: hidden;
+  }
+}
+
+.learning-places-slide-content-container-open {
+  @media(max-width:1200px) {
+    overflow-x: hidden;
+    max-width: max-content;
+    border-radius: 0px;
+  }
 }
 
 .event-slide-content-container {
@@ -35,6 +42,7 @@
   overflow: hidden;
   position: relative;
 }
+
 
 
 
@@ -108,8 +116,15 @@
 
   @media(max-width:1200px) {
     height: 100%;
-    border-radius: 0;
-    
+    max-height: 570px;
+  }
+}
+
+.learning-places-img-open {
+  @media(max-width:600px) {
+    border-radius: 0px;
+    height: 100%;
+    max-height: 360px;
   }
 }
 

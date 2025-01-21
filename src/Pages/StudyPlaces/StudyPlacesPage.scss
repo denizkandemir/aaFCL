@@ -4,17 +4,36 @@
   z-index: 5;
 }
 
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
 .learning-places-dark-close {
   opacity: 0;
   background-color: rgba(0, 0, 0, 0);
-  transition: all 1s ease;
   top: 0;
   left: 0;
   position: fixed;
   bottom: 0;
   right: 0;
   z-index: 0;
-  @media(max-width:1200px) {
+  animation: fadeOut 1s ease;
+  @media(max-width:800px) {
     background-color: rgba(0, 0, 0, 1);
   }
 }
@@ -23,16 +42,16 @@
 .learning-places-dark-open {
   opacity: 1;
   width: 100vw;
+  animation: fadeIn 1s ease;
   height: 100vh;
   background-color: rgba(0, 0, 0, 0.8);
-  transition: all 1s ease;
   top: 0;
   left: 0;
   z-index: 10;
   position: fixed;
   bottom: 0;
   right: 0;
-  @media(max-width:1200px) {
+  @media(max-width:800px) {
     background-color: rgba(0, 0, 0, 1);
   }
 
