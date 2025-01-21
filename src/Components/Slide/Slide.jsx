@@ -13,7 +13,7 @@ import "./Slide.scss";
 import { MdKeyboardArrowRight, MdKeyboardArrowLeft } from "react-icons/md";
 
 
-const Slide = ({ SlideImgs, imgClass, container, id, isSlideOpen }) => {
+const Slide = ({ SlideImgs, imgClass, container, id, isSlideOpen , containerRef }) => {
     const swiperRef = useRef(null);
 
     useEffect(() => {
@@ -26,9 +26,9 @@ const Slide = ({ SlideImgs, imgClass, container, id, isSlideOpen }) => {
         <>
             <div className={"slide-page-container"}>
                 <div className={container}>
-                    <div className="slide-content-container">
+                    <div  ref={containerRef} className="slide-content-container">
                         {SlideImgs && SlideImgs.length > 0 && (
-                            <Swiper
+                            <Swiper 
                                 ref={swiperRef}
                                 modules={[Navigation, Pagination, Autoplay, EffectFade]}
                                 centeredSlides={true}
@@ -53,7 +53,7 @@ const Slide = ({ SlideImgs, imgClass, container, id, isSlideOpen }) => {
                             >
                                 {SlideImgs.map((img) => (
                                     <SwiperSlide key={img.id}>
-                                        <div className="slide-container">
+                                        <div  className="slide-container">
                                             <img className={imgClass} src={img.img} alt="" />
                                         </div>
                                     </SwiperSlide>
@@ -61,7 +61,7 @@ const Slide = ({ SlideImgs, imgClass, container, id, isSlideOpen }) => {
                                 <div className={`swiper-button-next-${id} slide-button1`}>
                                     <MdKeyboardArrowRight />
                                 </div>
-                                <div className={`swiper-button-prev-${id} slide-button2`}>
+                                <div  className={`swiper-button-prev-${id} slide-button2`}>
                                     <MdKeyboardArrowLeft />
                                 </div>
                             </Swiper>

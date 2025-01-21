@@ -9,19 +9,44 @@ import { Link } from "react-router-dom";
 import NavigationArrowRight from "../../svgs/NavigationArrowRight";
 import NavigationArrowLeft from "../../svgs/NavigationArrowLeft";
 import Slide from "../Slide/Slide";
-import { useEffect, useRef} from "react";
+import fclLogo from "/fcl-logo.png";
+import { useEffect, useRef, useState } from "react";
+import Xmark from "../../svgs/Xmark";
 
 const FCLPlaces = ({ isSlideOpen, setSlideOpen }) => {
 
-    const slideRef = useRef(null);
+
+    const [screenSize, setScreenSize] = useState({
+        width: window.innerWidth,
+    });
+
+    useEffect(() => {
+        const handleResize = () => {
+            setScreenSize({
+                width: window.innerWidth,
+            });
+        };
+
+        window.addEventListener('resize', handleResize);
+
+        return () => window.removeEventListener('resize', handleResize);
+    }, []);
+
 
     const openSlide = () => {
-        setSlideOpen(true);
+        if (screenSize.width > 1200 || screenSize.width < 600) {
+            setSlideOpen(true);
+        }
+        else {
+            closeSlide();
+        }
     };
 
     const closeSlide = () => {
         setSlideOpen(false)
     };
+
+    const slideRef = useRef(null);
 
     useEffect(() => {
         const handleClickOutside = (event) => {
@@ -73,22 +98,39 @@ const FCLPlaces = ({ isSlideOpen, setSlideOpen }) => {
                                 {place.pageText2}
                             </p>
                         </div>
-                        <div
-                            ref={slideRef}
-                            className={
-                                isSlideOpen
-                                    ? "learning-places-slide-container-open"
-                                    : "learning-places-slide-container"
-                            }
-                        >
-                            <Slide
-                                key={place.id}
-                                isSlideOpen={isSlideOpen}
-                                SlideImgs={place.imgs}
-                                id={place.id}
-                                container="learning-places-slide-content-container"
-                                imgClass="learning-places-img"
-                            />
+                        <div className="slide-dark-title-container">
+                            <div className={isSlideOpen ? "slide-title-svg-container-open" : "d-none"}>
+                                <div className="fcl-logo-texts-container">
+                                    <img src={fclLogo} className="fcl-logo" alt="" />
+                                    <div className="fcl-texts-container">
+                                        <p className="fcl-text"> Future <br /> Classroom Lab </p>
+                                        <p className="fcl-bottom-text"> By European Schoolnet </p>
+                                    </div>
+                                </div>
+
+                                <h3 className="learning-slide-title">
+                                    {place.title}
+                                </h3>
+
+                                <Xmark fill={"white"} width={30} height={30} />
+                            </div>
+                            <div onClick={() => openSlide()}
+                                className={
+                                    isSlideOpen
+                                        ? "learning-places-slide-container-open"
+                                        : "learning-places-slide-container"
+                                }
+                            >
+                                <Slide
+                                    key={place.id}
+                                    isSlideOpen={isSlideOpen}
+                                    SlideImgs={place.imgs}
+                                    id={place.id}
+                                    containerRef={slideRef}
+                                    container={isSlideOpen ? "learning-places-slide-content-container-open learning-places-slide-content-container" : "learning-places-slide-content-container"}
+                                    imgClass={isSlideOpen ? "learning-places-img learning-places-img-open" : "learning-places-img"}
+                                />
+                            </div>
                         </div>
 
                         <div className="learning-places-collage-container fade-in" >
