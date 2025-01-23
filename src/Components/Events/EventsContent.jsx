@@ -1,102 +1,78 @@
 import "./EventsContent.scss";
 import Events from "../../objects/Events";
-import Slide from "../Slide/Slide";
-import { useState, useEffect } from "react";
 import fclLogo from "/fcl-logo.png";
-import Xmark from "../../svgs/Xmark";
-import { useRef } from "react";
+import { Link } from "react-router-dom";
 import withFadeInOnScroll from "../../hooks/animation/Animation";
 
 const EventsContent = () => {
 
     withFadeInOnScroll();
 
-    const [isSlideOpen, setSlideOpen] = useState(false);
-
-    // useEffect(() => {
-    //     setSlideOpen(true)
-    // }, []);
-
-    const openSlide = () => {
-        setSlideOpen(true);
-    }
-
-    const closeSlide = () => {
-        setSlideOpen(false)
-    };
-
-    const eventSlideRef = useRef(null);
-
-    useEffect(() => {
-        const handleClickOutside = (event) => {
-            if (slideRef.current && !slideRef.current.contains(event.target)) {
-                closeSlide();
-            }
-        };
-
-        if (isSlideOpen) {
-            document.addEventListener("mousedown", handleClickOutside);
-        }
-
-        return () => {
-            document.removeEventListener("mousedown", handleClickOutside);
-        };
-    }, [isSlideOpen]);
-
-
     return (
-        <div className="events-container">
-
-            {
-                Events.slice().reverse().map((event) => (
-                    <div key={event.id} className={event.id % 2 === 0 ? "event-wrapper-container" : "event-wrapper-container event-reverse"}>
-                        <div key={event.id} className="event-wrapper">
-                            <div className="event-titles-container">
-                                <h5 className="event-little-title fade-in "> Etkinliklerimiz </h5>
-                                <h3 className="event-title fade-in "> {event.title} </h3>
+        <div className="event-cards-container">
+            <div className="event-cards-content-container">
+                <div className="event-cards-data-container">            
+                {
+                    Events.slice().reverse().map((event) => (
+                        <div key={event.id} className="event-ınfo-card-wrapper fade-in">
+                            <div className="event-ınfo-img-container">
+                                <img src={event.cardImg} className="event-ınfo-info-img" alt="" />
                             </div>
-                            {/* <div className="event-slide-container fade-in">
-                                <Slide SlideImgs={event.imgs} id={event.id} key={event.id} isSlideOpen={isSlideOpen} container={"event-slide-content-container"} imgClass={"event-img"} />
-                            </div> */}
-
-                            <div className="slide-dark-title-container">
-                                <div className={isSlideOpen ? "slide-title-svg-container-open" : "d-none"}>
-                                    <div className="fcl-logo-texts-container">
-                                        <img src={fclLogo} className="fcl-logo" alt="" />
-                                        <div className="fcl-texts-container">
-                                            <p className="fcl-text"> Future <br /> Classroom Lab </p>
-                                            <p className="fcl-bottom-text"> By European Schoolnet </p>
+                            <div className="event-ınfo-content-container">
+                                <div className="event-ınfo-text-container">
+                                    <p className="event-ınfo-p"> {event.title} </p>
+                                    <p className="event-ınfo-text"> {event.text} </p>
+                                </div>
+                                <div className="event-ınfo-button-container">
+                                    <div className="event-ınfo-logo-container">
+                                        <div className="fcl-logo-texts-container">
+                                            <img className="event-ınfo-logo" src={fclLogo} alt="" />
+                                            <div className="fcl-texts-container">
+                                                <p className="fcl-text"> Future <br /> Classroom Lab </p>
+                                                <p className="fcl-bottom-text"> By European Schoolnet </p>
+                                            </div>
                                         </div>
                                     </div>
+                                    <Link
+                                        className="event-ınfo-link"
+                                        to={{ pathname: `/etkinlikler${event.path}/${event.id}` }}
+                                      >                                    
+                                        <div className="event-cards-button-container">
 
-                                    <h3 className="learning-slide-title">
-                                        {event.title}
-                                    </h3>
+                                            <div className="event-cards-buttons">
+                                                <button className="event-cards-blob-btn">
+                                                    Devamını Oku
+                                                    <span className="event-cards-blob-btn__inner">
+                                                        <span className="event-cards-blob-btn__blobs">
+                                                            <span className="event-cards-blob-btn__blob"></span>
+                                                            <span className="event-cards-blob-btn__blob"></span>
+                                                            <span className="event-cards-blob-btn__blob"></span>
+                                                            <span className="event-cards-blob-btn__blob"></span>
+                                                        </span>
+                                                    </span>
+                                                </button>
+                                                <br />
 
-                                    <Xmark fill={"white"} width={30} height={30} />
+                                                <svg height={0} xmlns="http://www.w3.org/2000/svg" version="1.1">
+                                                    <defs>
+                                                        <filter id="goo">
+                                                            <feGaussianBlur in="SourceGraphic" result="blur" stdDeviation="10"></feGaussianBlur>
+                                                            <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 21 -7" result="goo"></feColorMatrix>
+                                                            <feBlend in2="goo" in="SourceGraphic" result="mix"></feBlend>
+                                                        </filter>
+                                                    </defs>
+                                                </svg>
+                                            </div>
+                                        </div>
+
+                                    </Link>
                                 </div>
-                                <div onClick={() => openSlide()}
-                                    className={
-                                        isSlideOpen
-                                            ? "event-slide-container-open fade-in"
-                                            : "event-slide-container fade-in"
-                                    }
-                                >
-                                    <Slide containerRef={eventSlideRef} SlideImgs={event.imgs} id={event.id} key={event.id} isSlideOpen={isSlideOpen} container={"event-slide-content-container"} imgClass={"event-img"} />
-
-                                </div>
-                            </div>
-
-                            <div className="event-text-container">
-
-                                <p className="event-p fade-in"> {event.text} </p>
-                                <p className="event-p fade-in"> {event.text2} </p>
-                                <p className="event-p fade-in"> {event.text3} </p>
                             </div>
                         </div>
-                    </div>
-                ))
-            }
+                    ))
+                }
+                </div>
+            </div>
         </div>
     )
 }

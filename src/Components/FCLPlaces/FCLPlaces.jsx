@@ -10,10 +10,10 @@ import NavigationArrowRight from "../../svgs/NavigationArrowRight";
 import NavigationArrowLeft from "../../svgs/NavigationArrowLeft";
 import Slide from "../Slide/Slide";
 import fclLogo from "/fcl-logo.png";
-import Xmark from "../../svgs/Xmark";
 import { useEffect, useRef, useState } from "react";
+import Xmark from "../../svgs/Xmark";
 
-const FCLPlaces = ({ isSlideOpen, setSlideOpen }) => {
+const FCLPlaces = ({ isFclSlideOpen, setFclSlideOpen }) => {
 
     const [screenSize, setScreenSize] = useState({
         width: window.innerWidth,
@@ -32,36 +32,36 @@ const FCLPlaces = ({ isSlideOpen, setSlideOpen }) => {
     }, []);
 
 
-    const openSlide = () => {
+    const openFclSlide = () => {
         if (screenSize.width > 1200 || screenSize.width < 600) {
-            setSlideOpen(true);
+            setFclSlideOpen(true);
         }
         else {
-            closeSlide();
+            closeFclSlide();
         }
     };
 
-    const closeSlide = () => {
-        setSlideOpen(false)
+    const closeFclSlide = () => {
+        setFclSlideOpen(false)
     };
 
-    const slideRef = useRef(null);
+    const fclSlideRef = useRef(null);
 
     useEffect(() => {
         const handleClickOutside = (event) => {
-            if (slideRef.current && !slideRef.current.contains(event.target)) {
-                closeSlide();
+            if (fclSlideRef.current && !fclSlideRef.current.contains(event.target)) {
+                closeFclSlide();
             }
         };
 
-        if (isSlideOpen) {
+        if (isFclSlideOpen) {
             document.addEventListener("mousedown", handleClickOutside);
         }
 
         return () => {
             document.removeEventListener("mousedown", handleClickOutside);
         };
-    }, [isSlideOpen]);
+    }, [isFclSlideOpen]);
 
     const { routeId } = useParams();
     const place = LearningPlaces.find((place) => parseInt(place.id) === parseInt(routeId));
@@ -98,7 +98,7 @@ const FCLPlaces = ({ isSlideOpen, setSlideOpen }) => {
                             </p>
                         </div>
                         <div className="slide-dark-title-container">
-                            <div className={isSlideOpen ? "slide-title-svg-container-open" : "d-none"}>
+                            <div className={isFclSlideOpen ? "slide-title-svg-container-open" : "d-none"}>
                                 <div className="fcl-logo-texts-container">
                                     <img src={fclLogo} className="fcl-logo" alt="" />
                                     <div className="fcl-texts-container">
@@ -113,32 +113,33 @@ const FCLPlaces = ({ isSlideOpen, setSlideOpen }) => {
 
                                 <Xmark fill={"white"} width={30} height={30} />
                             </div>
-                            <div onClick={() => openSlide()}
+                            <div 
                                 className={
-                                    isSlideOpen
+                                   isFclSlideOpen
                                         ? "learning-places-slide-container-open"
                                         : "learning-places-slide-container"
                                 }
                             >
                                 <Slide
                                     key={place.id}
-                                    isSlideOpen={isSlideOpen}
+                                    isSlideOpen={isFclSlideOpen}
                                     SlideImgs={place.imgs}
                                     id={place.id}
-                                    containerRef={slideRef}
-                                    container={isSlideOpen ? "learning-places-slide-content-container-open learning-places-slide-content-container" : "learning-places-slide-content-container"}
-                                    imgClass={isSlideOpen ? "learning-places-img learning-places-img-open" : "learning-places-img"}
+                                    openSlide={openFclSlide}
+                                    containerRef={fclSlideRef}
+                                    container={isFclSlideOpen ? "learning-places-slide-content-container-open learning-places-slide-content-container" : "learning-places-slide-content-container"}
+                                    imgClass={isFclSlideOpen ? "learning-places-img learning-places-img-open" : "learning-places-img"}
                                 />
                             </div>
                         </div>
 
                         <div className="learning-places-collage-container fade-in" >
                             <div className="learning-img-big-container">
-                                <img src={place.bigImg} onClick={() => openSlide(place.id)} alt="" className="learning-img-big" />
+                                <img src={place.bigImg} onClick={() => openFclSlide()} alt="" className="learning-img-big" />
                             </div>
                             <div className="learning-collage-two-container">
-                                <img src={place.littleImg} alt="" onClick={() => openSlide(place.id)} className={"learning-img-little"} />
-                                <div className="img-length-container" onClick={() => openSlide(place.id)}>
+                                <img src={place.littleImg} alt="" onClick={() => openFclSlide()} className={"learning-img-little"} />
+                                <div className="img-length-container" onClick={() => openFclSlide()}>
                                     <img src={place.littleImg2} alt="" className={"learning-img-little"} />
                                     <div className="length-dark-container"></div>
                                     <p className="learning-length-p"> +{place.imgs.length} </p>
@@ -152,7 +153,7 @@ const FCLPlaces = ({ isSlideOpen, setSlideOpen }) => {
                             <Link
                                 className="place-link"
                                 to={{
-                                    pathname: `${prevPlace.path}/${prevPlace.id}`,
+                                    pathname: `/fclAlanları${prevPlace.path}/${prevPlace.id}`,
                                 }} >
                                 <div className="learning-arrow-p-container">
                                     <NavigationArrowLeft fill={"#043d60"} height={70} width={70} />
@@ -165,7 +166,7 @@ const FCLPlaces = ({ isSlideOpen, setSlideOpen }) => {
                             <Link
                                 className="place-link"
                                 to={{
-                                    pathname: `${nextPlace.path}/${nextPlace.id}`,
+                                    pathname: `/fclAlanları${nextPlace.path}/${nextPlace.id}`,
                                 }} >
                                 <div className="learning-arrow-p-container">
                                     <p className="learning-place-p"> {nextPlace.title} </p>

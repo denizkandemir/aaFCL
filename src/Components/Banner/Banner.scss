@@ -60,20 +60,22 @@
     position: relative;
     word-spacing: 10px;
     text-align:center;
-    z-index: 10;
+    z-index: 4;
 
     @media(max-width: 690px) { 
-      font-size: 50px;
+      font-size: 46px;
+      line-height: 51px;
     }
 
     @media(max-width: 450px) { 
       font-size: 40px;
+      line-height: 47px;
     }
   }
 
 .banner-img-texts-container{
     position: relative;
-    z-index: 10;
+    z-index: 4;
     display: flex;
     gap: 30px;
     margin-top: 20px;

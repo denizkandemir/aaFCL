@@ -1,0 +1,161 @@
+@use "../styles/variables" as vars;
+
+.event-container {
+    .event-reverse {
+        background-color: vars.$lightGrey-color;
+    }
+
+    .event-wrapper-container {
+        width: 100%;
+    }
+
+    .event-wrapper {
+        max-width: 1150px;
+        margin-left: auto;
+        margin-right: auto;
+        padding: 60px 30px;
+
+        @media(max-width:600px) {
+            padding: 40px 30px;
+        }
+
+        .event-title {
+            font-family: vars.$primary-font;
+            font-size: 45px;
+            color: vars.$blue-color4;
+            font-weight: 600;
+            line-height: 53px;
+
+            @media(max-width:600px) {
+                font-size: 32px;
+            }
+
+            @media(max-width:450px) {
+                font-size: 26px;
+            }
+        }
+
+        .slide-title-svg-container-open {
+            display: none;
+
+            @media(max-width:600px) {
+                display: flex;
+                justify-content: space-between;
+                padding: 15px;
+                position: fixed;
+                top: 10px;
+                z-index: 1000;
+                align-items: center;
+                width: 100%;
+                left: 0;
+                color: white;
+
+                .learning-slide-title {
+                    font-family: vars.$primary-font;
+                    font-size: 19px;
+                    margin-right: 10px;
+
+                    @media(max-width:450px) {
+                        font-size: 16px;
+                    }
+
+                    @media(max-width:390px) {
+                        font-size: 15px;
+                    }
+                }
+
+                .fcl-logo-texts-container {
+                    display: flex;
+                    gap: 5px;
+                    align-items: center;
+
+                    .fcl-text {
+                        font-weight: 500;
+                        font-size: 10px;
+
+                        @media(max-width:390px) {
+                            font-size: 8px;
+                        }
+                    }
+
+                    .fcl-bottom-text {
+                        // color: #5999cf;
+                        color: #04bce8;
+                        margin-top: 1px;
+                        font-size: 8px;
+
+                        @media(max-width:390px) {
+                            font-size: 7px;
+                        }
+                    }
+
+                    .fcl-logo {
+                        object-fit: contain;
+                        width: 50px;
+
+                        @media(max-width:450px) {
+                            width: 40px;
+                        }
+                        @media(max-width:390px) {
+                            width: 30px;
+                        }
+                    }
+                }
+            }
+        }
+
+        .event-little-title {
+            font-family: vars.$primary-font;
+            color: #817e7e;
+            font-weight: 500;
+            font-size: 18px;
+            margin-left: 4px;
+            line-height: 13px;
+            margin-bottom: 2px;
+        }
+
+        .event-slide-container-open {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: fixed;
+            top: 45%;
+            left: 50%;
+            transform: translate(-50%, -45%);
+            z-index: 1000;
+            height: auto;
+            width: 100%;
+            transition: none;
+
+            @media(max-width:600px) {
+                top: 52%;
+            }
+        }
+
+        .event-p {
+            font-family: vars.$primary-font;
+            font-size: 21px;
+            color: rgba(0, 0, 0, 0.8);
+            font-weight: 500;
+            margin-top: 15px;
+            word-spacing: 2px;
+            line-height: 26px;
+
+            @media(max-width:600px) {
+                font-size: 19px;
+            }
+        }
+
+        .event-slide-container {
+            max-width: 1150px;
+            margin-top: 10px;
+            margin-bottom: 30px;
+
+            @media(max-width:600px) {
+                margin-bottom: 20px;
+                margin-top: 5px;
+            }
+        }
+    }
+
+}
