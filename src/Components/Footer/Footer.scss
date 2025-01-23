@@ -90,6 +90,8 @@
             gap: 20px;
             align-items: center;
             cursor: pointer;
+            position: relative;
+            z-index: 10000;
           
         }
 
@@ -188,6 +190,8 @@
 
             .footer-link {
                 text-decoration: none;
+                position: relative;
+                z-index: 10000;
             }
 
             .footer-p {
