@@ -92,6 +92,7 @@ const Footer = () => {
               </div>
               <Link className="footer-link" to={"/etkinliklerimiz"}><p className="footer-p"> Etkinliklerimiz </p></Link>
               <Link className="footer-link" to={"/iletişim"}><p className="footer-p"> İletişim  </p></Link>
+              <Link className="footer-link" to={"/login"}> <p className="footer-p"> Login </p> </Link>
             </div>
             <div className="footer-menu-container footer-middle">
               <h3 className="footer-title"> Bağlantılar </h3>
@@ -106,7 +107,6 @@ const Footer = () => {
               <a className="footer-link" target="blank" href="https://sehituzmancavusaliakdoganilkokul.meb.k12.tr/meb_iys_dosyalar/35/29/970299/icerikler/listele_okullar-hayat-olsun.html?CHK=ed2ce0d02fd2d046bda134503c60b858r"> <p className="footer-p"> Okullar Hayat Olsun  </p></a>
               <a className="footer-link" target="blank" href="https://sehituzmancavusaliakdoganilkokul.meb.k12.tr/icerikler/tabletten-sanat-atolyelerine_6048839.html"><p className="footer-p"> EkoSchool </p></a>
               <a className="footer-link" target="blank" href="https://sehituzmancavusaliakdoganilkokul.meb.k12.tr/meb_iys_dosyalar/35/29/970299/dosyalar/2018_12/06110102_ekookullar.pdf?CHK=ed2ce0d02fd2d046bda134503c60b858"> <p className="footer-p"> Sorunlarımızdan Sorumluyuz Projesi  </p></a>
-
             </div>
 
           </div>

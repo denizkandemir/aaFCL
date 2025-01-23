@@ -7,6 +7,7 @@ import EventsPage from './Pages/EventsPage';
 import StudyPlacesPage from './Pages/StudyPlaces/StudyPlacesPage';
 import FCLPage from './Pages/FCLPage';
 import EventInfoPage from './Pages/EventsInfoPage/EventInfoPage';
+import LoginPage from './Pages/LoginPage';
 
 function App() {
 
@@ -25,6 +26,7 @@ function App() {
             <Route path="/etkinlikler">
               <Route path=":path/:routeId" element={<EventInfoPage />} />
             </Route>
+            <Route path="/login" element={<LoginPage/>}/>
           </Route>
         </Routes>
       </Router>

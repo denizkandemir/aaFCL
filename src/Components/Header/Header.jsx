@@ -1,6 +1,5 @@
 import "./Header.scss";
 import background from "/aafcl-background3.png";
-
 import rocket from "/rocket.png";
 import education from "/education.png";
 import hammers from "/hammer.png";
