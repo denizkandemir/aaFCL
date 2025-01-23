@@ -82,7 +82,7 @@ const Navbar = () => {
                                     {
                                         LearningPlaces.map((place) => (
                                             <Link key={place.id} to={{
-                                                pathname: `${place.path}/${place.id}`,
+                                                pathname: `/fclAlanları${place.path}/${place.id}`,
                                             }}
                                                 className="learning-link"
                                             >

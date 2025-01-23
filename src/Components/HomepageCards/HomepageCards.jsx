@@ -37,15 +37,13 @@ const HomepageCards = () => {
                                         </div>
                                         <Link
                                             className="place-link"
-                                            to={{
-                                                pathname: `${place.path}/${place.id}`,
-                                            }}
+                                            to={{pathname: `/fclAlanları${place.path}/${place.id}`}}
                                         >
                                             <div className="cards-button-container">
 
                                             <div className="cards-buttons">
                                                 <button className="cards-blob-btn">
-                                                    İletişim
+                                                    Keşfet
                                                     <span className="cards-blob-btn__inner">
                                                         <span className="cards-blob-btn__blobs">
                                                             <span className="cards-blob-btn__blob"></span>

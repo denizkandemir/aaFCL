@@ -60,7 +60,7 @@ const Sidebar = ({ isSidebarOpen, setSidebarOpen }) => {
                                 LearningPlaces.map((place) => (
                                     <div key={place.id} >
                                         <Link className="navbar-link " onClick={linkHandler} to={{
-                                            pathname: `${place.path}/${place.id}`,
+                                            pathname: `/fclAlanları${place.path}/${place.id}`,
                                         }} >
                                             <div className="sidebar-learning-link-svg-container">
                                                 <p className="sidebar-accordion-text">

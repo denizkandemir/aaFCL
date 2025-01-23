@@ -46,4 +46,8 @@
     overflow: visible;
 
   }
+
   
+  .d-none {
+    display: none;
+  }

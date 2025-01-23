@@ -34,7 +34,7 @@ const HeaderNavbar = () => {
                                 {
                                     LearningPlaces.map((place) => (
                                         <Link key={place.id} to={{
-                                            pathname: `${place.path}/${place.id}`,
+                                            pathname: `/fclAlanları${place.path}/${place.id}`,
                                         }}
                                             className="learning-link"
                                         >
@@ -50,7 +50,6 @@ const HeaderNavbar = () => {
                     </div>
                     <Link className="link-p" to={"/etkinliklerimiz"}><li className="headerNavbar-link"> Etkinliklerimiz </li></Link>
                     <Link className="link-p" to={"/iletişim"}><li className="headerNavbar-link"> İletişim  </li></Link>
-                    {/* <li className="headerNavbar-link"></li> */}
                 </ul>
             </div>
         </div>

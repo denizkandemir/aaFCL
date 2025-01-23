@@ -6,10 +6,10 @@ import "./StudyPlacesPage.scss"
 
 const StudyPlacesPage = () => {
 
-  const [isSlideOpen, setSlideOpen] = useState(false);
+  const [isFclSlideOpen, setFclSlideOpen] = useState(false);
   const root = document.querySelector("#root");
 
-  if (isSlideOpen) {
+  if (isFclSlideOpen) {
     document.body.classList.add("no-scroll");
     root.classList.add("no-scroll");
   } else {
@@ -26,10 +26,10 @@ const StudyPlacesPage = () => {
     <>
       <div
         className={"study-places-page-container"}>
-        <div className={isSlideOpen
+        <div className={isFclSlideOpen
           ? "learning-places-dark-open"
           : "learning-places-dark-close"}></div>
-        <FCLPlaces isSlideOpen={isSlideOpen} setSlideOpen={setSlideOpen} />
+        <FCLPlaces isFclSlideOpen={isFclSlideOpen} setFclSlideOpen={setFclSlideOpen} />
       </div>
     </>
   )
