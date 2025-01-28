@@ -1,6 +1,6 @@
 import "./Login.scss";
-// import loginImg from "/şuaafcl-school.jpg";
 import loginImg from "/aaSchool.jpg";
+
 
 const Login = () => {
     return(

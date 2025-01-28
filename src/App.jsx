@@ -8,6 +8,7 @@ import StudyPlacesPage from './Pages/StudyPlaces/StudyPlacesPage';
 import FCLPage from './Pages/FCLPage';
 import EventInfoPage from './Pages/EventsInfoPage/EventInfoPage';
 import LoginPage from './Pages/LoginPage';
+import AdminPage from './Pages/AdminPage';
 
 function App() {
 
@@ -27,6 +28,7 @@ function App() {
               <Route path=":path/:routeId" element={<EventInfoPage />} />
             </Route>
             <Route path="/login" element={<LoginPage/>}/>
+            <Route path="/admin" element={<AdminPage/>}/>
           </Route>
         </Routes>
       </Router>
