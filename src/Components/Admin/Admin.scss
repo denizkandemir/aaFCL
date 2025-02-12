@@ -1,6 +1,6 @@
 @use "../styles/variables" as vars;
 
-.admin-events-container {
+.admin-admins-container {
     padding: 80px 100px;
   
     @media(max-width:1370px) {
@@ -8,13 +8,13 @@
       padding-bottom: 60px;
     }
   
-    .event-cards-content-container {
+    .admin-cards-content-container {
       max-width: 1230px;
       margin-left: auto;
       margin-right: auto;
     }
   
-    .event-cards-title-container {
+    .admin-cards-title-container {
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -22,7 +22,7 @@
   
     }
   
-    .event-cards-p {
+    .admin-cards-p {
       color: rgba(0, 0, 0, 0.8);
       font-family: vars.$primary-font;
       font-size: 20px;
@@ -41,7 +41,7 @@
       }
     }
   
-    .event-cards-title {
+    .admin-cards-title {
       color: vars.$blue-color4;
       font-family: vars.$primary-font;
       font-size: 45px;
@@ -50,7 +50,7 @@
       font-weight: 700;
     }
   
-    .event-cards-data-container {
+    .admin-cards-data-container {
       display: grid;
       align-items: stretch;
       grid-template-columns: repeat(auto-fill, 360px);
@@ -68,7 +68,7 @@
     }
   }
   
-  .event-ınfo-card-wrapper {
+  .admin-ınfo-card-wrapper {
     background-color: white;
     box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
     border-radius: 10px;
@@ -79,15 +79,15 @@
       width: 320px;
     }
   
-    .event-ınfo-content-container {
+    .admin-ınfo-content-container {
       padding: 20px 15px;
     }
   
-    .event-ınfo-img-container {
+    .admin-ınfo-img-container {
       width: 100%;
     }
   
-    .event-ınfo-info-img {
+    .admin-ınfo-info-img {
       object-fit: cover;
       width: 100%;
       border-top-left-radius: 10px;
@@ -95,7 +95,7 @@
       max-height: 200px;
     }
   
-    .event-ınfo-text-container {
+    .admin-ınfo-text-container {
   
       display: flex;
       flex-direction: column;
@@ -107,7 +107,7 @@
         gap: 10px;
       }
   
-      .event-ınfo-p {
+      .admin-ınfo-p {
         font-family: vars.$primary-font;
         color: vars.$blue-color4;
         font-size: 24px;
@@ -120,7 +120,7 @@
         -webkit-box-orient: vertical; 
       }
   
-      .event-ınfo-text {
+      .admin-ınfo-text {
         font-family: vars.$primary-font;
         color: rgba(0, 0, 0, 0.8);
         font-size: 19px;
@@ -137,13 +137,23 @@
       }
     }
   
-    .event-ınfo-button-container {
+    .admin-ınfo-button-container {
       display: flex;
       justify-content: space-between;
       width: 100%;
       align-items: center;
+
+      .admin-icons-container {
+        display: flex;
+        gap: 10px;
+      }
+      .admin-icon-img {
+        max-width: 50px;
+        object-fit: contain;
+        cursor: pointer;
+      }
   
-      .event-ınfo-logo-container {
+      .admin-ınfo-logo-container {
         display: flex;
         gap: 5px;
   
@@ -165,7 +175,7 @@
             font-size: 8px;
           }
   
-          .event-ınfo-logo {
+          .admin-ınfo-logo {
             object-fit: contain;
             max-width: 40px;
           }
@@ -174,7 +184,7 @@
   
       }
   
-      .event-ınfo-button {
+      .admin-ınfo-button {
         background-color: vars.$blue-color2;
         // background-color: black;
         color: white;
