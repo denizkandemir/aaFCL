@@ -4,6 +4,8 @@ import fclLogo from "/fcl-logo.png";
 import withFadeInOnScroll from "../../hooks/animation/Animation";
 import editIcon from "/edit.png";
 import deleteIcon from "/delete.png";
+import addEventImg3 from "/aafcl-add3.png";
+import { Link } from "react-router-dom";
 
 const Admin = () => {
 
@@ -35,7 +37,9 @@ const Admin = () => {
                                             </div>
                                         </div>
                                         <div className="admin-icons-container">
-                                            <img src={editIcon} alt="" className="admin-icon-img" />
+                                            <Link className="event-ınfo-link" to={{ pathname: `/etkinlikDüzenle${admin.path}/${admin.id}` }}>
+                                                <img src={editIcon} alt="" className="admin-icon-img" />
+                                            </Link>
                                             <img src={deleteIcon} alt="" className="admin-icon-img" />
                                         </div>
                                     </div>
@@ -43,10 +47,13 @@ const Admin = () => {
                             </div>
                         ))
                     }
-                    <div className="add-admin-container">
-
-                    </div>
                 </div>
+                <Link className="add-event-link" to={"/etkinlikEkle"}>
+                    <div className="add-admin-container fade-in">
+                        <img src={addEventImg3} alt="" className="event-add-img" />
+                        <p className="event-add-p"> Etkinlik Ekle </p>
+                    </div>
+                </Link>
             </div>
         </>
     )

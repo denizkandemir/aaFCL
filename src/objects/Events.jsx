@@ -10,6 +10,15 @@ import eventImg9 from "/fclEvent12.jpg"
 import eventImg10 from "/fclEvent4.jpg"
 import eventImg21 from "/fclEvent21.jpg"
 import eventImg22 from "/fclEvent22.jpg"
+import eventImg31 from "/aafcl-event31.jpg"
+import eventImg32 from "/aafcl-event32.jpg"
+import eventImg33 from "/aafcl-event33.jpg"
+import eventImg34 from "/aafcl-event34.jpg"
+import eventImg35 from "/aafcl-event35.jpg"
+import eventImg36 from "/aafcl-event36.jpg"
+import eventImg37 from "/aafcl-event37.jpg"
+import eventImg38 from "/aafcl-event38.jpg"
+import eventImg39 from "/aafcl-event39.jpg"
 
 
 const Events = [
@@ -48,6 +57,27 @@ const Events = [
         text:"İzmir İl Milli Eğitim Müdürlüğü Erasmus+ Okul Eğitimi Akreditasyonu öncülüğünde, 3 Ocak 2025 tarihinde Şehit Uzman Çavuş Ali AKDOĞAN İlkokulunda FCL elçisi Mesut ÜSTÜN tarafından konsorsiyum ortaklarına yönelik kapsamlı bir eğitim verildi.",
         text2:"Eğitimde, yenilikçi öğrenme alanlarının temelinde yatan pedagojik yaklaşımlar, eğitimde teknoloji entegrasyonu, yenilikçi değerlendirme yöntemleri ve teknoloji odaklı öğrenme senaryoları gibi önemli konular ele alındı. Teorik bilgilendirmelerin ardından katılımcılar, örnek bir öğrenme senaryosu hazırlayarak bu senaryoyu uygulama fırsatı buldu.",
         text3:"Bu etkinlik, İzmir İl Milli Eğitim Müdürlüğü Erasmus+ Okul Eğitimi Akreditasyonunun geçtiğimiz Eylül ayında konsorsiyum ortaklarımıza yönelik davet ettiği FCL uzmanı Emma Abbate tarafından verilen üç günlük eğitimin bir devamı niteliğindedir.",
+    },
+
+    {
+        id:3,
+        imgs: [
+            { img: eventImg31, id: 1 },
+            { img: eventImg32, id: 2 },
+            { img: eventImg33, id: 3 },
+            { img: eventImg34, id: 4 },
+            { img: eventImg35, id: 5 },
+            { img: eventImg36, id: 6 },
+            { img: eventImg37, id: 7 },
+            { img: eventImg38, id: 8 },
+            { img: eventImg39, id: 9 },
+        ],
+        cardImg:eventImg31,
+        path:"/anasınıfıkodlamaeğitimi",
+        title:"FCL’de Kodlama ve Zeka Oyunları",
+        text:"Anasınıfı öğrencileri, FCL (Future Classroom Lab) sınıfında robotik kodlama dersleriyle teknoloji dünyasına ilk adımlarını attılar. Bu derslerde öğrenciler, hem robotları hem de bilgisayarları kullanarak temel kodlama becerilerini öğreniyorlar.",
+        text2:"Robotik kodlama çalışmalarının yanı sıra, öğrenciler geliştirme alanında akıl ve zeka oyunlarıyla da buluşuyor. Bir grup öğrenci kodlama yaparken, diğer grup zeka oyunları oynayarak zihinsel becerilerini geliştiriyor. Bu oyunlar, çocukların stratejik düşünme, odaklanma ve mantık yürütme yeteneklerini güçlendiriyor.",
+        text3:"FCL sınıfı, öğrencilere çok yönlü bir öğrenme ortamı sunuyor. Bu sınıfta, robotik kodlama ve zeka oyunları gibi farklı aktiviteler bir arada yürütülerek, öğrencilerin hem teknolojik hem de zihinsel becerileri aynı anda geliştiriliyor. Bu yaklaşım, çocukların öğrenme sürecini daha eğlenceli ve etkili hale getiriyor. Ayrıca, erken yaşta edindikleri bu beceriler, gelecekteki eğitim hayatlarına da sağlam bir temel oluşturuyor. FCL sınıfı, öğrencilerin keşfetme, öğrenme ve gelişme süreçlerine büyük katkı sağlıyor.",
     },
 ];
 

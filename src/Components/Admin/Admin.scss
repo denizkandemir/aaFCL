@@ -1,200 +1,236 @@
 @use "../styles/variables" as vars;
 
 .admin-admins-container {
-    padding: 80px 100px;
-  
-    @media(max-width:1370px) {
-      padding: 45px 30px;
-      padding-bottom: 60px;
-    }
-  
-    .admin-cards-content-container {
-      max-width: 1230px;
-      margin-left: auto;
-      margin-right: auto;
-    }
-  
-    .admin-cards-title-container {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-  
-    }
-  
-    .admin-cards-p {
-      color: rgba(0, 0, 0, 0.8);
-      font-family: vars.$primary-font;
-      font-size: 20px;
-      text-align: center;
-      margin-top: 20px;
-      margin-bottom: 45px;
-      font-weight: 500;
-      max-width: 900px;
-      word-spacing: 0.8px;
-  
-      @media only screen and (max-width: 550px) {
-        text-align: left;
-        font-size: 19px;
-        margin: 15px 0;
-        margin-bottom: 25px;
-      }
-    }
-  
-    .admin-cards-title {
-      color: vars.$blue-color4;
-      font-family: vars.$primary-font;
-      font-size: 45px;
-      line-height: 52px;
-      text-align: center;
-      font-weight: 700;
-    }
-  
-    .admin-cards-data-container {
-      display: grid;
-      align-items: stretch;
-      grid-template-columns: repeat(auto-fill, 360px);
-      gap: 60px;
-      flex-wrap: wrap;
-      position: relative;
-      z-index: 10;
-  
-      @media only screen and (max-width: 840px) {
-        justify-content: center;
-      }
-      @media only screen and (max-width: 420px) {
-        grid-template-columns: repeat(auto-fill, 320px);
-      }
-    }
+  padding: 80px 100px;
+  padding-bottom: 40px;
+
+
+  @media(max-width:1370px) {
+    padding: 45px 30px;
+    padding-bottom: 40px;
   }
-  
-  .admin-ınfo-card-wrapper {
-    background-color: white;
-    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
-    border-radius: 10px;
-    width: 360px;
+
+  .admin-cards-content-container {
+    max-width: 1230px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .admin-cards-title-container {
     display: flex;
     flex-direction: column;
-    @media only screen and (max-width: 420px) {
-      width: 320px;
-    }
-  
-    .admin-ınfo-content-container {
-      padding: 20px 15px;
-    }
-  
-    .admin-ınfo-img-container {
-      width: 100%;
-    }
-  
-    .admin-ınfo-info-img {
-      object-fit: cover;
-      width: 100%;
-      border-top-left-radius: 10px;
-      border-top-right-radius: 10px;
-      max-height: 200px;
-    }
-  
-    .admin-ınfo-text-container {
-  
-      display: flex;
-      flex-direction: column;
-      align-items: stretch;
-      gap: 15px;
-      margin-bottom: 30px;
-      @media only screen and (max-width: 420px) {
-        margin-bottom: 20px;
-        gap: 10px;
-      }
-  
-      .admin-ınfo-p {
-        font-family: vars.$primary-font;
-        color: vars.$blue-color4;
-        font-size: 24px;
-        font-weight: 600;
-        overflow: hidden;
-        text-overflow: ellipsis;
-        -webkit-line-clamp: 1;
-        line-clamp: 1;
-        display: -webkit-box;
-        -webkit-box-orient: vertical; 
-      }
-  
-      .admin-ınfo-text {
-        font-family: vars.$primary-font;
-        color: rgba(0, 0, 0, 0.8);
-        font-size: 19px;
-        font-weight: 500;
-        overflow: hidden;
-        text-overflow: ellipsis;
-        -webkit-line-clamp: 4;
-        line-clamp: 4;
-        display: -webkit-box;
-        -webkit-box-orient: vertical;
-        @media only screen and (max-width: 420px) {
-          font-size: 17px;
-        }
-      }
-    }
-  
-    .admin-ınfo-button-container {
-      display: flex;
-      justify-content: space-between;
-      width: 100%;
-      align-items: center;
+    justify-content: center;
+    align-items: center;
 
-      .admin-icons-container {
-        display: flex;
-        gap: 10px;
-      }
-      .admin-icon-img {
-        max-width: 50px;
-        object-fit: contain;
-        cursor: pointer;
-      }
-  
-      .admin-ınfo-logo-container {
-        display: flex;
-        gap: 5px;
-  
-        .fcl-logo-texts-container {
-          display: flex;
-          gap: 5px;
-          align-items: center;
-  
-          .fcl-text {
-            font-weight: 500;
-            font-size: 10px;
-  
-          }
-  
-          .fcl-bottom-text {
-            // color: #5999cf;
-            color: #04bce8;
-            margin-top: 1px;
-            font-size: 8px;
-          }
-  
-          .admin-ınfo-logo {
-            object-fit: contain;
-            max-width: 40px;
-          }
-        }
-  
-  
-      }
-  
-      .admin-ınfo-button {
-        background-color: vars.$blue-color2;
-        // background-color: black;
-        color: white;
-        font-family: vars.$primary-font;
-        font-size: 16px;
-        font-weight: 400;
-        cursor: pointer;
-        border: none;
-        border-radius: 5px;
+  }
+
+  .admin-cards-p {
+    color: rgba(0, 0, 0, 0.8);
+    font-family: vars.$primary-font;
+    font-size: 20px;
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 45px;
+    font-weight: 500;
+    max-width: 900px;
+    word-spacing: 0.8px;
+
+    @media only screen and (max-width: 550px) {
+      text-align: left;
+      font-size: 19px;
+      margin: 15px 0;
+      margin-bottom: 25px;
+    }
+  }
+
+  .admin-cards-title {
+    color: vars.$blue-color4;
+    font-family: vars.$primary-font;
+    font-size: 45px;
+    line-height: 52px;
+    text-align: center;
+    font-weight: 700;
+  }
+
+  .admin-cards-data-container {
+    display: grid;
+    align-items: stretch;
+    grid-template-columns: repeat(auto-fill, 360px);
+    gap: 60px;
+    flex-wrap: wrap;
+    position: relative;
+    z-index: 10;
+
+    @media only screen and (max-width: 840px) {
+      justify-content: center;
+    }
+
+    @media only screen and (max-width: 420px) {
+      grid-template-columns: repeat(auto-fill, 320px);
+    }
+  }
+
+  .add-admin-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    margin-top: 70px;
+    gap: 20px;
+
+    .event-add-img{
+      object-fit: contain;
+      max-width: 150px;
+      cursor: pointer;
+    }
+
+    .event-add-p {
+      font-family: vars.$primary-font;
+      font-size: 30px;
+      font-weight: 600;
+      color: vars.$blue-color;
+      cursor: pointer;
+    }
+
+ 
+  }
+
+  .add-event-link {
+    text-decoration: none;
+  }
+}
+
+.admin-ınfo-card-wrapper {
+  background-color: white;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+  border-radius: 10px;
+  width: 360px;
+  display: flex;
+  flex-direction: column;
+
+  @media only screen and (max-width: 420px) {
+    width: 320px;
+  }
+
+  .admin-ınfo-content-container {
+    padding: 20px 15px;
+  }
+
+  .admin-ınfo-img-container {
+    width: 100%;
+  }
+
+  .admin-ınfo-info-img {
+    object-fit: cover;
+    width: 100%;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    max-height: 200px;
+  }
+
+  .admin-ınfo-text-container {
+
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 15px;
+    margin-bottom: 30px;
+
+    @media only screen and (max-width: 420px) {
+      margin-bottom: 20px;
+      gap: 10px;
+    }
+
+    .admin-ınfo-p {
+      font-family: vars.$primary-font;
+      color: vars.$blue-color4;
+      font-size: 24px;
+      font-weight: 600;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      -webkit-line-clamp: 1;
+      line-clamp: 1;
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+    }
+
+    .admin-ınfo-text {
+      font-family: vars.$primary-font;
+      color: rgba(0, 0, 0, 0.8);
+      font-size: 19px;
+      font-weight: 500;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      -webkit-line-clamp: 4;
+      line-clamp: 4;
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+
+      @media only screen and (max-width: 420px) {
+        font-size: 17px;
       }
     }
   }
-  
+
+  .admin-ınfo-button-container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    align-items: center;
+
+    .admin-icons-container {
+      display: flex;
+      gap: 10px;
+    }
+
+    .admin-icon-img {
+      max-width: 50px;
+      object-fit: contain;
+      cursor: pointer;
+    }
+
+    .admin-ınfo-logo-container {
+      display: flex;
+      gap: 5px;
+
+      .fcl-logo-texts-container {
+        display: flex;
+        gap: 5px;
+        align-items: center;
+
+        .fcl-text {
+          font-weight: 500;
+          font-size: 10px;
+
+        }
+
+        .fcl-bottom-text {
+          // color: #5999cf;
+          color: #04bce8;
+          margin-top: 1px;
+          font-size: 8px;
+        }
+
+        .admin-ınfo-logo {
+          object-fit: contain;
+          max-width: 40px;
+        }
+      }
+
+
+    }
+
+    .admin-ınfo-button {
+      background-color: vars.$blue-color2;
+      // background-color: black;
+      color: white;
+      font-family: vars.$primary-font;
+      font-size: 16px;
+      font-weight: 400;
+      cursor: pointer;
+      border: none;
+      border-radius: 5px;
+    }
+  }
+}
