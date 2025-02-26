@@ -1,0 +1,90 @@
+@use "../styles/variables" as vars;
+
+
+.add-event-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 50px 20px;
+    background-color: vars.$grey-color;
+
+    .add-event-form-title-container {
+        background-color: white;
+        box-shadow: vars.$card-box-shadow;
+        border-radius: 5px;
+        padding: 10px 0;
+        width: 80%;
+
+
+
+        .add-event-title-container {
+            width: 100%;
+            border-bottom: 2px vars.$grey-color solid;
+            padding: 15px;
+
+            .add-event-title {
+                font-family: vars.$primary-font;
+                //   color: rgba(0,0,0,0.75);
+                color: vars.$dark-grey;
+                font-size: 25px;
+                font-weight: 700;
+
+            }
+        }
+
+        .add-event-inputs-form {
+            padding: 30px;
+
+            .input-title {
+                font-family: vars.$primary-font;
+                font-size: 18px;
+                font-weight: 500;
+                color: vars.$dark-grey;
+            }
+
+            .add-event-input-container {
+                display: flex;
+                flex-direction: column;
+                gap: 12px; 
+                margin-bottom: 12px;
+
+                .add-event-input {
+                    border: 1px solid vars.$lightGrey-color3;
+                    padding: 6px;
+                    border-radius: 5px;
+                }
+            }
+
+
+            .add-img-button-container {
+                border-radius: 5px;
+                border: 1px solid vars.$grey-color;
+                padding: 6px;
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                justify-content: center;
+                cursor: pointer;          
+                max-width: 170px;
+
+                .add-ımg-ıcon {
+                    object-fit: contain;
+                    max-width: 40px;
+                }
+            }
+
+            .image-preview-container {
+                display: flex;
+                gap: 30px;
+                flex-wrap: wrap;
+
+                .add-event-image {
+                    object-fit: contain;
+                    max-width: 200px;
+                    max-height: 100px;
+                }
+            }
+        }
+    }
+
+}
