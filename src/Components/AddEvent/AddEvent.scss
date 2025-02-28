@@ -5,7 +5,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 50px 20px;
+    padding: 70px 20px;
+    padding-bottom: 50px;
     background-color: vars.$grey-color;
 
     .add-event-form-title-container {
@@ -14,6 +15,7 @@
         border-radius: 5px;
         padding: 10px 0;
         width: 80%;
+        max-width: 1150px;
 
         .event-save-button-container {
             display: flex;

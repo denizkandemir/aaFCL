@@ -52,9 +52,9 @@
   }
 
   .event-cards-data-container {
-    display: grid;
+    display: flex;
     align-items: stretch;
-    grid-template-columns: repeat(auto-fill, 360px);
+    justify-content: center;
     gap: 60px;
     flex-wrap: wrap;
     position: relative;
