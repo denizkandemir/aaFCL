@@ -9,17 +9,20 @@ export function Layout() {
     const location = useLocation();
     const isHomePage = location.pathname === "/";
 
+    const isLogin = location.pathname === "/login";
 
     return (
         <>
          <ScrollToTop/>
              {
-                !isHomePage && <Navbar/>
+                !isHomePage && !isLogin && <Navbar/>
             }
             <main>
                 <Outlet />
             </main>
-            <Footer />
+            {
+              !isLogin && <Footer />
+            }
         </>
     )
 }

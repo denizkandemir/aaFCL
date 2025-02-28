@@ -7,6 +7,10 @@ import EventsPage from './Pages/EventsPage';
 import StudyPlacesPage from './Pages/StudyPlaces/StudyPlacesPage';
 import FCLPage from './Pages/FCLPage';
 import EventInfoPage from './Pages/EventsInfoPage/EventInfoPage';
+import LoginPage from './Pages/LoginPage';
+import AdminPage from './Pages/AdminPage';
+import AddEventPage from './Pages/AddEventPage';
+import EditEventPage from './Pages/EditEventPage';
 
 function App() {
 
@@ -24,6 +28,12 @@ function App() {
             </Route>
             <Route path="/etkinlikler">
               <Route path=":path/:routeId" element={<EventInfoPage />} />
+            </Route>
+            <Route path="/login" element={<LoginPage/>}/>
+            <Route path="/admin" element={<AdminPage/>}/>
+            <Route path="/etkinlikEkle" element={<AddEventPage />}/>
+            <Route path="/etkinlikDüzenle">
+              <Route path=":path/:routeId" element={<EditEventPage />} />
             </Route>
           </Route>
         </Routes>
