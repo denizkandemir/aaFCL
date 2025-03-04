@@ -22,8 +22,6 @@ const EventsContent = () => {
                 console.error("Error fetching events:", error);
                 setLoading(false);
             });
-
-
     }, []);
 
     const [fadeInReady, setFadeInReady] = useState(false);
