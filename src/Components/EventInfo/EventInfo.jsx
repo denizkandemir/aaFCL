@@ -7,47 +7,48 @@ import fclLogo from "/fcl-logo.png";
 import { useState, useEffect } from "react";
 import eventsImg from "/learningPlaces6.png";
 import Banner from "../Banner/Banner";
-import withFadeInOnScroll from "../../hooks/animation/Animation";
 
 const EventInfo = ({ isEventSlideOpen, setEventSlideOpen }) => {
 
     const { routeId } = useParams();
 
-    const [loading, setLoading] = useState(true);
-    const [event, setEvent] = useState({});
+    const API_URL = import.meta.env.REACT_APP_API_URL;
+
+    const [event, setEvent] = useState(null);
+    const [loadingEvent, setLoadingEvent] = useState(true);
     const [screenSize, setScreenSize] = useState({ width: window?.innerWidth || 1920 });
+    const [fadeInReady, setFadeInReady] = useState(false);
     const eventSlideRef = useRef(null);
 
     useEffect(() => {
-        setLoading(true);
+        let isMounted = true;
+        setLoadingEvent(true);
 
-        fetch("http://localhost:5000/api/events")
-            .then((res) => res.json())
-            .then((data) => {
-                const selectedEvent = data.find((event) => parseInt(event.id) === parseInt(routeId));
-                setEvent(selectedEvent || {});
-                console.log(data)
-                console.log(selectedEvent)
-                // setLoading(false);
-            })
-            .catch((error) => {
+        (async () => {
+            try {
+                const res = await fetch("http://localhost:5000/api/events");
+                const data = await res.json();
+                const selectedEvent = data.find((ev) => parseInt(ev.id) === parseInt(routeId));
+
+                if (isMounted) {
+                    setEvent(selectedEvent || {});
+                    setLoadingEvent(false);
+                }
+            } catch (error) {
                 console.error("Error fetching events:", error);
-                // setLoading(false);
-            });
+            }
+        })();
+
+        return () => { isMounted = false };
     }, [routeId]);
 
 
-    const [fadeInReady, setFadeInReady] = useState(false);
-
     useEffect(() => {
-        if (!loading) {
+        if (!loadingEvent) {
             setFadeInReady(true);
         }
-    }, [loading]);
+    }, [loadingEvent]);
 
-    // if (loading) {
-    //     return <div>Loading events...</div>;
-    // }
 
     useEffect(() => {
         const handleResize = () => {
@@ -61,18 +62,6 @@ const EventInfo = ({ isEventSlideOpen, setEventSlideOpen }) => {
         return () => window.removeEventListener('resize', handleResize);
     }, []);
 
-    const openEventSlide = () => {
-        if (screenSize.width > 1200 || screenSize.width < 600) {
-            setEventSlideOpen(true);
-        }
-        else {
-            closeEventSlide();
-        }
-    };
-
-    const closeEventSlide = () => {
-        setEventSlideOpen(false)
-    };
 
     useEffect(() => {
         const handleClickOutside = (event) => {
@@ -90,7 +79,28 @@ const EventInfo = ({ isEventSlideOpen, setEventSlideOpen }) => {
         };
     }, [isEventSlideOpen]);
 
-    withFadeInOnScroll();
+
+
+    const openEventSlide = () => {
+        if (screenSize.width > 1200 || screenSize.width < 600) {
+            setEventSlideOpen(true);
+        }
+        else {
+            closeEventSlide();
+        }
+    };
+
+    const closeEventSlide = () => {
+        setEventSlideOpen(false)
+    };
+
+    if (loadingEvent) {
+        return <div>Loading events...</div>;
+    }
+
+    if (!event) {
+        return <div>No event found</div>;
+    }
 
     return (
         <>
@@ -122,13 +132,15 @@ const EventInfo = ({ isEventSlideOpen, setEventSlideOpen }) => {
                                     : "event-slide-container "
                             }
                         >
-                            <Slide containerRef={eventSlideRef} openSlide={openEventSlide} SlideImgs={event.imgs} id={event.id} key={event.id} isSlideOpen={isEventSlideOpen} container={"event-slide-content-container fade-in"} imgClass={"event-img"} />
+                            {/* <Slide containerRef={eventSlideRef} openSlide={openEventSlide} SlideImgs={event.imgs} id={event.id} key={event.id} isSlideOpen={isEventSlideOpen} container={"event-slide-content-container fade-in"} imgClass={"event-img"} /> */}
                         </div>
                     </div>
                     <div className="event-text-container">
-                        <p className={`event-p fade-in ${fadeInReady ? 'show' : ''} `} > {event.text} </p>
-                        <p className={`event-p fade-in ${fadeInReady ? 'show' : ''} `} > {event.text2} </p>
-                        <p className={`event-p fade-in ${fadeInReady ? 'show' : ''} `} > {event.text3} </p>
+                        {
+                            event.texts.map((text,index) => (
+                              <p key={index} className={`event-p fade-in ${fadeInReady ? 'show' : ''} `} > {text} </p>
+                            ))
+                        }
                     </div>
                 </div>
             </div>
