@@ -35,7 +35,7 @@ const EventsContent = () => {
     withFadeInOnScroll(); 
     
     if (loading) {
-        return <div>Loading events...</div>;
+        return <div> Etkinlikler Yükleniyor ... </div>;
     }
 
     return (

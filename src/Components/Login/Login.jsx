@@ -4,20 +4,42 @@ import { useEffect, useState } from "react";
 
 const Login = () => {
 
-  const [adminUser,setAdminUser] = useState();
+  const [inputUsername, setInputUsername] = useState();
+  const [inputPassword, setInputPassword] = useState();
 
-  useEffect(() => {
-    fetch("http://localhost:5000/api/auth")
-      .then((res) => res.json())
-      .then((data) => {
-        setAdminUser(data);
-        console.log(data);
-      })
-      .catch((error) => {
-        console.error("Error fetching events:", error);
-
+  const loginUser = async () => {
+    try {
+      const response = await fetch("http://localhost:5000/api/auth/login", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          username: inputUsername,
+          password: inputPassword,
+        }),
       });
-  }, []);
+
+  
+      const data = await response.json();
+      if (response.ok) {
+        console.log("Giriş Başarılı!", data);
+      } else {
+        window.Error(data.message);
+      }
+    } catch (error) {
+      console.error("Giriş hatası:", error);
+      window.Error("Bir hata oluştu");
+    }
+  };
+  
+  const setUsername = (e) => {
+    setInputUsername(e.target.value);
+  }
+
+  const setPassword = (e) => {
+    setInputPassword(e.target.value);
+  }
 
   return (
     <>
@@ -29,13 +51,13 @@ const Login = () => {
           <h3 className="login-title"> Hoşgeldiniz </h3>
           <div className="login-input-container">
             <p className="login-input-p"> Kullanıcı Adı </p>
-            <input type="text" className="login-input" />
+            <input type="text" onChange={(e) => setUsername(e)} className="login-input" />
           </div>
           <div className="login-input-container">
             <p className="login-input-p"> Şifre </p>
-            <input type="text" className="login-input" />
+            <input type="text" onChange={(e) => setPassword(e)}  className="login-input" />
           </div>
-          <button className="login-button"> Giriş Yap </button>
+          <button onClick={() => loginUser()} className="login-button"> Giriş Yap </button>
         </div>
       </div>
     </>
