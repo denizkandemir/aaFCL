@@ -1,11 +1,13 @@
 import "./Login.scss";
 import loginImg from "/aaSchool.jpg";
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const Login = () => {
 
   const [inputUsername, setInputUsername] = useState();
   const [inputPassword, setInputPassword] = useState();
+  const navigate = useNavigate();
 
   const loginUser = async () => {
     try {
@@ -20,12 +22,14 @@ const Login = () => {
         }),
       });
 
-  
       const data = await response.json();
       if (response.ok) {
         console.log("Giriş Başarılı!", data);
+        navigate("/admin");
+        localStorage.setItem("isLogin" , JSON.stringify(true));
       } else {
         window.Error(data.message);
+        alert("Giriş Bilgileri Hatalı")
       }
     } catch (error) {
       console.error("Giriş hatası:", error);

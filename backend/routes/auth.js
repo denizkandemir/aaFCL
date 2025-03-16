@@ -5,20 +5,23 @@ const router = express.Router();
 
 router.post("/login", async (req, res) => {
   const { username, password } = req.body;
-  
-    
-  try {
-    console.log(password);
 
+  if (!password) {
+    return res.status(400).json({ message: "Password is required" });
+  }
+
+  try {
     const adminUser = await Admin.findOne({ username });
 
-    console.log(adminUser.password)
     if (!adminUser) {
       return res.status(404).json({ message: "Kullanıcı bulunamadı" });
     }
 
+    console.log("Frontend password:", password);
+    console.log("Stored hashed password:", adminUser.password);
+
     const passwordMatch = await bcrypt.compare(password, adminUser.password);
-    console.log(passwordMatch)
+
     if (!passwordMatch) {
       return res.status(401).json({ message: "Yanlış şifre" });
     }
