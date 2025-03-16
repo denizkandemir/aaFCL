@@ -7,10 +7,16 @@ import HamburgerMenu from "../../svgs/HamburgerMenu";
 import { useState } from "react";
 import Sidebar from "../Sidebar/Sidebar";
 import LearningPlaces from "../../objects/LearningPlaces";
+import { useLocation } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import LeftArrow from "../../svgs/LeftArrow";
+import adminLogo from "/şuaafcl-school.jpg";
 
 const Navbar = () => {
 
     const [isSidebarOpen, setSidebarOpen] = useState(false);
+    const location = useLocation();
+    const navigate = useNavigate();
 
     const sidebarOpener = (event) => {
         event.preventDefault();
@@ -27,15 +33,19 @@ const Navbar = () => {
         root.classList.remove("no-scroll");
     }
 
-
     const closeDropdown = () => {
         const dropdown = document.querySelector(".learning-dropdown-container");
         dropdown.classList.add("d-none");
         dropdown.style.pointerEvents = "none";
         setTimeout(() => {
             dropdown.classList.remove("d-none");
-            dropdown.style.pointerEvents = "auto";  
-        }, 1000); 
+            dropdown.style.pointerEvents = "auto";
+        }, 1000);
+    }
+ 
+    const adminLogOut = () => {
+        localStorage.setItem("isLogin" , JSON.stringify(false));
+        navigate("/");
     }
 
     return (
@@ -98,19 +108,33 @@ const Navbar = () => {
                         </div>
                         <Link className="link-p" to={"/etkinliklerimiz"}><li className="navbar-link"> Etkinliklerimiz </li></Link>
                         <Link className="link-p" to={"/iletişim"}><li className="navbar-link"> İletişim  </li></Link>
-                        {/* <li className="navbar-link"></li> */}
                     </ul>
                 </div>
 
                 <div className="navbar-right-logo-container">
                     <img src={okulLogo} className="school-logo" alt="" />
-                    <div className="fcl-logo-texts-container">
-                        <img src={fclLogo} className="fcl-logo" alt="" />
-                        <div className="fcl-texts-container">
-                            <p className="fcl-text"> Future <br /> Classroom Lab </p>
-                            <p className="fcl-bottom-text"> By European Schoolnet </p>
-                        </div>
-                    </div>
+                    {
+                        location.pathname !== "/admin" && (
+                            <div className="fcl-logo-texts-container">
+                                <img src={fclLogo} className="fcl-logo" alt="" />
+                                <div className="fcl-texts-container">
+                                    <p className="fcl-text"> Future <br /> Classroom Lab </p>
+                                    <p className="fcl-bottom-text"> By European Schoolnet </p>
+                                </div>
+                            </div>
+                        )
+                    }
+                    {
+                         location.pathname === "/admin" && (
+                            <div className="fcl-admin-logo-container">
+                                <img src={adminLogo} alt="" className="fcl-admin-logo" />
+                                <div className="admin-dropdown-container">
+                                    <LeftArrow width={30} height={30} fill="black" stroke="black"/>
+                                    <p className="admin-log-out-p" onClick={() => adminLogOut()}> Çıkış Yap </p>
+                                </div>
+                            </div>
+                         )
+                    }
                 </div>
 
                 <div className="hamburger-container" onClick={sidebarOpener}>
