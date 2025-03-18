@@ -2,7 +2,6 @@ import "./Banner.scss"
 import { Link } from "react-router-dom";
 import LeftArrow from "../../svgs/LeftArrow";
 
-
 const Banner = ({ text, img, location, responsiveImg }) => {
     return (
         <div className="banner-img-title-container">

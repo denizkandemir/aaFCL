@@ -7,6 +7,7 @@ import fclLogo from "/fcl-logo.png";
 import { useState, useEffect } from "react";
 import eventsImg from "/learningPlaces6.png";
 import Banner from "../Banner/Banner";
+import withFadeInOnScroll from "../../hooks/animation/Animation";
 
 const EventInfo = ({ isEventSlideOpen, setEventSlideOpen }) => {
 
@@ -79,7 +80,7 @@ const EventInfo = ({ isEventSlideOpen, setEventSlideOpen }) => {
         };
     }, [isEventSlideOpen]);
 
-
+    withFadeInOnScroll();
 
     const openEventSlide = () => {
         if (screenSize.width > 1200 || screenSize.width < 600) {
@@ -108,8 +109,8 @@ const EventInfo = ({ isEventSlideOpen, setEventSlideOpen }) => {
             <div className="event-container">
                 <div key={event.id} className="event-wrapper">
                     <div className="event-titles-container">
-                        <h5 className={`event-little-title fade-in ${fadeInReady ? 'show' : ''} `} > Etkinliklerimiz </h5>
-                        <h3 className={`event-title fade-in ${fadeInReady ? 'show' : ''}`}> {event.title} </h3>
+                        <h5 className={`event-little-title ${fadeInReady ? '' : ''} `} > Etkinliklerimiz </h5>
+                        <h3 className={`event-title ${fadeInReady ? 'show' : 'fade-in'}`}> {event.title} </h3>
                     </div>
                     <div className="slide-dark-title-container ">
                         <div className={isEventSlideOpen ? "slide-title-svg-container-open" : "d-none"}>
@@ -135,10 +136,10 @@ const EventInfo = ({ isEventSlideOpen, setEventSlideOpen }) => {
                             {/* <Slide containerRef={eventSlideRef} openSlide={openEventSlide} SlideImgs={event.imgs} id={event.id} key={event.id} isSlideOpen={isEventSlideOpen} container={"event-slide-content-container fade-in"} imgClass={"event-img"} /> */}
                         </div>
                     </div>
-                    <div className="event-text-container">
+                    <div className={`event-text-container  fade-in  ${fadeInReady ? 'show' : ''} `}>
                         {
                             event.texts.map((text,index) => (
-                              <p key={index} className={`event-p fade-in ${fadeInReady ? 'show' : ''} `} > {text} </p>
+                              <p key={index} className={`event-p fade-in  ${fadeInReady ? 'show' : ''} `} > {text} </p>
                             ))
                         }
                     </div>

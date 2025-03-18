@@ -1,9 +1,11 @@
 import { useEffect } from 'react';
 import "./Animation.scss"
 import { useParams } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 
 const withFadeInOnScroll = (selector = '.fade-in, .fade-in-left, .fade-in-right') => {
   const { routeId } = useParams();
+  const location = useLocation();
 
   useEffect(() => {
     const elements = document.querySelectorAll(selector);
@@ -27,7 +29,7 @@ const withFadeInOnScroll = (selector = '.fade-in, .fade-in-left, .fade-in-right'
 
       return () => observer.disconnect();
     }
-  }, [selector, routeId]);
+  }, [selector, routeId, location]);
 
 };
 

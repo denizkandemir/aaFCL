@@ -9,8 +9,8 @@ import Sidebar from "../Sidebar/Sidebar";
 import LearningPlaces from "../../objects/LearningPlaces";
 import { useLocation } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
-import LeftArrow from "../../svgs/LeftArrow";
 import adminLogo from "/şuaafcl-school.jpg";
+import LogOutArrow from "../../svgs/LogOutArrow";
 
 const Navbar = () => {
 
@@ -129,8 +129,10 @@ const Navbar = () => {
                             <div className="fcl-admin-logo-container">
                                 <img src={adminLogo} alt="" className="fcl-admin-logo" />
                                 <div className="admin-dropdown-container">
-                                    <LeftArrow width={30} height={30} fill="black" stroke="black"/>
-                                    <p className="admin-log-out-p" onClick={() => adminLogOut()}> Çıkış Yap </p>
+                                   <p className="admin-log-out-p" onClick={() => adminLogOut()}> Çıkış Yap </p>
+                                    <div className="admin-log-out-arrow-container">
+                                     <LogOutArrow width={30} height={30} fill="black" stroke="black"/>
+                                    </div>
                                 </div>
                             </div>
                          )
