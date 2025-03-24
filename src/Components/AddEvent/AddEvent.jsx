@@ -9,13 +9,16 @@ const AddEvent = () => {
 
   const handleImageChange = (event) => {
     const files = Array.from(event.target.files);
-    const imageUrls = files.map((file) => URL.createObjectURL(file));
+    const newImages = files.map((file) => ({
+      file: file,
+      preview: URL.createObjectURL(file),
+    }));
 
-    setImages((prevImages) => [...prevImages, ...imageUrls]);
+    setImages((prevImages) => [...prevImages, ...newImages]);
   };
 
   const removeImg = (indexToRemove) => {
-    setImages(images.filter(( _ ,index) => index !== indexToRemove));
+    setImages(images.filter((_, index) => index !== indexToRemove));
   };
 
   const [inputs, setInputs] = useState([""]);
@@ -25,7 +28,7 @@ const AddEvent = () => {
   };
 
   const removeText = (indexToRemove) => {
-    setInputs(inputs.filter(( _ , index) => index !== indexToRemove));
+    setInputs(inputs.filter((_, index) => index !== indexToRemove));
   };
 
   const handleChange = (index, value) => {
@@ -34,6 +37,46 @@ const AddEvent = () => {
     setInputs(newInputs);
   };
 
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    const formData = new FormData();
+    images.forEach((image) => {
+      formData.append("images", image.file); // Append selected files
+    });
+
+    try {
+      const uploadResponse = await fetch("http://localhost:5000/api/upload", {
+        method: "POST",
+        body: formData,
+      });
+
+      const { imageUrls } = await uploadResponse.json();
+
+      const eventData = {
+        title: document.querySelector(".add-event-input").value,
+        texts: inputs,
+        imgs: imageUrls,
+      };
+
+      const saveResponse = await fetch("http://localhost:5000/api/events", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(eventData),
+      });
+
+      if (saveResponse.ok) {
+        alert("Etkinlik başarıyla eklendi!");
+      } else {
+        alert("Bir hata oluştu, lütfen tekrar deneyin.");
+      }
+    } catch (error) {
+      console.error("Error uploading images or saving event:", error);
+      alert("Hata oluştu.");
+    }
+  };
 
   return (
     <div className="add-event-container">
@@ -43,7 +86,7 @@ const AddEvent = () => {
             Etkinlik Ekle
           </h4>
         </div>
-        <form className="add-event-inputs-form">
+        <form onSubmit={() => handleSubmit()} className="add-event-inputs-form">
           <div className="add-event-input-container">
             <label className="input-title" htmlFor="title" >
               Etkinlik Başlığı
@@ -53,7 +96,7 @@ const AddEvent = () => {
 
           <div className="add-event-input-container">
             {inputs.map((value, index) => (
-              <div className="add-event-input-container" style={{position:"relative",}} key={index}>
+              <div className="add-event-input-container" style={{ position: "relative", }} key={index}>
                 <label className="input-title" htmlFor={`title-${index}`}>
                   Etkinlik Açıklaması - {index + 1}
                 </label>
@@ -62,7 +105,7 @@ const AddEvent = () => {
                   className="add-event-input"
                   id={`title-${index}`}
                   value={value}
-                  onChange={(e) => handleChange(index, e.target.value)} 
+                  onChange={(e) => handleChange(index, e.target.value)}
                 />
                 {index > 0 && (
                   <div
@@ -101,9 +144,9 @@ const AddEvent = () => {
             <div className="image-preview-container">
               {images.map((img, index) => (
                 <div key={index} className="event-img-icon-container">
-                  <img  src={img} alt={`Preview ${index}`} className="add-event-image" />
+                  <img src={img.preview} alt={`Preview ${index}`} className="add-event-image" />
                   <img src={deleteIcon} alt="" onClick={() => removeImg(index)} className="event-delete-img-icon" />
-                </div> 
+                </div>
               ))}
             </div>
           </div>
