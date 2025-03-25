@@ -39,41 +39,30 @@ const AddEvent = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
+  
     const formData = new FormData();
     images.forEach((image) => {
-      formData.append("images", image.file); // Append selected files
+      formData.append("images", image.file);
     });
-
+  
+    formData.append("title", document.querySelector(".add-event-input").value);
+    formData.append("texts", JSON.stringify(inputs)); 
+  
     try {
-      const uploadResponse = await fetch("http://localhost:5000/api/upload", {
+      const response = await fetch("http://localhost:5000/api/uploadEvent", {
         method: "POST",
         body: formData,
       });
-
-      const { imageUrls } = await uploadResponse.json();
-
-      const eventData = {
-        title: document.querySelector(".add-event-input").value,
-        texts: inputs,
-        imgs: imageUrls,
-      };
-
-      const saveResponse = await fetch("http://localhost:5000/api/events", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(eventData),
-      });
-
-      if (saveResponse.ok) {
+  
+      const data = await response.json();
+  
+      if (response.ok) {
         alert("Etkinlik başarıyla eklendi!");
       } else {
-        alert("Bir hata oluştu, lütfen tekrar deneyin.");
+        alert("Hata oluştu: " + data.message);
       }
     } catch (error) {
-      console.error("Error uploading images or saving event:", error);
+      console.error("Error uploading event:", error);
       alert("Hata oluştu.");
     }
   };
@@ -86,7 +75,7 @@ const AddEvent = () => {
             Etkinlik Ekle
           </h4>
         </div>
-        <form onSubmit={() => handleSubmit()} className="add-event-inputs-form">
+        <form onSubmit={(e) => handleSubmit(e)} className="add-event-inputs-form">
           <div className="add-event-input-container">
             <label className="input-title" htmlFor="title" >
               Etkinlik Başlığı

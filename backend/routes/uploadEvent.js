@@ -2,6 +2,7 @@ const express = require("express");
 const { CloudinaryStorage } = require("multer-storage-cloudinary");
 const cloudinary = require("cloudinary").v2;
 const multer = require("multer");
+const Event = require("../models/events"); 
 require("dotenv").config();
 
 const router = express.Router();
@@ -22,9 +23,23 @@ const storage = new CloudinaryStorage({
 
 const upload = multer({ storage });
 
-router.post("/upload", upload.array("images"), (req, res) => {
-  const imageUrls = req.files.map((file) => file.path); 
-  res.json({ imageUrls });
+router.post("/upload", upload.array("images"), async (req, res) => {
+  try {
+    const { title, texts } = req.body; 
+    const imageUrls = req.files.map((file) => file.path); 
+
+    const newEvent = new Event({
+      title,
+      texts: JSON.parse(texts), 
+      imgs: imageUrls, 
+    });
+
+    await newEvent.save(); 
+
+    res.json({ message: "Event created successfully!", newEvent });
+  } catch (error) {
+    res.status(500).json({ message: "Error uploading event", error });
+  }
 });
 
 module.exports = router;
