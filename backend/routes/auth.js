@@ -1,6 +1,6 @@
 const express = require("express");
 const bcrypt = require("bcrypt");
-const Admin = require("../models/admin"); // Ensure the correct model import
+const Admin = require("../models/admin"); 
 const router = express.Router();
 
 router.post("/login", async (req, res) => {
@@ -16,9 +16,6 @@ router.post("/login", async (req, res) => {
     if (!adminUser) {
       return res.status(404).json({ message: "Kullanıcı bulunamadı" });
     }
-
-    console.log("Frontend password:", password);
-    console.log("Stored hashed password:", adminUser.password);
 
     const passwordMatch = await bcrypt.compare(password, adminUser.password);
 

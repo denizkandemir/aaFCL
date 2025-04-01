@@ -16,7 +16,7 @@ app.use(cors());
 // Routes
 app.use("/api/auth", require("./routes/auth"));
 app.use("/api/events", require("./routes/events"));
-app.use("/api/uploadImgs", require("./routes/uploadEvent"));
+app.use("/api/uploadEvent", require("./routes/uploadEvent"));
 
 // Server Listening
 const PORT = process.env.PORT || 5000;

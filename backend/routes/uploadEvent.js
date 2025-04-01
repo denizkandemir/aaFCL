@@ -23,16 +23,21 @@ const storage = new CloudinaryStorage({
 
 const upload = multer({ storage });
 
-router.post("/upload", upload.array("images"), async (req, res) => {
+router.post("/", upload.array("images"), async (req, res) => {
   try {
     const { title, texts } = req.body; 
     const imageUrls = req.files.map((file) => file.path); 
+
+    console.log("Uploaded files:", req.files);  // Debugging
+    console.log("Request body:", req.body);
 
     const newEvent = new Event({
       title,
       texts: JSON.parse(texts), 
       imgs: imageUrls, 
     });
+
+    console.log("Uploaded files:", req.files);
 
     await newEvent.save(); 
 

@@ -108,7 +108,7 @@ const AddEvent = () => {
               </div>
             ))}
 
-            <button onClick={addText} className="add-text-button"> Paragraf Ekle </button>
+            <button type="button" onClick={addText} className="add-text-button"> Paragraf Ekle </button>
           </div>
 
           <div className="add-event-input-container">
@@ -125,6 +125,7 @@ const AddEvent = () => {
               id="imageUpload"
               type="file"
               accept="image/*"
+              name="images"
               multiple
               onChange={handleImageChange}
               style={{ display: "none" }}

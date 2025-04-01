@@ -47,7 +47,7 @@ const Admin = () => {
                 <div className="admin-cards-data-container">
                     {
                         events.slice().reverse().map((admin) => (
-                            <div key={admin.id} className={`admin-ınfo-card-wrapper fade-in ${fadeInReady ? 'show' : ''}`}>
+                            <div key={admin._id} className={`admin-ınfo-card-wrapper fade-in ${fadeInReady ? 'show' : ''}`}>
                                 <div className="admin-ınfo-img-container">
                                     <img src={admin.cardImg} className="admin-ınfo-info-img" alt="" />
                                 </div>
