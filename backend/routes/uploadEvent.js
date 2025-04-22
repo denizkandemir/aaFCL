@@ -28,7 +28,7 @@ router.post("/", upload.array("images"), async (req, res) => {
     const { title, texts } = req.body; 
     const imageUrls = req.files.map((file) => file.path); 
 
-    console.log("Uploaded files:", req.files);  // Debugging
+    console.log("Uploaded files:", req.files);  
     console.log("Request body:", req.body);
 
     const newEvent = new Event({

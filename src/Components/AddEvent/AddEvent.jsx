@@ -45,9 +45,13 @@ const AddEvent = () => {
       formData.append("images", image.file);
     });
   
-    formData.append("title", document.querySelector(".add-event-input").value);
+    const title =  document.querySelector(".add-event-title").value;
+
+    const path = title.trim().toLowerCase().replace(/\s+/g, "-"); 
+    formData.append("title", document.querySelector(".add-event-title").value);
+    formData.append("path" ,path);
     formData.append("texts", JSON.stringify(inputs)); 
-  
+
     try {
       const response = await fetch("http://localhost:5000/api/uploadEvent", {
         method: "POST",
@@ -80,7 +84,7 @@ const AddEvent = () => {
             <label className="input-title" htmlFor="title" >
               Etkinlik Başlığı
             </label>
-            <input type="text" className="add-event-input" />
+            <input type="text" className="add-event-title" />
           </div>
 
           <div className="add-event-input-container">
