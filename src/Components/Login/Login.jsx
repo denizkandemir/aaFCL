@@ -59,7 +59,7 @@ const Login = () => {
           </div>
           <div className="login-input-container">
             <p className="login-input-p"> Şifre </p>
-            <input type="text" onChange={(e) => setPassword(e)}  className="login-input" />
+            <input type="password" onChange={(e) => setPassword(e)}  className="login-input" />
           </div>
           <button onClick={() => loginUser()} className="login-button"> Giriş Yap </button>
         </div>

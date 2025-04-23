@@ -46,7 +46,6 @@ const Admin = () => {
         }
     };
     
-
     const [fadeInReady, setFadeInReady] = useState(false);
 
     useEffect(() => {
@@ -71,7 +70,7 @@ const Admin = () => {
                                 <div className="admin-ınfo-img-container">
                                     {
                                         admin.imgs.slice(0, 1).map((img, index) => (
-                                            <img key={index} src={img} className="admin-ınfo-info-img" alt="" />
+                                            <img key={index} src={img.url} className="admin-ınfo-info-img" alt="" />
                                         ))
                                     }
                                 </div>

@@ -46,7 +46,11 @@ const EventsContent = () => {
                         events.slice().reverse().map((event) => (
                             <div key={event._id}  className={`event-info-card-wrapper fade-in ${fadeInReady ? 'show' : ''}`}>
                                 <div className="event-ınfo-img-container">
-                                    <img src={event.cardImg} className="event-ınfo-info-img" alt="" />
+                                    {
+                                 event.imgs.slice(0, 1).map((img, index) => (
+                                            <img key={index} src={img.url} className="event-ınfo-info-img" alt="" />
+                                        ))
+                                    }
                                 </div>
                                 <div className="event-ınfo-content-container">
                                     <div className="event-ınfo-text-container">
@@ -69,7 +73,7 @@ const EventsContent = () => {
                                         </div>
                                         <Link
                                             className="event-ınfo-link"
-                                            to={{ pathname: `/etkinlikler${event.path}/${event.id}` }}
+                                            to={{ pathname: `/etkinlikler${event.path}/${event._id}` }}
                                         >
                                             <div className="event-cards-button-container">
 

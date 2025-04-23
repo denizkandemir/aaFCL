@@ -52,9 +52,9 @@ const Slide = ({ SlideImgs, imgClass, container, id, isSlideOpen , containerRef,
                                 
                             >
                                 {SlideImgs.map((img) => (
-                                    <SwiperSlide key={img.id}>
+                                    <SwiperSlide key={img._id}>
                                         <div  className="slide-container">
-                                            <img onClick={() => openSlide()} className={imgClass} src={img.img} alt="" />
+                                            <img onClick={() => openSlide()} className={imgClass} src={img.url} alt="" />
                                         </div>
                                     </SwiperSlide>
                                 ))}
@@ -66,8 +66,6 @@ const Slide = ({ SlideImgs, imgClass, container, id, isSlideOpen , containerRef,
                                 </div>
                             </Swiper>
                         )}
-
-
                     </div>
                 </div>
             </div>

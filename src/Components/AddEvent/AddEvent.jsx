@@ -45,11 +45,11 @@ const AddEvent = () => {
       formData.append("images", image.file);
     });
   
-    const title =  document.querySelector(".add-event-title").value;
+    const title = document.querySelector(".add-event-title-input").value;
 
-    const path = title.trim().toLowerCase().replace(/\s+/g, "-"); 
-    formData.append("title", document.querySelector(".add-event-title").value);
-    formData.append("path" ,path);
+    const path = "/" + title.trim().toLowerCase().replace(/\s+/g, "-");   
+     formData.append("title", title);
+    formData.append("path" , path);
     formData.append("texts", JSON.stringify(inputs)); 
 
     try {
@@ -59,7 +59,7 @@ const AddEvent = () => {
       });
   
       const data = await response.json();
-  
+
       if (response.ok) {
         alert("Etkinlik başarıyla eklendi!");
       } else {
@@ -84,7 +84,7 @@ const AddEvent = () => {
             <label className="input-title" htmlFor="title" >
               Etkinlik Başlığı
             </label>
-            <input type="text" className="add-event-title" />
+            <input type="text" className="add-event-title-input" />
           </div>
 
           <div className="add-event-input-container">

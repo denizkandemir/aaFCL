@@ -25,18 +25,20 @@ const upload = multer({ storage });
 
 router.post("/", upload.array("images"), async (req, res) => {
   try {
-    const { title, texts } = req.body; 
-    const imageUrls = req.files.map((file) => file.path); 
+    const { title, texts , path } = req.body; 
 
-    console.log("Uploaded files:", req.files);  
-    console.log("Request body:", req.body);
-
+    const imageInfos = req.files.map((file) => ({
+      url: file.path,
+      public_id: file.filename, 
+    }));
+    
     const newEvent = new Event({
-      title,
+      title: title,
       texts: JSON.parse(texts), 
-      imgs: imageUrls, 
+      path: path,
+      imgs: imageInfos,
     });
-
+    
     console.log("Uploaded files:", req.files);
 
     await newEvent.save(); 
@@ -46,5 +48,45 @@ router.post("/", upload.array("images"), async (req, res) => {
     res.status(500).json({ message: "Error uploading event", error });
   }
 });
+
+router.put("/:id", upload.array("images"), async (req, res) => {
+  try {
+    const { title, texts, oldImages, deletedImages  } = req.body;
+
+    const deletedIds = JSON.parse(deletedImages || "[]");
+    for (const public_id of deletedIds) {
+      await cloudinary.uploader.destroy(public_id);  
+    }
+
+    const newImageUrls = req.files.map((file) => ({
+      url: file.path,
+      public_id: file.filename,  
+    }));
+
+    const keptImages = JSON.parse(oldImages || "[]");
+    const allImages = [...keptImages, ...newImageUrls];
+
+    console.log(allImages)
+    const updatedEvent = await Event.findByIdAndUpdate(
+      req.params.id,
+      {
+        title,
+        texts: JSON.parse(texts),
+        imgs: allImages,  
+      },
+      { new: true }
+    );
+
+    if (!updatedEvent) {
+      return res.status(404).json({ message: "Event not found" });
+    }
+
+    res.json({ message: "Event updated successfully", updatedEvent });
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ message: "Server error", error });
+  }
+});
+
 
 module.exports = router;

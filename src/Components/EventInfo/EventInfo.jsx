@@ -29,7 +29,7 @@ const EventInfo = ({ isEventSlideOpen, setEventSlideOpen }) => {
             try {
                 const res = await fetch("http://localhost:5000/api/events");
                 const data = await res.json();
-                const selectedEvent = data.find((ev) => parseInt(ev.id) === parseInt(routeId));
+                const selectedEvent = data.find((ev) => parseInt(ev._id) === parseInt(routeId));
 
                 if (isMounted) {
                     setEvent(selectedEvent || {});
@@ -133,7 +133,7 @@ const EventInfo = ({ isEventSlideOpen, setEventSlideOpen }) => {
                                     : "event-slide-container "
                             }
                         >
-                            {/* <Slide containerRef={eventSlideRef} openSlide={openEventSlide} SlideImgs={event.imgs} id={event.id} key={event.id} isSlideOpen={isEventSlideOpen} container={"event-slide-content-container fade-in"} imgClass={"event-img"} /> */}
+                            <Slide containerRef={eventSlideRef} openSlide={openEventSlide} SlideImgs={event.imgs} id={event._id} key={event._id} isSlideOpen={isEventSlideOpen} container={"event-slide-content-container fade-in"} imgClass={"event-img"} />
                         </div>
                     </div>
                     <div className={`event-text-container  fade-in  ${fadeInReady ? 'show' : ''} `}>
