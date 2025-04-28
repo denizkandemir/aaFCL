@@ -1,9 +1,9 @@
 import "./FCL_map.scss";
 import mapImg from "/FCL_map.png";
-import withFadeInOnScroll from "../../hooks/animation/Animation";
+import useFadeInOnScroll from "../../hooks/animation/Animation";
 
 const FCL_map = () => {
-    withFadeInOnScroll();
+    useFadeInOnScroll();
 
     return (
         <div className="fcl-map-container">

@@ -1,9 +1,9 @@
 import "./FCL_BottomBanner.scss";
 import bottomBanner from "/aafcl-bottom-banner.png";
-import withFadeInOnScroll from "../../hooks/animation/Animation";
+import useFadeInOnScroll from "../../hooks/animation/Animation";
 
 const FCL_BottomBanner = () => {
-    withFadeInOnScroll();
+    useFadeInOnScroll();
     return (
         <div className="bottom-banner-container">
             <div className="bottom-banner-content-container">

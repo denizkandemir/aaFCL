@@ -139,6 +139,14 @@
             }
         }
 
+        .event-slide-container-replace-open {
+            display: flex;
+            opacity: 0;
+        }
+        .event-slide-container-replace-close {
+            display: none;
+        }
+
         .event-p {
             font-family: vars.$primary-font;
             font-size: 21px;

@@ -1,7 +1,7 @@
 import "./EventsContent.scss";
 import fclLogo from "/fcl-logo.png";
 import { Link } from "react-router-dom";
-import withFadeInOnScroll from "../../hooks/animation/Animation";
+import useFadeInOnScroll from "../../hooks/animation/Animation";
 import { useState, useEffect } from "react";
 
 const EventsContent = () => {
@@ -32,7 +32,7 @@ const EventsContent = () => {
       }
     }, [loading]);
   
-    withFadeInOnScroll(); 
+    useFadeInOnScroll('.fade-in, .fade-in-left, .fade-in-right', !loading);
     
     if (loading) {
         return <div> Etkinlikler Yükleniyor ... </div>;
@@ -44,7 +44,7 @@ const EventsContent = () => {
                 <div className="event-cards-data-container ">
                     {
                         events.slice().reverse().map((event) => (
-                            <div key={event._id}  className={`event-info-card-wrapper fade-in ${fadeInReady ? 'show' : ''}`}>
+                            <div key={event._id}  className={`event-info-card-wrapper fade-in`}>
                                 <div className="event-ınfo-img-container">
                                     {
                                  event.imgs.slice(0, 1).map((img, index) => (

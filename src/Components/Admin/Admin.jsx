@@ -1,6 +1,6 @@
 import "./Admin.scss";
 import fclLogo from "/fcl-logo.png";
-import withFadeInOnScroll from "../../hooks/animation/Animation";
+import useFadeInOnScroll from "../../hooks/animation/Animation";
 import editIcon from "/edit.png";
 import deleteIcon from "/delete.png";
 import addEventImg3 from "/aafcl-add3.png";
@@ -54,7 +54,7 @@ const Admin = () => {
         }
     }, [loading]);
 
-    withFadeInOnScroll();
+    useFadeInOnScroll();
 
     if (loading) {
         return <div> Etkinlikler Yükleniyor ... </div>;

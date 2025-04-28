@@ -1,13 +1,13 @@
 import { useEffect } from 'react';
-import "./Animation.scss"
-import { useParams } from 'react-router-dom';
-import { useLocation } from 'react-router-dom';
+import { useParams, useLocation } from 'react-router-dom';
 
-const withFadeInOnScroll = (selector = '.fade-in, .fade-in-left, .fade-in-right') => {
+const useFadeInOnScroll = (selector = '.fade-in, .fade-in-left, .fade-in-right', shouldRun = true) => {
   const { routeId } = useParams();
   const location = useLocation();
 
   useEffect(() => {
+    if (!shouldRun) return;
+
     const elements = document.querySelectorAll(selector);
 
     if (elements.length > 0) {
@@ -20,17 +20,14 @@ const withFadeInOnScroll = (selector = '.fade-in, .fade-in-left, .fade-in-right'
             }
           });
         },
-        {
-          threshold: 0.25,
-        }
+        { threshold: 0.25 }
       );
 
       elements.forEach((element) => observer.observe(element));
 
       return () => observer.disconnect();
     }
-  }, [selector, routeId, location]);
-
+  }, [selector, routeId, location, shouldRun]);
 };
 
-export default withFadeInOnScroll;
+export default useFadeInOnScroll;

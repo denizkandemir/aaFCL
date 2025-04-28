@@ -13,7 +13,7 @@ import "./Slide.scss";
 import { MdKeyboardArrowRight, MdKeyboardArrowLeft } from "react-icons/md";
 
 
-const Slide = ({ SlideImgs, imgClass, container, id, isSlideOpen , containerRef,openSlide }) => {
+const Slide = ({ SlideImgs, imgClass, container, id, isSlideOpen , containerRef, openSlide }) => {
     const swiperRef = useRef(null);
 
     useEffect(() => {

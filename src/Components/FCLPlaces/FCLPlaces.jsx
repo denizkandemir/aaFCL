@@ -1,6 +1,6 @@
 import "./FCLPlaces.scss";
 import LearningPlaces from "../../objects/LearningPlaces";
-import withFadeInOnScroll from "../../hooks/animation/Animation";
+import useFadeInOnScroll from "../../hooks/animation/Animation";
 import { useParams } from "react-router-dom";
 import Banner from "../../Components/Banner/Banner";
 import learningImg from "/learningPlaces1.png";
@@ -77,7 +77,7 @@ const FCLPlaces = ({ isFclSlideOpen, setFclSlideOpen }) => {
         nextPlace = LearningPlaces.find((place) => parseInt(place.id) === (parseInt(routeId) + 1));
     }
 
-    withFadeInOnScroll();
+    useFadeInOnScroll();
 
     return (
         <>
