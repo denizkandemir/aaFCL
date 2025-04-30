@@ -9,6 +9,24 @@ const Login = () => {
   const [inputPassword, setInputPassword] = useState();
   const navigate = useNavigate();
 
+  useEffect(() => {
+    const checkAuth = async () => {
+      try {
+        const res = await fetch("http://localhost:5000/api/admin", {
+          credentials: "include", 
+        });
+
+        if (res.ok) {
+          navigate("/admin"); 
+        }
+      } catch (err) {
+        console.log("User is not authenticated.");
+      }
+    };
+
+    checkAuth();
+  }, [navigate]);
+
   const loginUser = async () => {
     try {
       const response = await fetch("http://localhost:5000/api/auth/login", {
@@ -16,24 +34,24 @@ const Login = () => {
         headers: {
           "Content-Type": "application/json",
         },
+        credentials: "include", 
         body: JSON.stringify({
           username: inputUsername,
           password: inputPassword,
         }),
       });
-
+  
       const data = await response.json();
+  
       if (response.ok) {
         console.log("Giriş Başarılı!", data);
         navigate("/admin");
-        localStorage.setItem("isLogin" , JSON.stringify(true));
       } else {
-        window.Error(data.message);
-        alert("Giriş Bilgileri Hatalı")
+        alert("Giriş Bilgileri Hatalı: " + data.message);
       }
     } catch (error) {
       console.error("Giriş hatası:", error);
-      window.Error("Bir hata oluştu");
+      alert("Bir hata oluştu");
     }
   };
   
@@ -59,7 +77,7 @@ const Login = () => {
           </div>
           <div className="login-input-container">
             <p className="login-input-p"> Şifre </p>
-            <input type="password" onChange={(e) => setPassword(e)}  className="login-input" />
+            <input type="password" onChange={(e) => setPassword(e)} className="login-input" />
           </div>
           <button onClick={() => loginUser()} className="login-button"> Giriş Yap </button>
         </div>

@@ -293,12 +293,23 @@
                 display: none;
                 box-shadow: vars.$card-box-shadow;
                 border-radius: 10px;
-                bottom: -60px;
-                right: -10px;
+                bottom: -70px;
+                right: -22px;
                 padding: 10px;
                 box-shadow: 0 -8px 20px rgba(0, 0, 0, 0.2);
                 background-color: vars.$lightGrey-color;
               
+                .admin-log-out-p{
+                    font-family: vars.$primary-font;
+                    font-size: 18px;
+                  }
+
+                  .admin-log-out-arrow-container{
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    padding: 5px;
+                  }
             }
 
             .admin-dropdown-container::before {

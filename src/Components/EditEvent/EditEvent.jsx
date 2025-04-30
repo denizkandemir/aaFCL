@@ -3,13 +3,14 @@ import addImgIcon from "/aafcl-addImgIcon.png";
 import Xmark from "../../svgs/Xmark";
 import deleteIcon from "/delete.png";
 import { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useParams,useNavigate } from "react-router-dom";
 
 const EditEvent = () => {
 
   const [images, setImages] = useState([]); 
   const [deletedImages, setDeletedImages] = useState([]);  
   const { routeId } = useParams();
+  const navigate = useNavigate();
 
   const [event, setEvent] = useState(null);
   const [loading, setLoading] = useState(true);
@@ -24,7 +25,7 @@ const EditEvent = () => {
       try {
         const res = await fetch("http://localhost:5000/api/events");
         const data = await res.json();
-        const selectedEvent = data.find((ev) => parseInt(ev._id) === parseInt(routeId));
+        const selectedEvent = data.find((ev) => ev._id === routeId);
 
         if (isMounted) {
           setEvent(selectedEvent || {});
@@ -77,6 +78,7 @@ const EditEvent = () => {
   
       if (response.ok) {
         alert("Etkinlik başarıyla güncellendi!");
+        navigate("/admin");
       } else {
         alert("Hata oluştu: " + data.message);
       }

@@ -42,11 +42,23 @@ const Navbar = () => {
             dropdown.style.pointerEvents = "auto";
         }, 1000);
     }
- 
-    const adminLogOut = () => {
-        localStorage.setItem("isLogin" , JSON.stringify(false));
-        navigate("/");
-    }
+
+    const adminLogOut = async () => {
+        try {
+            const res = await fetch("http://localhost:5000/api/auth/logout", {
+                method: "POST",
+                credentials: "include",
+            });
+
+            if (res.ok) {
+                navigate("/"); 
+            } else {
+                alert("Çıkış başarısız");
+            }
+        } catch (err) {
+            console.error("Çıkış hatası:", err);
+        }
+    };
 
     return (
         <>
@@ -125,17 +137,17 @@ const Navbar = () => {
                         )
                     }
                     {
-                         location.pathname === "/admin" && (
+                        location.pathname === "/admin" && (
                             <div className="fcl-admin-logo-container">
                                 <img src={adminLogo} alt="" className="fcl-admin-logo" />
                                 <div className="admin-dropdown-container">
-                                   <p className="admin-log-out-p" onClick={() => adminLogOut()}> Çıkış Yap </p>
+                                    <p className="admin-log-out-p" onClick={() => adminLogOut()}> Çıkış Yap </p>
                                     <div className="admin-log-out-arrow-container">
-                                     <LogOutArrow width={30} height={30} fill="black" stroke="black"/>
+                                        <LogOutArrow width={40} height={40} fill="black" stroke="black" />
                                     </div>
                                 </div>
                             </div>
-                         )
+                        )
                     }
                 </div>
 

@@ -3,9 +3,11 @@ import "./AddEvent.scss";
 import addImgIcon from "/aafcl-addImgIcon.png";
 import Xmark from "../../svgs/Xmark";
 import deleteIcon from "/delete.png";
+import { useNavigate } from "react-router-dom";
 
 const AddEvent = () => {
   const [images, setImages] = useState([]);
+  const navigate = useNavigate();
 
   const handleImageChange = (event) => {
     const files = Array.from(event.target.files);
@@ -48,7 +50,7 @@ const AddEvent = () => {
     const title = document.querySelector(".add-event-title-input").value;
 
     const path = "/" + title.trim().toLowerCase().replace(/\s+/g, "-");   
-     formData.append("title", title);
+    formData.append("title", title);
     formData.append("path" , path);
     formData.append("texts", JSON.stringify(inputs)); 
 
@@ -62,6 +64,7 @@ const AddEvent = () => {
 
       if (response.ok) {
         alert("Etkinlik başarıyla eklendi!");
+        navigate("/admin");
       } else {
         alert("Hata oluştu: " + data.message);
       }

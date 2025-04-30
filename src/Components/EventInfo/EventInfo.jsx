@@ -29,7 +29,7 @@ const EventInfo = ({ isEventSlideOpen, setEventSlideOpen }) => {
             try {
                 const res = await fetch("http://localhost:5000/api/events");
                 const data = await res.json();
-                const selectedEvent = data.find((ev) => parseInt(ev._id) === parseInt(routeId));
+                const selectedEvent = data.find((ev) => ev._id === routeId);
 
                 if (isMounted) {
                     setEvent(selectedEvent || {});
