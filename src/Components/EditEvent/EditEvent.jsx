@@ -52,11 +52,8 @@ const EditEvent = () => {
     images.forEach((image) => {
       if (image.file) {
         formData.append("images", image.file);  
-        console.log(image.file)
       }
     });
-
-    console.log(images)
   
     const title = document.querySelector(".add-event-title-input").value;
     const path = "/" + title.trim().toLowerCase().replace(/\s+/g, "-");
@@ -64,6 +61,8 @@ const EditEvent = () => {
     formData.append("title", title);
     formData.append("path", path);
     formData.append("texts", JSON.stringify(inputs));
+    formData.append("deletedImages", JSON.stringify(deletedImages));
+    console.log(deletedImages);
   
     const oldImages = event.imgs?.filter(img => !img.url.includes("blob:")) || [];
     formData.append("oldImages", JSON.stringify(oldImages));
