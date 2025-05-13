@@ -8,6 +8,7 @@ import { useNavigate } from "react-router-dom";
 const AddEvent = () => {
   const [images, setImages] = useState([]);
   const navigate = useNavigate();
+  const [isLoading, setIsLoading] = useState(false);
 
   const handleImageChange = (event) => {
     const files = Array.from(event.target.files);
@@ -41,25 +42,25 @@ const AddEvent = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-  
+    setIsLoading(true);
+
     const formData = new FormData();
     images.forEach((image) => {
       formData.append("images", image.file);
     });
-  
-    const title = document.querySelector(".add-event-title-input").value;
 
-    const path = "/" + title.trim().toLowerCase().replace(/\s+/g, "-");   
+    const title = document.querySelector(".add-event-title-input").value;
+    const path = "/" + title.trim().toLowerCase().replace(/\s+/g, "-");
     formData.append("title", title);
-    formData.append("path" , path);
-    formData.append("texts", JSON.stringify(inputs)); 
+    formData.append("path", path);
+    formData.append("texts", JSON.stringify(inputs));
 
     try {
       const response = await fetch("http://localhost:5000/api/uploadEvent", {
         method: "POST",
         body: formData,
       });
-  
+
       const data = await response.json();
 
       if (response.ok) {
@@ -71,8 +72,11 @@ const AddEvent = () => {
     } catch (error) {
       console.error("Error uploading event:", error);
       alert("Hata oluştu.");
+    } finally {
+      setIsLoading(false);
     }
   };
+
 
   return (
     <div className="add-event-container">
@@ -149,7 +153,16 @@ const AddEvent = () => {
           </div>
 
           <div className="event-save-button-container">
-            <button type="submit" className="event-save-button"> Kaydet </button>
+            <button type="submit" className="event-save-button" disabled={isLoading}>
+              {isLoading ? (
+                <>
+                  Kaydediliyor...
+                  <span className="spinner" />
+                </>
+              ) : (
+                "Kaydet"
+              )}
+            </button>
           </div>
         </form>
       </div>

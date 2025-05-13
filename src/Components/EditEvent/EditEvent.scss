@@ -9,6 +9,29 @@
     padding-bottom: 50px;
     background-color: vars.$grey-color;
 
+    .spinner {
+        margin-left: 10px;
+        border: 3px solid #f3f3f3;
+        border-top: 3px solid #333;
+        border-radius: 50%;
+        width: 14px;
+        height: 14px;
+        animation: spin 0.8s linear infinite;
+        display: inline-block;
+        vertical-align: middle;
+    }
+
+    @keyframes spin {
+        0% {
+            transform: rotate(0deg);
+        }
+
+        100% {
+            transform: rotate(360deg);
+        }
+    }
+
+
     .add-event-form-title-container {
         background-color: white;
         box-shadow: vars.$card-box-shadow;
@@ -22,6 +45,7 @@
             justify-content: center;
             align-items: center;
             padding: 10px 0;
+
             .event-save-button {
                 padding: 10px;
                 margin-top: 10px;
@@ -76,6 +100,14 @@
                     border-radius: 5px;
                     font-family: vars.$primary-font;
                     font-size: 16px;
+                }
+
+                .add-event-title-input {
+                    border: 1px solid vars.$lightGrey-color3;
+                    padding: 6px;
+                    border-radius: 5px;
+                    font-size: 16px;
+                    font-family: vars.$primary-font;
                 }
 
                 .add-text-xmark-container {
@@ -134,7 +166,7 @@
                     flex-direction: column;
                     justify-content: space-between;
                     align-items: center;
-             
+
                     height: 200px;
 
                     .event-delete-img-icon {

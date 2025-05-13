@@ -3,15 +3,15 @@ import addImgIcon from "/aafcl-addImgIcon.png";
 import Xmark from "../../svgs/Xmark";
 import deleteIcon from "/delete.png";
 import { useState, useEffect } from "react";
-import { useParams,useNavigate } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 
 const EditEvent = () => {
 
-  const [images, setImages] = useState([]); 
-  const [deletedImages, setDeletedImages] = useState([]);  
+  const [images, setImages] = useState([]);
+  const [deletedImages, setDeletedImages] = useState([]);
   const { routeId } = useParams();
   const navigate = useNavigate();
-
+  const [isSaving, setIsSaving] = useState(false);
   const [event, setEvent] = useState(null);
   const [loading, setLoading] = useState(true);
 
@@ -33,7 +33,7 @@ const EditEvent = () => {
           setImages(selectedEvent.imgs.map((urlObj) => ({
             url: urlObj.url,
             public_id: urlObj.public_id,
-          })));          
+          })));
           setLoading(false);
         }
       } catch (error) {
@@ -46,35 +46,35 @@ const EditEvent = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-  
+    setIsSaving(true);
+
     const formData = new FormData();
-  
+
     images.forEach((image) => {
       if (image.file) {
-        formData.append("images", image.file);  
+        formData.append("images", image.file);
       }
     });
-  
+
     const title = document.querySelector(".add-event-title-input").value;
     const path = "/" + title.trim().toLowerCase().replace(/\s+/g, "-");
-  
+
     formData.append("title", title);
     formData.append("path", path);
     formData.append("texts", JSON.stringify(inputs));
     formData.append("deletedImages", JSON.stringify(deletedImages));
-    console.log(deletedImages);
-  
+
     const oldImages = event.imgs?.filter(img => !img.url.includes("blob:")) || [];
     formData.append("oldImages", JSON.stringify(oldImages));
-  
+
     try {
       const response = await fetch(`http://localhost:5000/api/uploadEvent/${event._id}`, {
         method: "PUT",
         body: formData,
       });
-  
+
       const data = await response.json();
-  
+
       if (response.ok) {
         alert("Etkinlik başarıyla güncellendi!");
         navigate("/admin");
@@ -84,31 +84,33 @@ const EditEvent = () => {
     } catch (error) {
       console.error("Error updating event:", error);
       alert("Sunucu hatası oluştu.");
+    } finally {
+      setIsSaving(false);
     }
   };
-  
+
   const handleImageChange = (event) => {
     const files = Array.from(event.target.files);
     const newImages = files.map((file) => {
       const url = URL.createObjectURL(file);
-      const public_id = file.name.split(".")[0]; 
-  
+      const public_id = file.name.split(".")[0];
+
       return { file, url, public_id };
     });
-  
+
     setImages((prevImages) => [...prevImages, ...newImages]);
   };
-  
+
   const removeImg = (indexToRemove) => {
     const imageToRemove = images[indexToRemove];
-  
+
     if (imageToRemove.public_id) {
       setDeletedImages((prev) => [...prev, imageToRemove.public_id]);
     }
-  
+
     setImages(images.filter((_, index) => index !== indexToRemove));
   };
-  
+
   const addText = () => {
     setInputs([...inputs, ""]);
   };
@@ -205,7 +207,18 @@ const EditEvent = () => {
           </div>
 
           <div className="event-save-button-container">
-            <button type="submit" className="event-save-button"> Kaydet </button>
+            <div className="event-save-button-container">
+              <button type="submit" className="event-save-button" disabled={isSaving}>
+                {isSaving ? (
+                  <>
+                    Kaydediliyor...
+                    <span className="spinner" />
+                  </>
+                ) : (
+                  "Kaydet"
+                )}
+              </button>
+            </div>
           </div>
         </form>
       </div>
