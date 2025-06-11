@@ -29,7 +29,7 @@ router.post("/", upload.array("images"), async (req, res) => {
 
     const imageInfos = req.files.map((file) => ({
       url: file.path,
-      public_id: file.filename.split('/').pop(), 
+      public_id: file.filename,
     }));
 
     const newEvent = new Event({
@@ -51,39 +51,43 @@ router.post("/", upload.array("images"), async (req, res) => {
 
 router.put("/:id", upload.array("images"), async (req, res) => {
   try {
-    const { title, texts, oldImages, deletedImages } = req.body;
+    const { title, event, texts, oldImages, deletedImages } = req.body;
 
     const deletedIds = JSON.parse(deletedImages || "[]");
+    const JsonEvent = JSON.parse(event);
+
+    console.log(JsonEvent.imgs);
     for (const public_id of deletedIds) {
       try {
-        const result = await cloudinary.uploader.destroy(public_id, {
+        const result = await cloudinary.uploader.destroy(`${public_id}`, {
           invalidate: true,
+          resource_type: "image",
         });
-        console.log(`Cloudinary destroy result for ${public_id}:`, result);
-        if (result.result !== "ok") {
-          console.warn(
-            `Cloudinary delete returned unexpected result for ${public_id}:`,
-            result
-          );
+        console.log(`Deleted from Cloudinary: ${public_id}`, result);
+
+        const imageIndex = JsonEvent.imgs.findIndex(
+          (img) => img.public_id === public_id
+        );
+
+        if (imageIndex !== -1) {
+          JsonEvent.imgs.splice(imageIndex, 1);
+          console.log(`Removed image with public_id: ${public_id}`);
+          console.log("Updated images array:", event.imgs);
+        } else {
+          console.log(`Image not found with public_id: ${public_id}`);
         }
       } catch (error) {
-        console.error(`Error deleting ${public_id} from Cloudinary:`, error);
+        console.error(`Failed to delete ${public_id} from Cloudinary:`, error);
       }
     }
 
-    await Event.findByIdAndUpdate(req.params.id, {
-      $pull: { imgs: { public_id: { $in: deletedIds } } },
-    });
-
-    console.log(deletedImages);
-    console.log("deletedIds : ", deletedIds);
-
+   
     const newImageUrls = req.files.map((file) => ({
       url: file.path,
       public_id: file.filename,
     }));
 
-    const keptImages = JSON.parse(oldImages || "[]");
+    const keptImages = JsonEvent.imgs;
     const allImages = [...keptImages, ...newImageUrls];
 
     const updatedEvent = await Event.findByIdAndUpdate(

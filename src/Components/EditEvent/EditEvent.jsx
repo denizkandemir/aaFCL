@@ -59,13 +59,17 @@ const EditEvent = () => {
     const title = document.querySelector(".add-event-title-input").value;
     const path = "/" + title.trim().toLowerCase().replace(/\s+/g, "-");
 
+    console.log(event)
     formData.append("title", title);
     formData.append("path", path);
+    formData.append("event", JSON.stringify(event));
     formData.append("texts", JSON.stringify(inputs));
     formData.append("deletedImages", JSON.stringify(deletedImages));
 
     const oldImages = event.imgs?.filter(img => !img.url.includes("blob:")) || [];
     formData.append("oldImages", JSON.stringify(oldImages));
+    console.log("deletedImages being sent:", deletedImages);
+
 
     try {
       const response = await fetch(`http://localhost:5000/api/uploadEvent/${event._id}`, {
