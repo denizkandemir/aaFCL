@@ -17,7 +17,7 @@ const storage = new CloudinaryStorage({
   cloudinary: cloudinary,
   params: {
     folder: "events",
-    allowed_formats: ["jpg", "png", "jpeg"],
+    allowed_formats: ["jpg", "png", "jpeg" , "JPG", "PNG" , "JPEG"],
   },
 });
 
@@ -49,7 +49,7 @@ router.post("/", upload.array("images"), async (req, res) => {
 
     res.json({ message: "Event created successfully!", newEvent });
   } catch (error) {
-    console.error("🔥 Backend Error:", error.stack || error.message || error);
+    console.error("Backend Error:", error.stack || error.message || error);
     res.status(500).json({
       message: "Error uploading event",
       error: error.stack || error.message || error,

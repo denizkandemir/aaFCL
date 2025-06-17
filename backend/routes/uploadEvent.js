@@ -44,8 +44,6 @@ router.put("/:id", upload.array("images"), async (req, res) => {
 
         if (imageIndex !== -1) {
           JsonEvent.imgs.splice(imageIndex, 1);
-          console.log(`Removed image with public_id: ${public_id}`);
-          console.log("Updated images array:", event.imgs);
         } else {
           console.log(`Image not found with public_id: ${public_id}`);
         }

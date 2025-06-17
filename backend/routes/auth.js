@@ -4,7 +4,9 @@ const jwt = require("jsonwebtoken");
 const Admin = require("../models/admin");
 const router = express.Router();
 
-const JWT_SECRET = process.env.JWT_SECRET || "67531e047121d583dbfbc0b14ff98b4fc990ba17accde91343e05833690e3ee"; 
+const JWT_SECRET =
+  process.env.JWT_SECRET ||
+  "67531e047121d583dbfbc0b14ff98b4fc990ba17accde91343e05833690e3ee";
 
 router.post("/login", async (req, res) => {
   const { username, password } = req.body;
@@ -34,9 +36,9 @@ router.post("/login", async (req, res) => {
 
     res.cookie("token", token, {
       httpOnly: true,
-      secure: true, 
+      secure: true,
       sameSite: "Strict",
-      maxAge: 24 * 60 * 60 * 1000, 
+      maxAge: 24 * 60 * 60 * 1000,
     });
 
     res.json({ message: "Giriş başarılı" });
@@ -44,16 +46,15 @@ router.post("/login", async (req, res) => {
     console.error("Login error:", error);
     res.status(500).json({ message: "Server error" });
   }
+});
 
-  router.post("/logout", (req, res) => {
-    res.clearCookie("token", {
-      httpOnly: true,
-      secure: true, 
-      sameSite: "Strict",
-    });
-    res.json({ message: "Çıkış başarılı" });
+router.post("/logout", (req, res) => {
+  res.clearCookie("token", {
+    httpOnly: true,
+    secure: true,
+    sameSite: "Strict",
   });
-  
+  res.json({ message: "Çıkış başarılı" });
 });
 
 module.exports = router;

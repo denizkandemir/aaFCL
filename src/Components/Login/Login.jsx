@@ -73,7 +73,7 @@ const Login = () => {
           <h3 className="login-title"> Hoşgeldiniz </h3>
           <div className="login-input-container">
             <p className="login-input-p"> Kullanıcı Adı </p>
-            <input type="text" onChange={(e) => setUsername(e)} className="login-input" />
+            <input type="password" onChange={(e) => setUsername(e)} className="login-input" />
           </div>
           <div className="login-input-container">
             <p className="login-input-p"> Şifre </p>
