@@ -56,7 +56,7 @@ const AddEvent = () => {
     formData.append("texts", JSON.stringify(inputs));
 
     try {
-      const response = await fetch("http://localhost:5000/api/uploadEvent", {
+      const response = await fetch("http://localhost:5000/api/addEvent", {
         method: "POST",
         body: formData,
       });
@@ -76,7 +76,6 @@ const AddEvent = () => {
       setIsLoading(false);
     }
   };
-
 
   return (
     <div className="add-event-container">

@@ -23,32 +23,6 @@ const storage = new CloudinaryStorage({
 
 const upload = multer({ storage });
 
-router.post("/", upload.array("images"), async (req, res) => {
-  try {
-    const { title, texts, path } = req.body;
-
-    const imageInfos = req.files.map((file) => ({
-      url: file.path,
-      public_id: file.filename,
-    }));
-
-    const newEvent = new Event({
-      title: title,
-      texts: JSON.parse(texts),
-      path: path,
-      imgs: imageInfos,
-    });
-
-    console.log("Uploaded files:", req.files);
-
-    await newEvent.save();
-
-    res.json({ message: "Event created successfully!", newEvent });
-  } catch (error) {
-    res.status(500).json({ message: "Error uploading event", error });
-  }
-});
-
 router.put("/:id", upload.array("images"), async (req, res) => {
   try {
     const { title, event, texts, oldImages, deletedImages } = req.body;
@@ -56,7 +30,6 @@ router.put("/:id", upload.array("images"), async (req, res) => {
     const deletedIds = JSON.parse(deletedImages || "[]");
     const JsonEvent = JSON.parse(event);
 
-    console.log(JsonEvent.imgs);
     for (const public_id of deletedIds) {
       try {
         const result = await cloudinary.uploader.destroy(`${public_id}`, {
@@ -80,8 +53,7 @@ router.put("/:id", upload.array("images"), async (req, res) => {
         console.error(`Failed to delete ${public_id} from Cloudinary:`, error);
       }
     }
-
-   
+    
     const newImageUrls = req.files.map((file) => ({
       url: file.path,
       public_id: file.filename,

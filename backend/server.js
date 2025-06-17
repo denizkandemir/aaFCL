@@ -24,6 +24,7 @@ app.use(cookieParser());
 app.use("/api/auth", require("./routes/auth"));
 app.use("/api/events", require("./routes/events"));
 app.use("/api/uploadEvent", require("./routes/uploadEvent"));
+app.use("/api/addEvent", require("./routes/addEvent"));
 app.use("/api/admin", require("./routes/admin"));
 
 

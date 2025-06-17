@@ -1,5 +1,5 @@
 import "./Login.scss";
-import loginImg from "/aaSchool.jpg";
+import loginImg from "/aafcLogin.webp";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
