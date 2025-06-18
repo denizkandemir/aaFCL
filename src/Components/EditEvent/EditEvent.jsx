@@ -23,7 +23,7 @@ const EditEvent = () => {
 
     (async () => {
       try {
-        const res = await fetch("http://localhost:5000/api/events");
+        const res = await fetch("https://suaafcl.com/api/events");
         const data = await res.json();
         const selectedEvent = data.find((ev) => ev._id === routeId);
 
@@ -72,7 +72,7 @@ const EditEvent = () => {
 
 
     try {
-      const response = await fetch(`http://localhost:5000/api/uploadEvent/${event._id}`, {
+      const response = await fetch(`https://suaafcl.com/api/uploadEvent/${event._id}`, {
         method: "PUT",
         body: formData,
       });

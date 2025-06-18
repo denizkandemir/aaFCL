@@ -15,7 +15,7 @@ const Admin = () => {
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-        fetch("http://localhost:5000/api/events")
+        fetch("https://suaafcl.com/api/events")
             .then((res) => res.json())
             .then((data) => {
                 setEvents(data);
@@ -32,7 +32,7 @@ const Admin = () => {
         if (!confirmDelete) return;
     
         try {
-            const response = await fetch(`http://localhost:5000/api/events/${id}`, {
+            const response = await fetch(`https://suaafcl.com/api/events/${id}`, {
                 method: "DELETE",
             });
     

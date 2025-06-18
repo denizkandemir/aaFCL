@@ -45,7 +45,7 @@ const Navbar = () => {
 
     const adminLogOut = async () => {
         try {
-            const res = await fetch("http://localhost:5000/api/auth/logout", {
+            const res = await fetch("https://suaafcl.com/api/auth/logout", {
                 method: "POST",
                 credentials: "include",
             });

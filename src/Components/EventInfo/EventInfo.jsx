@@ -27,7 +27,7 @@ const EventInfo = ({ isEventSlideOpen, setEventSlideOpen }) => {
 
         (async () => {
             try {
-                const res = await fetch("http://localhost:5000/api/events");
+                const res = await fetch("https://suaafcl.com/api/events");
                 const data = await res.json();
                 const selectedEvent = data.find((ev) => ev._id === routeId);
 

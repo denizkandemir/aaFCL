@@ -12,7 +12,7 @@ const EventsContent = () => {
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-        fetch("http://localhost:5000/api/events")
+        fetch("https://suaafcl.com/api/events")
             .then((res) => res.json())
             .then((data) => {
                 setEvents(data);

@@ -56,7 +56,7 @@ const AddEvent = () => {
     formData.append("texts", JSON.stringify(inputs));
 
     try {
-      const response = await fetch("http://localhost:5000/api/addEvent", {
+      const response = await fetch("https://suaafcl.com/api/addEvent", {
         method: "POST",
         body: formData,
       });
