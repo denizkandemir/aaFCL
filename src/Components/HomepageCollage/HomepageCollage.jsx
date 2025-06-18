@@ -1,11 +1,11 @@
 import "./HomepageCollage.scss";
 import collage from "/aafcl-collage4.png";
-import withFadeInOnScroll from "../../hooks/animation/Animation";
+import useFadeInOnScroll from "../../hooks/animation/Animation";
 
 
 const HomepageCollage = () => {
 
-  withFadeInOnScroll();
+  useFadeInOnScroll();
 
  return(
   <div className="collage-container">

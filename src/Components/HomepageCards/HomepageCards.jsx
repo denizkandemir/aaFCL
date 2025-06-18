@@ -2,10 +2,10 @@ import "./HomepageCards.scss";
 import { Link } from "react-router-dom";
 import LearningPlaces from "../../objects/LearningPlaces";
 import fclLogo from "/fcl-logo.png";
-import withFadeInOnScroll from "../../hooks/animation/Animation";
+import useFadeInOnScroll from "../../hooks/animation/Animation";
 
 const HomepageCards = () => {
-    withFadeInOnScroll();
+    useFadeInOnScroll();
     return (
         <div className="cards-container">
             <div className="cards-content-container">

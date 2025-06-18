@@ -3,11 +3,11 @@ import "./HomePageContact.scss";
 import school from "/aaSchool.jpg";
 
 import { Link } from "react-router-dom";
-import withFadeInOnScroll from "../../hooks/animation/Animation";
+import useFadeInOnScroll from "../../hooks/animation/Animation";
 
 const HomePageContact = () => {
 
-    withFadeInOnScroll();
+    useFadeInOnScroll();
 
     return (
         <div className="home-contact-container ">

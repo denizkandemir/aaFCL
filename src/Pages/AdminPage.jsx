@@ -5,7 +5,7 @@ import adminImg from "/aafcl-admin.png";
 const AdminPage = () => {
     return (
        <>
-        <Banner img={adminImg} text={"Etkinlik Düzenle"} location={"Admin"}  />
+        <Banner img={adminImg} responsiveImg={adminImg} text={"Etkinlik Düzenle"} location={"Admin"}  />
         <Admin/>
        </>
     )

@@ -2,10 +2,10 @@ import "./ProjectGoals.scss";
 import goalsImg from "/aafcl-goals.png";
 import Goals from "../../objects/Goals";
 import circle from "/goalCircle.png";
-import withFadeInOnScroll from "../../hooks/animation/Animation";
+import useFadeInOnScroll from "../../hooks/animation/Animation";
 
 const ProjectGoals = () => {
-    withFadeInOnScroll();
+    useFadeInOnScroll();
     return (
         <>
             <div className="project-goals-container">

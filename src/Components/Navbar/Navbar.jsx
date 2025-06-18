@@ -7,10 +7,16 @@ import HamburgerMenu from "../../svgs/HamburgerMenu";
 import { useState } from "react";
 import Sidebar from "../Sidebar/Sidebar";
 import LearningPlaces from "../../objects/LearningPlaces";
+import { useLocation } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import adminLogo from "/şuaafcl-school.jpg";
+import LogOutArrow from "../../svgs/LogOutArrow";
 
 const Navbar = () => {
 
     const [isSidebarOpen, setSidebarOpen] = useState(false);
+    const location = useLocation();
+    const navigate = useNavigate();
 
     const sidebarOpener = (event) => {
         event.preventDefault();
@@ -27,16 +33,32 @@ const Navbar = () => {
         root.classList.remove("no-scroll");
     }
 
-
     const closeDropdown = () => {
         const dropdown = document.querySelector(".learning-dropdown-container");
         dropdown.classList.add("d-none");
         dropdown.style.pointerEvents = "none";
         setTimeout(() => {
             dropdown.classList.remove("d-none");
-            dropdown.style.pointerEvents = "auto";  
-        }, 1000); 
+            dropdown.style.pointerEvents = "auto";
+        }, 1000);
     }
+
+    const adminLogOut = async () => {
+        try {
+            const res = await fetch("https://suaafcl.com/api/auth/logout", {
+                method: "POST",
+                credentials: "include",
+            });
+
+            if (res.ok) {
+                navigate("/"); 
+            } else {
+                alert("Çıkış başarısız");
+            }
+        } catch (err) {
+            console.error("Çıkış hatası:", err);
+        }
+    };
 
     return (
         <>
@@ -98,19 +120,35 @@ const Navbar = () => {
                         </div>
                         <Link className="link-p" to={"/etkinliklerimiz"}><li className="navbar-link"> Etkinliklerimiz </li></Link>
                         <Link className="link-p" to={"/iletişim"}><li className="navbar-link"> İletişim  </li></Link>
-                        {/* <li className="navbar-link"></li> */}
                     </ul>
                 </div>
 
                 <div className="navbar-right-logo-container">
                     <img src={okulLogo} className="school-logo" alt="" />
-                    <div className="fcl-logo-texts-container">
-                        <img src={fclLogo} className="fcl-logo" alt="" />
-                        <div className="fcl-texts-container">
-                            <p className="fcl-text"> Future <br /> Classroom Lab </p>
-                            <p className="fcl-bottom-text"> By European Schoolnet </p>
-                        </div>
-                    </div>
+                    {
+                        location.pathname !== "/admin" && (
+                            <div className="fcl-logo-texts-container">
+                                <img src={fclLogo} className="fcl-logo" alt="" />
+                                <div className="fcl-texts-container">
+                                    <p className="fcl-text"> Future <br /> Classroom Lab </p>
+                                    <p className="fcl-bottom-text"> By European Schoolnet </p>
+                                </div>
+                            </div>
+                        )
+                    }
+                    {
+                        location.pathname === "/admin" && (
+                            <div className="fcl-admin-logo-container">
+                                <img src={adminLogo} alt="" className="fcl-admin-logo" />
+                                <div className="admin-dropdown-container">
+                                    <p className="admin-log-out-p" onClick={() => adminLogOut()}> Çıkış Yap </p>
+                                    <div className="admin-log-out-arrow-container">
+                                        <LogOutArrow width={40} height={40} fill="black" stroke="black" />
+                                    </div>
+                                </div>
+                            </div>
+                        )
+                    }
                 </div>
 
                 <div className="hamburger-container" onClick={sidebarOpener}>

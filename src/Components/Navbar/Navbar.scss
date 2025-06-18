@@ -262,7 +262,7 @@
 
         .school-logo {
             object-fit: contain;
-            height: 70px;
+            height: 73px;
         }
 
 
@@ -270,15 +270,68 @@
             display: flex;
             gap: 10px;
             align-items: center;
-
-
-
+            
             .fcl-logo {
                 object-fit: contain;
                 width: 65px;
             }
         }
 
+        .fcl-admin-logo-container {
+            position: relative;
+            cursor: pointer;
+
+            .fcl-admin-logo{
+                object-fit: cover;
+                width: 72px;
+                height: 71px;
+                border-radius: 50%;
+            }
+
+            .admin-dropdown-container {
+                position: absolute;
+                display: none;
+                box-shadow: vars.$card-box-shadow;
+                border-radius: 10px;
+                bottom: -70px;
+                right: -22px;
+                padding: 10px;
+                box-shadow: 0 -8px 20px rgba(0, 0, 0, 0.2);
+                background-color: vars.$lightGrey-color;
+              
+                .admin-log-out-p{
+                    font-family: vars.$primary-font;
+                    font-size: 18px;
+                  }
+
+                  .admin-log-out-arrow-container{
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    padding: 5px;
+                  }
+            }
+
+            .admin-dropdown-container::before {
+                content: ' ';
+                position: absolute;
+                width: 0;
+                height: 0;
+                top: -12px;
+                left: 50%;
+                margin-left: -15px;
+                border-style: solid;
+                border-width: 0 15px 15px 15px;
+                border-color: transparent transparent vars.$lightGrey-color transparent;
+    
+            }
+    
+
+            &:hover .admin-dropdown-container {
+                display: flex;
+                gap: 10px;
+            }
+        }
     }
 }
 

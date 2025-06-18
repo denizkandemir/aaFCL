@@ -1,30 +1,33 @@
 import { useEffect } from 'react';
-import "./Animation.scss"
-import { useParams } from 'react-router-dom';
+import { useParams, useLocation } from 'react-router-dom';
 
-const withFadeInOnScroll = (selector = '.fade-in, .fade-in-left, .fade-in-right') => {
+const useFadeInOnScroll = (selector = '.fade-in, .fade-in-left, .fade-in-right', shouldRun = true) => {
   const { routeId } = useParams();
+  const location = useLocation();
 
   useEffect(() => {
+    if (!shouldRun) return;
+
     const elements = document.querySelectorAll(selector);
-    const observer = new IntersectionObserver(
-      (entries, observer) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('show');
-            observer.unobserve(entry.target); 
-          }
-        });
-      },
-      {
-        threshold:0.25,
-      }
-    );
 
-    elements.forEach((element) => observer.observe(element));
+    if (elements.length > 0) {
+      const observer = new IntersectionObserver(
+        (entries, observer) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('show');
+              observer.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.25 }
+      );
 
-    return () => observer.disconnect();
-  }, [selector,routeId]);
+      elements.forEach((element) => observer.observe(element));
+
+      return () => observer.disconnect();
+    }
+  }, [selector, routeId, location, shouldRun]);
 };
 
-export default withFadeInOnScroll;
+export default useFadeInOnScroll;

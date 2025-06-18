@@ -11,6 +11,7 @@ import LoginPage from './Pages/LoginPage';
 import AdminPage from './Pages/AdminPage';
 import AddEventPage from './Pages/AddEventPage';
 import EditEventPage from './Pages/EditEventPage';
+import PrivateRoute from './Components/PrivateRoute/PrivateRoute';
 
 function App() {
 
@@ -29,11 +30,25 @@ function App() {
             <Route path="/etkinlikler">
               <Route path=":path/:routeId" element={<EventInfoPage />} />
             </Route>
-            <Route path="/login" element={<LoginPage/>}/>
-            <Route path="/admin" element={<AdminPage/>}/>
-            <Route path="/etkinlikEkle" element={<AddEventPage />}/>
+            <Route path="/login" element={<LoginPage />} />
+            <Route
+              path="/admin"
+              element={
+                <PrivateRoute>
+                  <AdminPage />
+                </PrivateRoute>
+              }
+            />
+            <Route path="/etkinlikEkle" element={<PrivateRoute>
+              <AddEventPage />
+            </PrivateRoute>
+            } />
             <Route path="/etkinlikDüzenle">
-              <Route path=":path/:routeId" element={<EditEventPage />} />
+              <Route path=":path/:routeId" element={
+                <PrivateRoute>
+                  <EditEventPage />
+                </PrivateRoute>
+              } />
             </Route>
           </Route>
         </Routes>

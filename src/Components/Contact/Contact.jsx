@@ -3,10 +3,10 @@ import contactCards from "../../objects/contactCards";
 import contactImgResponsive from "/aafcl-contact-img4.png";
 import contactImg from "/aafcl-contact-img3.png";
 import Banner from "../Banner/Banner";
-import withFadeInOnScroll from "../../hooks/animation/Animation";
+import useFadeInOnScroll from "../../hooks/animation/Animation";
 
 const Contact = () => {
-    withFadeInOnScroll();
+    useFadeInOnScroll();
     return (
         <>
             <div className="contact-container">

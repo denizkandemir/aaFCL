@@ -74,21 +74,21 @@ const LearningPlaces = [
  
     {
         id:1,
-        imgs: [
-            { img: developmentImg6, id: 1 },
-            { img: developmentImg12, id: 2 },
-            { img: developmentImg18, id: 3 },
-            { img: developmentImg9, id: 4 },
-            { img: developmentImg10, id: 5 },
-            { img: developmentImg11, id: 6 },
-            { img: developmentImg13, id: 7 },
-            { img: developmentImg14, id: 8 },
-            { img: developmentImg15, id: 9 },
-            { img: developmentImg16, id: 10 },
-            { img: developmentImg5, id: 11 },
-            { img: developmentImg17, id: 12 },
-            { img: developmentImg7, id: 13 },
-            { img: developmentImg8, id: 14 },
+       imgs: [
+            { url: developmentImg6, _id: 1 },
+            { url: developmentImg12, _id: 2 },
+            { url: developmentImg18, _id: 3 },
+            { url: developmentImg9, _id: 4 },
+            { url: developmentImg10, _id: 5 },
+            { url: developmentImg11, _id: 6 },
+            { url: developmentImg13, _id: 7 },
+            { url: developmentImg14, _id: 8 },
+            { url: developmentImg15, _id: 9 },
+            { url: developmentImg16, _id: 10 },
+            { url: developmentImg5, _id: 11 },
+            { url: developmentImg17, _id: 12 },
+            { url: developmentImg7, _id: 13 },
+            { url: developmentImg8, _id: 14 },
         
         ],
         littleImg:developmentImg13,
@@ -105,18 +105,18 @@ const LearningPlaces = [
 
     {
         id:2,
-        imgs: [
-            { img: researchImg1, id: 1 },
-            { img: researchImg2, id: 2 },
-            { img: researchImg7, id: 3},
-            { img: researchImg9, id: 4 },
-            { img: researchImg11, id: 5 },
-            { img: researchImg8, id: 6 },
-            { img: researchImg3, id: 7 },
-            { img: researchImg4, id: 8 },
-            { img: researchImg5, id: 9 },
-            { img: researchImg6, id: 10 },
-            { img: researchImg10, id: 11 },
+       imgs: [
+            { url: researchImg1, _id: 1 },
+            { url: researchImg2, _id: 2 },
+            { url: researchImg7, _id: 3},
+            { url: researchImg9, _id: 4 },
+            { url: researchImg11, _id: 5 },
+            { url: researchImg8, _id: 6 },
+            { url: researchImg3, _id: 7 },
+            { url: researchImg4, _id: 8 },
+            { url: researchImg5, _id: 9 },
+            { url: researchImg6, _id: 10 },
+            { url: researchImg10, _id: 11 },
         ],
         littleImg:researchImg11,
         littleImg2:researchImg10,
@@ -132,13 +132,13 @@ const LearningPlaces = [
 
     {
         id:3,
-        imgs: [
-            { img: productionImg5, id: 1 },
-            { img: productionImg6, id: 2 },
-            { img: productionImg2, id: 3 },
-            { img: productionImg3, id: 4 },
-            { img: productionImg4, id: 5 },
-            { img: productionImg1, id: 6 },
+       imgs: [
+            { url: productionImg5, _id: 1 },
+            { url: productionImg6, _id: 2 },
+            { url: productionImg2, _id: 3 },
+            { url: productionImg3, _id: 4 },
+            { url: productionImg4, _id: 5 },
+            { url: productionImg1, _id: 6 },
         ],
         littleImg:productionImg3,
         littleImg2:productionImg4,
@@ -154,17 +154,17 @@ const LearningPlaces = [
 
     {
         id:4,
-        imgs: [
+       imgs: [
         
-            { img: presentationImg4, id: 1 },
-            { img: presentationImg5, id: 2 },
-            { img: presentationImg3, id: 3 },
-            { img: presentationImg6, id: 4 },
-            { img: presentationImg7, id: 5 },
-            { img: presentationImg8, id: 6 },
-            { img: presentationImg9, id: 7 },
-            { img: presentationImg1, id: 8 },
-            { img: presentationImg2, id: 9 },
+            { url: presentationImg4, _id: 1 },
+            { url: presentationImg5, _id: 2 },
+            { url: presentationImg3, _id: 3 },
+            { url: presentationImg6, _id: 4 },
+            { url: presentationImg7, _id: 5 },
+            { url: presentationImg8, _id: 6 },
+            { url: presentationImg9, _id: 7 },
+            { url: presentationImg1, _id: 8 },
+            { url: presentationImg2, _id: 9 },
         ],
         littleImg:presentationImg9,
         littleImg2:presentationImg7,
@@ -180,11 +180,11 @@ const LearningPlaces = [
 
     {
         id:5,
-        imgs: [
-            { img: interactionImg2, id: 1 },
-            { img: interactionImg1, id: 2 },
-            { img: interactionImg3, id: 3 },
-            { img: interactionImg4, id: 4 },
+       imgs: [
+            { url: interactionImg2, _id: 1 },
+            { url: interactionImg1, _id: 2 },
+            { url: interactionImg3, _id: 3 },
+            { url: interactionImg4, _id: 4 },
         ],
         littleImg:interactionImg1,
         littleImg2:interactionImg4,
@@ -199,15 +199,15 @@ const LearningPlaces = [
 
     {
         id:6,
-        imgs: [
-            { img: teamWorkImg1, id: 1 },
-            { img: teamWorkImg2, id: 2 },
-            { img: teamWorkImg3, id: 3 },
-            { img: teamWorkImg4, id: 4 },
-            { img: teamWorkImg5, id: 5 },
-            { img: teamWorkImg6, id: 6 },
-            { img: teamWorkImg7, id: 7 },
-            { img: teamWorkImg8, id: 8 },
+       imgs: [
+            { url: teamWorkImg1, _id: 1 },
+            { url: teamWorkImg2, _id: 2 },
+            { url: teamWorkImg3, _id: 3 },
+            { url: teamWorkImg4, _id: 4 },
+            { url: teamWorkImg5, _id: 5 },
+            { url: teamWorkImg6, _id: 6 },
+            { url: teamWorkImg7, _id: 7 },
+            { url: teamWorkImg8, _id: 8 },
         ],
         littleImg:teamWorkImg4,
         littleImg2:teamWorkImg5,
@@ -216,7 +216,7 @@ const LearningPlaces = [
         path:"/işbirliğiAlanı",
         text: "Ekip çalışmasını teşvik eden, ortak hedeflere ulaşmak için birlikte çalışmayı destekleyen paylaşım odaklı bir ortam.",
         title:"İşbirliği Alanı",
-        pageText:"Öğrenme alanlarında başkaları ile işbirliği içinde çalışmak çok önemlidir. Araştırma, üretim ve sunum çalışmaları boyunca takım çalışmaları gerçekleştirilir. İşbirliğinin kalitesini grup içindeki aidiyet duygusu, sorumluluk paylaşımı ve karar verme süreci belirler. Oyunla ve interaktif öğrenme ile öğrenmenin kalıcı olması hedeflenmektedir.",
+        pageText:"Öğrenme alanlarında başkaları ile işbirliği içinde çalışmak çok öneml_idir. Araştırma, üretim ve sunum çalışmaları boyunca takım çalışmaları gerçekleştirilir. İşbirliğinin kalitesini grup içindeki a_idiyet duygusu, sorumluluk paylaşımı ve karar verme süreci belirler. Oyunla ve interaktif öğrenme ile öğrenmenin kalıcı olması hedeflenmektedir.",
         pageText2:"Sınıfımızın işbirliği alanında 1 altıgen ayrılıp birleşen masa, 6 adet renkli tabureler bulunmaktadır.",
     },
     
