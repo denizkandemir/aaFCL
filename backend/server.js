@@ -12,12 +12,14 @@ connectDB();
 // Middleware
 app.use(express.json());
 
-app.use(
-  cors({
-    origin: "https://suaafcl.com", 
-    credentials: true, 
-  })
-);
+// Enable CORS for your frontend
+app.use(cors({
+  origin: ['http://localhost:5173', 'https://suaafcl.com'], // both local & live
+  methods: 'GET,POST,PUT,DELETE',
+  credentials: true
+}));
+
+
 app.use(cookieParser());
 
 // Routes
