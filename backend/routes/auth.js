@@ -8,40 +8,32 @@ const JWT_SECRET = process.env.JWT_SECRET;
 
 router.post("/login", async (req, res) => {
   const { username, password } = req.body;
-
-  if (!password) {
-    return res.status(400).json({ message: "Password is required" });
-  }
+  if (!password) return res.status(400).json({ message: "Password is required" });
 
   try {
-    const adminUser = await Admin.findOne({ username });
+    const user = await Admin.findOne({ username });
+    if (!user) return res.status(404).json({ message: "Kullanıcı bulunamadı" });
 
-    if (!adminUser) {
-      return res.status(404).json({ message: "Kullanıcı bulunamadı" });
-    }
-
-    const passwordMatch = await bcrypt.compare(password, adminUser.password);
-
-    if (!passwordMatch) {
-      return res.status(401).json({ message: "Yanlış şifre" });
-    }
+    const ok = await bcrypt.compare(password, user.password);
+    if (!ok) return res.status(401).json({ message: "Yanlış şifre" });
 
     const token = jwt.sign(
-      { id: adminUser._id, username: adminUser.username },
-      JWT_SECRET,
+      { id: user._id, username: user.username },
+      process.env.JWT_SECRET,
       { expiresIn: "1d" }
     );
 
     res.cookie("token", token, {
       httpOnly: true,
-      secure: true,
-      sameSite: "Strict",
+      secure: true,       
+      sameSite: "None",   
+      path: "/",          
       maxAge: 24 * 60 * 60 * 1000,
     });
 
     res.json({ message: "Giriş başarılı" });
-  } catch (error) {
-    console.error("Login error:", error);
+  } catch (err) {
+    console.error("Login error:", err);
     res.status(500).json({ message: "Server error" });
   }
 });
@@ -50,7 +42,8 @@ router.post("/logout", (req, res) => {
   res.clearCookie("token", {
     httpOnly: true,
     secure: true,
-    sameSite: "Strict",
+    sameSite: "None",
+    path: "/",
   });
   res.json({ message: "Çıkış başarılı" });
 });
