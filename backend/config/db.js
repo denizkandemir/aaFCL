@@ -20,6 +20,8 @@ const connectDB = async () => {
   try {
     await mongoose.connect(process.env.MONGO_URI, {});
     console.log("🔑 MONGO_URI is:", process.env.MONGO_URI); // Debug
+     console.log("🔍 Connected to DB:", mongoose.connection.name);
+    console.log("📂 Collections:", await mongoose.connection.db.listCollections().toArray());
     console.log("MongoDB Connected...");
   } catch (err) {
     console.error("MongoDB Connection Error:", err);

@@ -3,17 +3,15 @@ const Event = require("../models/events");
 const { v2: cloudinary } = require("cloudinary");
 const router = express.Router();
 
+
+
 router.get("/", async (req, res) => {
   try {
-      console.log("🔍 Connected to DB:", mongoose.connection.name);
-    console.log("📂 Collections:", await mongoose.connection.db.listCollections().toArray());
-
-
-    const events = await Event.find(); 
-        console.log("📦 Found events:", events);
+    const events = await Event.find({}).sort({ createdAt: -1 }).lean();
     res.json(events);
-  } catch (error) {
-    res.status(500).json({ message: "Server error", error });
+  } catch (err) {
+    console.error("🔥 Error in GET /api/events:", err); // full error in Render logs
+    res.status(500).json({ message: "Server error", error: err.message });
   }
 });
 
