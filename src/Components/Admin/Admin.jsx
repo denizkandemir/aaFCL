@@ -15,7 +15,7 @@ const Admin = () => {
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-        fetch("https://suaafcl.com/api/events")
+        fetch("https://aafcl-backend.onrender.com/api/events")
             .then((res) => res.json())
             .then((data) => {
                 setEvents(data);

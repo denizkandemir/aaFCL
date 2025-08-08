@@ -12,7 +12,7 @@ const Login = () => {
   useEffect(() => {
     const checkAuth = async () => {
       try {
-        const res = await fetch("https://suaafcl.com/api/admin", {
+        const res = await fetch("https://aafcl-backend.onrender.com/api/admin", {
           credentials: "include", 
         });
 
@@ -29,7 +29,7 @@ const Login = () => {
 
   const loginUser = async () => {
     try {
-      const response = await fetch("https://suaafcl.com/api/auth/login", {
+      const response = await fetch("https://aafcl-backend.onrender.com/api/auth/login", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

@@ -56,7 +56,7 @@ const AddEvent = () => {
     formData.append("texts", JSON.stringify(inputs));
 
     try {
-      const response = await fetch("https://suaafcl.com/api/addEvent", {
+      const response = await fetch("https://aafcl-backend.onrender.com/api/addEvent", {
         method: "POST",
         body: formData,
       });

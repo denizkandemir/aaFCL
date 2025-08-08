@@ -8,7 +8,7 @@ const PrivateRoute = ({ children }) => {
   useEffect(() => {
     const checkAuth = async () => {
       try {
-        const res = await fetch("https://suaafcl.com/api/admin", {
+        const res = await fetch("https://aafcl-backend.onrender.com/api/admin", {
           credentials: "include",
         });
 
