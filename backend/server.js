@@ -14,7 +14,7 @@ app.use(express.json());
 
 // Enable CORS for your frontend
 app.use(cors({
-  origin: ['http://localhost:5173', 'https://suaafcl.com'], // both local & live
+  origin: ['http://localhost:5000', 'https://suaafcl.com'], // both local & live
   methods: 'GET,POST,PUT,DELETE',
   credentials: true
 }));

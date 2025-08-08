@@ -1,5 +1,8 @@
 const mongoose = require("mongoose");
-require("dotenv").config();
+
+if (process.env.NODE_ENV !== "production") {
+  require("dotenv").config();
+}
 
 const https = require("https");
   https.get("https://api.ipify.org?format=json", (res) => {
@@ -16,6 +19,7 @@ const https = require("https");
 const connectDB = async () => {
   try {
     await mongoose.connect(process.env.MONGO_URI, {});
+    console.log("🔑 MONGO_URI is:", process.env.MONGO_URI); // Debug
     console.log("MongoDB Connected...");
   } catch (err) {
     console.error("MongoDB Connection Error:", err);
