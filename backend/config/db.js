@@ -4,6 +4,8 @@ if (process.env.NODE_ENV !== "production") {
   require("dotenv").config();
 }
 
+
+
 const https = require("https");
   https.get("https://api.ipify.org?format=json", (res) => {
     let data = "";
@@ -28,5 +30,20 @@ const connectDB = async () => {
     process.exit(1);
   }
 };
+
+mongoose.connection.on("connected", async () => {
+  const db = mongoose.connection.db;
+  console.log("🗄️ Connected DB:", db.databaseName);
+
+  const colls = (await db.listCollections().toArray()).map(c => c.name);
+  console.log("📚 Collections:", colls);
+
+  try {
+    const count = await db.collection("events").countDocuments();
+    console.log("🔢 events count:", count);
+  } catch (e) {
+    console.error("events count failed:", e.message);
+  }
+});
 
 module.exports = connectDB;
