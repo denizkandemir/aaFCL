@@ -5,6 +5,10 @@ const router = express.Router();
 
 router.get("/", async (req, res) => {
   try {
+      console.log("🔍 Connected to DB:", mongoose.connection.name);
+    console.log("📂 Collections:", await mongoose.connection.db.listCollections().toArray());
+
+    console.log("📦 Found events:", events);
     const events = await Event.find(); 
     res.json(events);
   } catch (error) {
