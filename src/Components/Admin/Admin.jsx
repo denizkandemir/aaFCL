@@ -32,7 +32,7 @@ const Admin = () => {
         if (!confirmDelete) return;
     
         try {
-            const response = await fetch(`https://suaafcl.com/api/events/${id}`, {
+            const response = await fetch(`https://aafcl-backend.onrender.com/api/events/${id}`, {
                 method: "DELETE",
             });
     

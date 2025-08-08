@@ -70,9 +70,8 @@ const EditEvent = () => {
     formData.append("oldImages", JSON.stringify(oldImages));
     console.log("deletedImages being sent:", deletedImages);
 
-
     try {
-      const response = await fetch(`https://suaafcl.com/api/uploadEvent/${event._id}`, {
+      const response = await fetch(`https://aafcl-backend.onrender.com/api/uploadEvent/${event._id}`, {
         method: "PUT",
         body: formData,
       });
