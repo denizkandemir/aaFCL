@@ -8,8 +8,9 @@ router.get("/", async (req, res) => {
       console.log("🔍 Connected to DB:", mongoose.connection.name);
     console.log("📂 Collections:", await mongoose.connection.db.listCollections().toArray());
 
-    console.log("📦 Found events:", events);
+
     const events = await Event.find(); 
+        console.log("📦 Found events:", events);
     res.json(events);
   } catch (error) {
     res.status(500).json({ message: "Server error", error });
