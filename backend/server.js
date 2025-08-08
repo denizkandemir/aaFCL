@@ -10,8 +10,8 @@ const app = express();
 connectDB();
 
 // Middleware
-app.use(express.json({ limit: "10mb" })); 
-app.use(express.urlencoded({ extended: true, limit: "10mb" })); 
+app.use(express.json({ limit: "10mb" }));
+app.use(express.urlencoded({ extended: true, limit: "10mb" }));
 
 // Enable CORS for your frontend
 const allowedOrigins = [
@@ -22,13 +22,10 @@ const allowedOrigins = [
 ];
 
 app.use(cors({
-  origin: function (origin, cb) {
-    if (!origin) return cb(null, true);
-    if (allowedOrigins.includes(origin)) return cb(null, true);
-    return cb(new Error("Not allowed by CORS"));
-  },
-  methods: "GET,POST,PUT,DELETE,PATCH,OPTIONS",
-  credentials: true
+  origin(origin, cb){ if(!origin) return cb(null,true); cb(null, allowedOrigins.includes(origin)); },
+  credentials: true,
+  methods: ["GET","POST","PUT","DELETE","PATCH","OPTIONS"],
+  allowedHeaders: ["Content-Type","Authorization"]
 }));
 
 app.use(cookieParser());

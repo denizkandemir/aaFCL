@@ -50,7 +50,6 @@ const EditEvent = () => {
 
     const formData = new FormData();
 
-    // Append only new files
     images.forEach((image) => {
       if (image.file) {
         formData.append("images", image.file);
@@ -76,7 +75,6 @@ const EditEvent = () => {
         body: formData,
       });
 
-      // Handle non-JSON gracefully
       const contentType = response.headers.get("content-type");
       let data;
       if (contentType && contentType.includes("application/json")) {

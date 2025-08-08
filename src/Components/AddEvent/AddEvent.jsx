@@ -58,6 +58,7 @@ const AddEvent = () => {
     try {
       const response = await fetch("https://aafcl-backend.onrender.com/api/addEvent", {
         method: "POST",
+        credentials: "include",
         body: formData,
       });
 
