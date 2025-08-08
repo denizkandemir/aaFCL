@@ -3,8 +3,6 @@ const Event = require("../models/events");
 const { v2: cloudinary } = require("cloudinary");
 const router = express.Router();
 
-
-
 router.get("/", async (req, res) => {
   try {
     const events = await Event.find({}).sort({ createdAt: -1 }).lean();

@@ -10,15 +10,26 @@ const app = express();
 connectDB();
 
 // Middleware
-app.use(express.json());
+app.use(express.json({ limit: "10mb" })); 
+app.use(express.urlencoded({ extended: true, limit: "10mb" })); 
 
 // Enable CORS for your frontend
+const allowedOrigins = [
+  "http://localhost:5173", 
+  "http://localhost:3000", 
+  "https://suaafcl.com",
+  "https://www.suaafcl.com",
+];
+
 app.use(cors({
-  origin: ['http://localhost:5000', 'https://suaafcl.com'], // both local & live
-  methods: 'GET,POST,PUT,DELETE',
+  origin: function (origin, cb) {
+    if (!origin) return cb(null, true);
+    if (allowedOrigins.includes(origin)) return cb(null, true);
+    return cb(new Error("Not allowed by CORS"));
+  },
+  methods: "GET,POST,PUT,DELETE,PATCH,OPTIONS",
   credentials: true
 }));
-
 
 app.use(cookieParser());
 
@@ -28,7 +39,6 @@ app.use("/api/events", require("./routes/events"));
 app.use("/api/uploadEvent", require("./routes/uploadEvent"));
 app.use("/api/addEvent", require("./routes/addEvent"));
 app.use("/api/admin", require("./routes/admin"));
-
 
 // Server Listening
 const PORT = process.env.PORT || 5000;

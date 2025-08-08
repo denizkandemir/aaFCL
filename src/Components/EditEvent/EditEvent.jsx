@@ -50,6 +50,7 @@ const EditEvent = () => {
 
     const formData = new FormData();
 
+    // Append only new files
     images.forEach((image) => {
       if (image.file) {
         formData.append("images", image.file);
@@ -59,30 +60,37 @@ const EditEvent = () => {
     const title = document.querySelector(".add-event-title-input").value;
     const path = "/" + title.trim().toLowerCase().replace(/\s+/g, "-");
 
-    console.log(event)
     formData.append("title", title);
     formData.append("path", path);
-    formData.append("event", JSON.stringify(event));
-    formData.append("texts", JSON.stringify(inputs));
-    formData.append("deletedImages", JSON.stringify(deletedImages));
+    formData.append("event", JSON.stringify(event || { imgs: [] }));
+    formData.append("texts", JSON.stringify(inputs || []));
+    formData.append("deletedImages", JSON.stringify(deletedImages || []));
 
-    const oldImages = event.imgs?.filter(img => !img.url.includes("blob:")) || [];
+    const oldImages = event?.imgs?.filter(img => !img.url.includes("blob:")) || [];
     formData.append("oldImages", JSON.stringify(oldImages));
-    console.log("deletedImages being sent:", deletedImages);
 
     try {
       const response = await fetch(`https://aafcl-backend.onrender.com/api/uploadEvent/${event._id}`, {
         method: "PUT",
+        credentials: "include",
         body: formData,
       });
 
-      const data = await response.json();
+      // Handle non-JSON gracefully
+      const contentType = response.headers.get("content-type");
+      let data;
+      if (contentType && contentType.includes("application/json")) {
+        data = await response.json();
+      } else {
+        const text = await response.text();
+        throw new Error(text);
+      }
 
       if (response.ok) {
         alert("Etkinlik başarıyla güncellendi!");
         navigate("/admin");
       } else {
-        alert("Hata oluştu: " + data.message);
+        alert("Hata oluştu: " + (data.message || "Bilinmeyen hata"));
       }
     } catch (error) {
       console.error("Error updating event:", error);
