@@ -30,7 +30,7 @@ const upload = multer({ storage });
 function uploadMiddleware(req, res, next) {
   upload.array("images")(req, res, function (err) {
     if (err) {
-      console.error("🧯 Multer/Cloudinary error:", err);
+      console.error("Multer/Cloudinary error:", err);
       return res.status(500).json({ message: "Upload error", error: String(err) });
     }
     next();
@@ -39,8 +39,8 @@ function uploadMiddleware(req, res, next) {
 
 router.post("/", uploadMiddleware, async (req, res) => {
   try {
-    console.log("📝 addEvent body keys:", Object.keys(req.body));
-    console.log("🖼️ addEvent files count:", (req.files || []).length);
+    console.log("addEvent body keys:", Object.keys(req.body));
+    console.log("addEvent files count:", (req.files || []).length);
 
     const rawTitle = req.body.title || "Untitled Event";
     const title = String(rawTitle);
